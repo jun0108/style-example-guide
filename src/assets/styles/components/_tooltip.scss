@@ -1,0 +1,72 @@
+@use '../variables/typography' as *;
+@use '../mixins/mask-icon' as *;
+
+.cm-tooltip {
+  position: relative;
+  display: inline-flex;
+
+  &__label {
+    --tooltip-label-margin: var(--space-32);
+
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--tooltip-label-margin);
+    > label {
+      @include typo('title-t5');
+      margin-right: var(--space-16);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__message {
+    @include typo('body-b3');
+    color: var(--color-font-sub-1) !important;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.mobile {
+  .cm-tooltip {
+    &__label {
+      --tooltip-label-margin: var(--space-16);
+    }
+  }
+}
+
+.tippy-box {
+max-width: 260px !important;
+  border-radius: 8px !important;
+  background-color: var(--color-bg-normal-light) !important;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.08))
+  drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08))
+  drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.12));
+
+}
+
+.tippy-content {
+  padding: 16px !important;
+}
+
+.tippy-arrow {
+  width: 12px !important;
+  height: 9px !important;
+  color: var(--color-bg-normal-light) !important;
+
+}

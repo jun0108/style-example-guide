@@ -1,0 +1,48 @@
+@use '../mixins/index' as *;
+@use '../mixins/mask-icon' as *;
+@use '../variables/typography' as *;
+
+:root {
+  --nodata-radius: 8px;
+  --nodata-padding: var(--space-20) var(--space-40);
+  --nodata-gap: var(--space-20);
+  --nodata-icon-size: 40px;
+  --nodata-bg-color: var(--color-bg-normal-disabled);
+  --nodata-border-color: var(--color-line-regular);
+  --nodata-icon-color: var(--color-icon-light);
+  --nodata-text-color: var(--color-font-disabled-b);
+}
+
+/* ========================= Mixins ========================= */
+
+/* ========================= Styles ========================= */
+.cm-nodata {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--nodata-padding);
+  background-color: var(--nodata-bg-color);
+  border: 1px solid var(--nodata-border-color);
+  border-radius: var(--nodata-radius);
+
+  &__icon {
+    margin-bottom: var(--nodata-gap);
+    color: var(--nodata-icon-color);
+    &.is-nodata {
+      @include mask-icon('../images/icon/nodata__line--818.svg', var(--nodata-icon-size));
+    }
+    &.is-custom {
+      @include mask-icon('../images/icon/search__line--818.svg', var(--nodata-icon-size));
+    }
+  }
+
+  &__text {
+    @include typo('body-b1');
+    color: var(--nodata-text-color);
+    text-align: center;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}

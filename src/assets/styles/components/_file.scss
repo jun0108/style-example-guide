@@ -1,0 +1,156 @@
+@use '../mixins/index' as *;
+@use '../variables/typography' as *;
+
+.file {
+  &__dropzone {
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+    background-color: var(--color-bg-normal-light);
+    border-radius: 8px;
+    input[type="file"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+  }
+  &__header {
+    @include typo('body-b3');
+    display: flex;
+    color: var(--color-font-sub-2);
+    line-height: 24px;
+    padding: 16px 16px 20px;
+    word-break: break-all;
+    label {
+      margin: 0 4px;
+      color: var(--color-font-main);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    }
+  }
+  &__list {
+    overflow-y: auto;
+    flex: 1;
+    padding: 0 10px 0 16px;
+    margin: 0 6px 16px 0;
+
+    li {
+    --list-border-color: var(--color-line-regular);
+    --list-text-color: var(--color-font-main);
+    --list-status-text-color: var(--color-font-sub-1);
+    --list-icon-color: var(--color-status-positive);
+      
+      @include typo('body-b2');
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 38px;
+      padding: 8px;
+      background-color: var(--color-bg-normal-white);
+      border: 1px solid var(--list-border-color);
+      border-radius: 4px;
+      color: var(--list-text-color);
+
+      .list {
+        &__icon {
+          &--file {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            background: url('../../images/icon/excel.svg');
+          }
+        }
+        &__status {
+          @include typo('button-but2', var(--font-weight-regular));
+          position: relative;
+          padding-right: 24px;
+          margin-left: auto;
+          color: var(--list-status-text-color);
+          &::after {
+            @include pseudo-icon(20px, '../images/icon/check-cercle__line--00b.svg') {
+              left: unset;
+              right: 0;
+              color: var(--list-icon-color);
+              transform: translate(0, -50%);
+            }
+          }
+        }
+        &__progress {
+          --progress: 0;
+          @include typo('button-but2', var(--font-weight-regular));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: auto;
+          color: var(--list-status-text-color);
+
+          .progress-chart {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            margin: 4px;          
+            background: conic-gradient(
+              var(--color-primary-normal) calc(var(--progress) * 1%),
+              var(--color-line-regular) 0
+            );
+            border-radius: 50%;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 11px;
+              height: 11px;
+              background: var(--color-bg-normal-white);
+              border-radius: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+      p {
+        min-width: 50px;
+      }
+      button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        margin-left: 4px;
+        .cm-icon--close-lg {
+          color: var(--color-icon-regular);
+        }
+      }
+
+      & + li {
+        margin-top: 8px;
+      }
+      &.is-fail {
+        --list-border-color: var(--color-status-warning);
+        --list-text-color: var(--color-status-warning);
+        --list-status-text-color: var(--color-status-warning);
+        --list-icon-color: var(--color-status-warning);
+        .list__status {
+          &::after {
+            @include pseudo-icon(20px, '../images/icon/info__circle--818.svg') {
+              left: unset;
+              right: 0;
+              color: var(--list-icon-color);
+              transform: translate(0, -50%);
+            }
+          }
+        }
+      }
+      &.is-success {
+        --list-border-color: var(--color-status-positive);
+        --list-text-color: var(--color-status-positive);
+      }
+    }
+  }
+}

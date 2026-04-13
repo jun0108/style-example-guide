@@ -1,0 +1,113 @@
+@use '@/assets/styles/mixins/mask-icon' as *;
+@use '../variables/typography' as *;
+@use '../mixins/breakpoint' as *;
+
+.search-condition {
+  --search-condition-gap: var(--space-40);
+  --search-condition-padding: var(--space-20);
+  --search-condition-fields-gap: var(--space-24);
+  --search-condition-unit-gap: var(--space-16);
+  --search-condition-field-dropdown-max: 210px;
+  --search-condition-field-textfield-max: 260px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--search-condition-gap);
+  width: 100%;
+  padding: var(--search-condition-padding);
+  border-bottom: 1px solid var(--color-line-regular);
+
+  &__title {
+    @include typo('headline-h6');
+    flex: none;
+    color: var(--color-font-main);
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--search-condition-gap);
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__fields {
+    display: flex;
+    gap: var(--search-condition-fields-gap);
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 0;
+
+    .v-dropdown,
+    .v-datepicker {
+      flex: 1;
+      min-width: 100px;
+      max-width: var(--search-condition-field-dropdown-max);
+    }
+
+    .v-textfield {
+      flex: 1;
+      min-width: 200px;
+      max-width: var(--search-condition-field-textfield-max);
+    }
+
+    .v-datepicker {
+      min-width: 300px;
+    }
+  }
+
+  &__group {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--search-condition-unit-gap);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--search-condition-unit-gap);
+    flex: none;
+  }
+
+  @include respond-down('mobile') {
+    --search-condition-gap: var(--space-16);
+    --search-condition-fields-gap: var(--space-20);
+    --search-condition-unit-gap: var(--space-8);
+    flex-direction: column;
+
+    &__body,
+    &__fields,
+    &__group {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__body {
+      gap: var(--space-20);
+    }
+
+    &__fields {
+      .v-dropdown,
+      .v-textfield,
+      .v-datepicker {
+        width: 100%;
+        min-width: unset;
+        max-width: none;
+      }
+    }
+
+    &__actions {
+      gap: var(--space-16);
+      width: 100%;
+      .cm-tooltip {
+        display: none;
+      }
+      .cm-button {
+        flex: 1;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@use 'sass:map';
+@use './mask-icon' as *;
+@use '../variables/typography' as *;
+@use './breakpoint' as *;
+
+@mixin textfield-base {
+  display: flex;
+  flex-flow: column;
+  gap: var(--inputs-vertical-space);
+
+  &__label {
+    @include typo('body-b1', var(--inputs-label-font-weight));
+    display: inline-flex;
+    align-items: center;
+
+    position: relative;
+    width: var(--inputs-label-width);
+    color: var(--inputs-label-text-color);
+
+    &.required {
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin-left: var(--inputs-required-space);
+        margin-top: -14px;
+        vertical-align: middle;
+        background: url('../../images/icon/required.svg') no-repeat center / contain;
+      }
+    }
+
+    &.size {
+      &--xs {
+        line-height: var(--inputs-height-xs);
+      }
+
+      &--sm {
+        line-height: var(--inputs-height-sm);
+      }
+
+      &--lg {
+        line-height: var(--inputs-height-lg);
+      }
+
+      &--xl {
+        line-height: var(--inputs-height-xl);
+      }
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__input {
+    @include typo('body-b2');
+
+    width: 100%;
+    height: var(--inputs-height-md);
+    padding: 11px var(--space-16);
+    background: var(--inputs-background-color);
+    border: 1px solid var(--inputs-border-color);
+    border-radius: var(--inputs-border-radius);
+    color: var(--inputs-text-color);
+    box-sizing: border-box;
+    outline: none;
+    text-overflow: ellipsis;
+
+    // &:hover:not(:disabled) {
+    //   outline: 1px solid var(--inputs-hover-border-color);
+    //   outline-offset: -1px;
+    // }
+
+    &:focus:not(:disabled) {
+      padding-right: var(--space-50);
+      border-color: var(--inputs-focus-border-color);
+
+      & + .v-textfield__icons {
+        .remove {
+          display: block;
+        }
+      }
+    }
+
+    &:disabled {
+      background-color: var(--inputs-disabled-background-color);
+      color: var(--inputs-disabled-text-color);
+      border-color: var(--inputs-disabled-border-color);
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: var(--inputs-placeholder-color);
+    }
+  }
+
+  &__desc {
+    @include typo('body-b3');
+    position: relative;
+    color: var(--color-font-sub-1);
+
+    &.valid {
+      padding-left: var(--space-18);
+      &::before {
+        @include pseudo-icon($src: '../images/icon/check__circle--00b.svg', $size: 16px);
+        left: 0;
+        transform: translateY(-50%);
+        color: var(--color-status-positive);
+      }
+    }
+
+    @include respond-down('mobile') {
+      white-space: nowrap;
+    }
+  }
+
+  // 오류 시
+  // &.is-error &__label,
+  &.is-error &__desc {
+    color: var(--inputs-error-color);
+  }
+
+  &.is-error &__input,
+  &.is-error .dd-trigger-container .dd-default-trigger {
+    border-color: var(--inputs-error-color);
+
+    &:hover {
+      border-color: var(--inputs-error-color);
+    }
+  }
+}
+
+/* Map ------------------------------------ */
+$map-textfield-size: (
+  xs: (
+    height: var(--inputs-height-xs),
+    padding: 8px 12px,
+  ),
+  sm: (
+    height: var(--inputs-height-sm),
+    padding: 11px 16px,
+  ),
+  md: (
+    height: var(--inputs-height-md),
+    padding: 11px 16px,
+  ),
+  lg: (
+    height: var(--inputs-height-lg),
+    padding: 13px 16px,
+  ),
+  xl: (
+    height: var(--inputs-height-xl),
+    padding: 13px 16px,
+  ),
+);
+
+/* Mixins ------------------------------------ */
+@mixin textfield-size {
+  @each $size, $size-map in $map-textfield-size {
+    &.size--#{$size} {
+      .v-textfield__input-wrapper {
+        height: map.get($size-map, height);
+      }
+
+      .v-textfield__input,
+      .dd-default-trigger.dd-rounded--medium,
+      .dp__input {
+        height: map.get($size-map, height);
+        padding: map.get($size-map, padding);
+      }
+    }
+  }
+}

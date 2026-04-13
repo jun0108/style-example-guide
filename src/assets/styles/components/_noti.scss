@@ -1,0 +1,44 @@
+@use '../variables/typography' as *;
+
+.noti-container {
+  --noti-distance: 24px;
+  --noti-container-gap: var(--space-8);
+  --noti-radius: 8px;
+  --noti-default-bg-color: var(--color-bg-opacity-black-85);
+  --noti-default-text-color: var(--color-font-white);
+  --noti-width: 420px;
+  --noti-icon-size: 24px;
+
+  z-index: var(--z-index-noti);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: var(--noti-container-gap);
+
+  &.bottom-center {
+    bottom: var(--noti-distance);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.noti {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: var(--space-8);
+  width: var(--noti-width);
+  padding: var(--space-16) var(--space-20);
+  border-radius: var(--noti-radius);
+  background-color: var(--noti-default-bg-color);
+  color: var(--noti-default-text-color);
+
+  &__icon {
+    width: var(--noti-icon-size);
+    height: var(--noti-icon-size);
+  }
+
+  &__message {
+    @include typo('body-b1', var(--font-weight-semibold));
+  }
+}

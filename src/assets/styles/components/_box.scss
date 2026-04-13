@@ -1,0 +1,45 @@
+@use '../mixins/index' as *;
+@use '../variables/typography' as *;
+
+@mixin box-style(
+  $type: 'full',
+  $bg-color: var(--color-bg-normal-white),
+  $bd-color: var(--color-line-regular),
+) {
+  border: 1px solid;
+
+  @if $type == 'full' {
+    background-color: $bg-color;
+    border-color: $bd-color;
+  } @else if $type == 'line' {
+    background-color: var(-color-bg-normal-white);
+    border-color: $bd-color;
+  }
+}
+
+@mixin box-size($size: 'md') {
+  @if $size == 'md' {
+    padding: var(--space-16);
+    border-radius: 8px;
+  } @else if $size == 'lg' {
+    padding: var(--space-24);
+    border-radius: 16px;
+  }
+}
+
+.box {
+  &__full {
+    &--f7f {
+      @include box-style('full', var(--color-bg-normal-light), var(--color-bg-normal-light));
+      @include box-size('md');
+      width: 100%;
+      li {
+        @include typo('body-b3');
+        margin-left: var(--space-20);
+        color: var(--color-font-sub-2);
+        list-style: disc;
+      }
+    }
+  }
+  &__line {}
+}

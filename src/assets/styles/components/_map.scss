@@ -1,0 +1,60 @@
+@use '../mixins/breakpoint' as *;
+
+.cm-map {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+  &.size {
+    &--md {
+      overflow: hidden;
+      flex: 1;
+      height: 440px;
+      border-radius: 8px;
+    }
+    &--sm {
+      overflow: hidden;
+      flex: 1;
+      height: 260px;
+      border-radius: 8px;
+      @include respond-down('mobile') {
+        height: 225px;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.cm-map-inavi {
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &__ol {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}

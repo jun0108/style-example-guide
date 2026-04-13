@@ -1,0 +1,100 @@
+@use '../mixins/mask-icon' as *;
+
+.cm-icon {
+  flex-shrink: 0;
+  display: block;
+  font-size: 0;
+  // width: 16px;
+  // height: 16px;
+  color: currentColor;
+
+  &--reload {
+    @include mask-icon('../images/icon/reload__line--2a2.svg', 16px);
+  }
+
+  &--edit {
+    @include mask-icon('../images/icon/edit__line--fff.svg', 16px);
+  }
+
+  &--trash {
+    @include mask-icon('../images/icon/trash__line--2a2.svg', 16px);
+  }
+
+  &--plus {
+    @include mask-icon('../images/icon/plus__line--2a2.svg', 16px);
+  }
+
+  &--grip {
+    @include mask-icon('../images/icon/grip__dots--2a2.svg', 16px);
+  }
+
+  &--arrow-left {
+    @include mask-icon('../images/icon/arrow-l__line--2a2.svg', 24px);
+  }
+
+  &--setting {
+    @include mask-icon('../images/icon/setting__line--2a2.svg', 16px);
+  }
+
+  &--pin {
+    @include mask-icon('../images/icon/pin__line--2a2.svg', 16px);
+  }
+
+  &--upload {
+    @include mask-icon('../images/icon/upload__line--2a2.svg', 16px);
+  }
+
+  &--download {
+    @include mask-icon('../images/icon/download__line--2a2.svg', 16px);
+  }
+
+  &--close {
+    @include mask-icon('../images/icon/close__line--111.svg', 12px);
+  }
+
+  &--close-lg {
+    @include mask-icon('../images/icon/close__line--484.svg', 20px);
+  }
+
+  &--minus {
+    @include mask-icon('../images/icon/minus__line--fff.svg', 24px);
+  }
+
+  &--plus-bold {
+    @include mask-icon('../images/icon/plus__line--2a2.svg', 16px);
+  }
+  
+  &--plus-lg {
+    @include mask-icon('../images/icon/plus__line--2a2.svg', 24px);
+  }
+
+  &--point {
+    @include mask-icon('../images/icon/point__line--484.svg', 24px);
+  }
+
+  &--external {
+    @include mask-icon('../images/icon/external__line--2a2.svg', 16px);
+  }
+
+  &--copy {
+    @include mask-icon('../images/icon/copy__line--111.svg', 16px);
+  }
+
+  &--info-circle {
+    @include mask-icon('../images/icon/info__circle--818.svg', 24px);
+    color: var(--color-icon-light);
+  }
+
+  &--pen {
+    @include mask-icon('../images/icon/pen__line--2a2.svg', 16px);
+  }
+}
+
+.icon--device-model {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

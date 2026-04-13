@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+    모바일 320~767 / 태블릿 768~1279 / PC 1280~1920
+----------------------------------------------------------------------------- */
+/* media query 이슈로 SCSS 변수 병행 사용 */
+$bp-viewport-min: 320px;
+$bp-viewport-max: 1920px;
+$bp-pc-min: 1280px;
+$bp-mobile-max: 767px;
+$bp-tablet-max: 1279px;
+
+:root {
+  --bp-viewport-min: 320px;
+  --bp-viewport-max: 1920px;
+  --bp-pc-min: 1280px;
+  --bp-mobile-max: 767px;
+  --bp-tablet-max: 1279px;
+}

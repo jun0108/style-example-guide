@@ -1,0 +1,152 @@
+@use '../mixins/mask-icon' as *;
+
+:root {
+  --cm-colorpicker-saturation-ratio: 78%;
+  --cm-colorpicker-shadow-drop: 0 2px 12px 0 var(--color-bg-opacity-black-20);
+  --cm-colorpicker-gap-sm: var(--space-8);
+  --cm-colorpicker-gap-md: var(--space-16);
+  --cm-colorpicker-size-sm: 24px;
+  --cm-colorpicker-size-md: 28px;
+}
+
+.cm-colorpicker {
+  &__picker {
+    width: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--font-family) !important;
+
+    .saturation {
+      padding-bottom: var(--cm-colorpicker-saturation-ratio) !important;
+      border-radius: 0 !important;
+    }
+
+    .picker {
+      width: var(--cm-colorpicker-size-sm) !important;
+      height: var(--cm-colorpicker-size-sm) !important;
+      box-shadow:
+        0 0 0 2px var(--color-bg-normal-white),
+        inset 0 0 1px 1px var(--color-bg-opacity-black-30),
+        0 0 1px 2px var(--color-bg-opacity-black-50),
+        var(--cm-colorpicker-shadow-drop) !important;
+    }
+
+    .body {
+      padding: var(--cm-colorpicker-gap-md) !important;
+      background-color: var(--color-bg-normal-white) !important;
+    }
+
+    .controls {
+      gap: var(--cm-colorpicker-gap-sm) !important;
+    }
+
+    .active-color {
+      width: var(--cm-colorpicker-size-md) !important;
+      height: var(--cm-colorpicker-size-md) !important;
+      border-radius: 4px !important;
+    }
+
+    .hue-wrap {
+      height: var(--cm-colorpicker-size-md) !important;
+      margin: 0 !important;
+    }
+
+    .gradient {
+      border-radius: 4px !important;
+    }
+
+    .slider {
+      &[aria-valuenow='360.0'] {
+        .picker {
+          transform: translateX(calc(-1 * var(--cm-colorpicker-size-md))) !important;
+        }
+      }
+
+      .picker {
+        width: var(--cm-colorpicker-size-md) !important;
+        height: var(--cm-colorpicker-size-md) !important;
+        transform: translate(0, -1px) !important;
+        background-color: transparent !important;
+        box-shadow:
+          0 0 0 2px var(--color-line-light),
+          var(--cm-colorpicker-shadow-drop) !important;
+      }
+    }
+
+    .fieldsWrap {
+      position: relative !important;
+      padding-top: 0 !important;
+      margin-top: var(--cm-colorpicker-gap-md) !important;
+    }
+
+    .fields {
+      gap: var(--cm-colorpicker-gap-sm) !important;
+      margin: 0 !important;
+    }
+
+    .field {
+      padding-left: 0 !important;
+    }
+
+    .vc-editable-input {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: var(--cm-colorpicker-gap-sm) !important;
+    }
+
+    .vc-input-input {
+      height: 40px !important;
+      padding: 9px var(--cm-colorpicker-gap-md) !important;
+      border: 1px solid var(--color-line-regular) !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+      background-color: var(--color-bg-normal-white) !important;
+      border: 1px solid var(--color-line-regular) !important;
+      color: var(--color-font-main) !important;
+      font-size: var(--typo-body-b2-size) !important;
+      line-height: var(--typo-body-b2-lh) !important;
+      font-weight: var(--font-weight-regular) !important;
+      padding: 9px var(--space-16) !important;
+      box-sizing: border-box !important;
+      text-align: left !important;
+    }
+
+    .vc-input-label {
+      margin-top: 0 !important;
+      line-height: var(--typo-body-b1-lh) !important;
+      font-size: var(--typo-body-b1-size) !important;
+      color: var(--color-font-main) !important;
+    }
+
+    .toggle-btn {
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      width: var(--cm-colorpicker-size-sm) !important;
+      height: var(--cm-colorpicker-size-sm);
+
+      .toggle-icon {
+        @include mask-icon($src: '../images/icon/arrow__up-down--2a2.svg', $size: var(--cm-colorpicker-size-sm));
+        display: block;
+        margin: 0 !important;
+        color: var(--color-icon-black);
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    .toggle-icon_highlighted {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--cm-colorpicker-gap-md);
+    justify-content: center;
+    padding: var(--cm-colorpicker-gap-sm) 0 var(--cm-colorpicker-gap-md) 0;
+  }
+}

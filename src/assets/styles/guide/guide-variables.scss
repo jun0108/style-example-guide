@@ -1,0 +1,174 @@
+:root {
+  --g-color-neutral-0: #ffffff;
+  --g-color-neutral-30: #f0f0f0;
+  --g-color-neutral-50: #e6e5e5;
+  --g-color-neutral-100: #d4d3d3;
+  --g-color-neutral-200: #c3c2c2;
+  --g-color-neutral-300: #b1b0b0;
+  --g-color-neutral-400: #989797;
+  --g-color-neutral-500: #797878;
+  --g-color-neutral-600: #5a5858;
+  --g-color-neutral-700: #3b3939;
+  --g-color-neutral-800: #323030;
+  --g-color-neutral-900: #272626;
+  --g-color-neutral-950: #1a1919;
+  --g-color-neutral: var(--g-color-neutral-700);
+
+  --g-color-red-50: #f8e4e4;
+  --g-color-red-100: #f4cece;
+  --g-color-red-200: #efb9b9;
+  --g-color-red-300: #eba3a3;
+  --g-color-red-400: #e67575;
+  --g-color-red-500: #e14848;
+  --g-color-red-600: #dc1a1a;
+  --g-color-red-700: #c31717;
+  --g-color-red-800: #aa1414;
+  --g-color-red-900: #861010;
+  --g-color-red-950: #620c0c;
+  --g-color-red: var(--g-color-red-600);
+
+  --g-color-yellow-50: #fbf3e4;
+  --g-color-yellow-100: #f8e9c9;
+  --g-color-yellow-200: #f5dfae;
+  --g-color-yellow-300: #f1d481;
+  --g-color-yellow-400: #eec940;
+  --g-color-yellow-500: #eabd00;
+  --g-color-yellow-600: #d5ac00;
+  --g-color-yellow-700: #c09b00;
+  --g-color-yellow-800: #a68600;
+  --g-color-yellow-900: #876d00;
+  --g-color-yellow-950: #695500;
+  --g-color-yellow: var(--g-color-yellow-500);
+
+  --g-color-green-50: #e4f0e8;
+  --g-color-green-100: #cee4d5;
+  --g-color-green-200: #b8d9c3;
+  --g-color-green-300: #a2cdb0;
+  --g-color-green-400: #74bf94;
+  --g-color-green-500: #47b278;
+  --g-color-green-600: #19a45c;
+  --g-color-green-700: #169252;
+  --g-color-green-800: #137f47;
+  --g-color-green-900: #0f6438;
+  --g-color-green-950: #0b4929;
+  --g-color-green: var(--g-color-green-600);
+
+  --g-color-blue-50: #e4e8f0;
+  --g-color-blue-100: #d1d9e6;
+  --g-color-blue-200: #bec9dc;
+  --g-color-blue-300: #abbad2;
+  --g-color-blue-400: #8ea6c7;
+  --g-color-blue-500: #678fbb;
+  --g-color-blue-600: #4078b0;
+  --g-color-blue-700: #1961a4;
+  --g-color-blue-800: #15528b;
+  --g-color-blue-900: #10406d;
+  --g-color-blue-950: #0b2b49;
+  --g-color-blue: var(--g-color-blue-700);
+
+  --g-color-pink-50: #f6e5e8;
+  --g-color-pink-100: #f1d2d8;
+  --g-color-pink-200: #ecc0c9;
+  --g-color-pink-300: #e7adb9;
+  --g-color-pink-400: #e292a5;
+  --g-color-pink-500: #dc6f8d;
+  --g-color-pink-600: #d74b75;
+  --g-color-pink-700: #d1285d;
+  --g-color-pink-800: #3b3537;
+  --g-color-pink-900: #8b1b3e;
+  --g-color-pink-950: #5d122a;
+  --g-color-pink: var(--g-color-pink-700);
+
+  --g-color-primary: var(--g-color-pink);
+
+  --g-color-background: var(--g-color-neutral-30);
+  --g-color-text: var(--g-color-neutral-700);
+
+  --g-font-size-xs: 0.75rem;
+  --g-font-size-sm: 0.875rem;
+  --g-font-size-md: 1rem;
+  --g-font-size-lg: 1.125rem;
+  --g-font-size-xl: 1.25rem;
+
+  --g-rounded-sm: 0.25rem;
+  --g-rounded-md: 0.375rem;
+  --g-rounded-lg: 0.5rem;
+  --g-rounded-full: 100%;
+}
+
+// .layout-guide {
+//   /* ibm-plex-sans-kr-korean-300-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 300;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-300-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-300-normal.woff) format('woff');
+//   }
+
+//   /* ibm-plex-sans-kr-korean-400-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 400;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-400-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-400-normal.woff) format('woff');
+//   }
+
+//   /* ibm-plex-sans-kr-korean-700-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 700;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-700-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/korean-700-normal.woff) format('woff');
+//   }
+
+//   /* ibm-plex-sans-kr-latin-300-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 300;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-300-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-300-normal.woff) format('woff');
+//     unicode-range:
+//       U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+//       U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+//   }
+
+//   /* ibm-plex-sans-kr-latin-400-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 400;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-400-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-400-normal.woff) format('woff');
+//     unicode-range:
+//       U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+//       U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+//   }
+
+//   /* ibm-plex-sans-kr-latin-700-normal */
+//   @font-face {
+//     font-family: 'IBM Plex Sans KR';
+//     font-style: normal;
+//     font-display: swap;
+//     font-weight: 700;
+//     src:
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-700-normal.woff2) format('woff2'),
+//       url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans-kr@latest/latin-700-normal.woff) format('woff');
+//     unicode-range:
+//       U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F,
+//       U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+//   }
+// }

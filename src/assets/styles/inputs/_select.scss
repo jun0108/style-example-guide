@@ -1,0 +1,40 @@
+@use '../mixins/index' as *;
+
+.v-select {
+  @include textfield-base;
+  min-width: 50px;
+
+  &__input-wrapper {
+
+    // 화살표
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      width: 18px !important;
+      height: 18px !important;
+      top: 50%;
+      right: 0.625rem;
+      transform: translateY(-50%);
+      display: block;
+      color: var(--form-input-select-icon-color);
+      background-color: currentColor;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062'/%3E%3C/svg%3E");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+  }
+
+  // 오류 시
+  &.has-error &__label,
+  &.has-error &__desc {
+    color: var(--inputs-error-color);
+  }
+
+  &.has-error &__input {
+    border-color: var(--inputs-error-color);
+  }
+}

@@ -1,0 +1,325 @@
+@use 'sass:map';
+
+/* =============================================================================
+    Layer 1 (직접 참조 금지)
+============================================================================= */
+:root {
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* Font size */
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+
+  /* Line height */
+  --line-height-16: 16px;
+  --line-height-18: 18px;
+  --line-height-20: 20px;
+  --line-height-22: 22px;
+  --line-height-24: 24px;
+  --line-height-26: 26px;
+  --line-height-28: 28px;
+  --line-height-34: 34px;
+  --line-height-38: 38px;
+  --line-height-42: 42px;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-default: var(--letter-spacing-tight);
+
+  /* Font weight */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* =============================================================================
+    Layer 2 (PC / MO 분기)
+============================================================================= */
+
+// PC
+:root,
+[data-device='pc'],
+.pc {
+  /* Headline */
+  --typo-headline-h3-size: var(--font-size-28);
+  --typo-headline-h3-lh: var(--line-height-38);
+  --typo-headline-h4-size: var(--font-size-28);
+  --typo-headline-h4-lh: var(--line-height-38);
+  --typo-headline-h5-size: var(--font-size-24);
+  --typo-headline-h5-lh: var(--line-height-34);
+  --typo-headline-h6-size: var(--font-size-20);
+  --typo-headline-h6-lh: var(--line-height-28);
+
+  /* Title */
+  --typo-title-t1-size: var(--font-size-32);
+  --typo-title-t1-lh: var(--line-height-42);
+  --typo-title-t2-size: var(--font-size-28);
+  --typo-title-t2-lh: var(--line-height-38);
+  --typo-title-t3-size: var(--font-size-24);
+  --typo-title-t3-lh: var(--line-height-34);
+  --typo-title-t4-size: var(--font-size-20);
+  --typo-title-t4-lh: var(--line-height-28);
+  --typo-title-t5-size: var(--font-size-18);
+  --typo-title-t5-lh: var(--line-height-26);
+  --typo-title-t5-ls: var(--letter-spacing-default);
+  --typo-title-t5-sb-weight: var(--font-weight-semibold);
+
+  /* Body */
+  --typo-body-b1-size: var(--font-size-16);
+  --typo-body-b1-lh: var(--line-height-24);
+  --typo-body-b2-size: var(--font-size-15);
+  --typo-body-b2-lh: var(--line-height-22);
+  --typo-body-b3-size: var(--font-size-14);
+  --typo-body-b3-lh: var(--line-height-20);
+  --typo-body-b4-size: var(--font-size-13);
+  --typo-body-b4-lh: var(--line-height-18);
+}
+
+// MO
+:root,
+[data-device='mo'],
+.mobile {
+  /* Headline */
+  --typo-headline-h3-size: var(--font-size-24);
+  --typo-headline-h3-lh: var(--line-height-34);
+  --typo-headline-h4-size: var(--font-size-20);
+  --typo-headline-h4-lh: var(--line-height-28);
+  --typo-headline-h5-size: var(--font-size-18);
+  --typo-headline-h5-lh: var(--line-height-26);
+  --typo-headline-h6-size: var(--font-size-16);
+  --typo-headline-h6-lh: var(--line-height-24);
+
+  /* Title */
+  --typo-title-t1-size: var(--font-size-24);
+  --typo-title-t1-lh: var(--line-height-34);
+  --typo-title-t2-size: var(--font-size-20);
+  --typo-title-t2-lh: var(--line-height-28);
+  --typo-title-t3-size: var(--font-size-18);
+  --typo-title-t3-lh: var(--line-height-26);
+  --typo-title-t4-size: var(--font-size-16);
+  --typo-title-t4-lh: var(--line-height-24);
+  --typo-title-t5-size: var(--font-size-17);
+  --typo-title-t5-lh: normal;
+  --typo-title-t5-ls: var(--letter-spacing-normal);
+  --typo-title-t5-sb-weight: var(--font-weight-bold);
+
+  /* Body */
+  --typo-body-b1-size: var(--font-size-15);
+  --typo-body-b1-lh: var(--line-height-22);
+  --typo-body-b2-size: var(--font-size-14);
+  --typo-body-b2-lh: var(--line-height-20);
+  --typo-body-b3-size: var(--font-size-13);
+  --typo-body-b3-lh: var(--line-height-18);
+  --typo-body-b4-size: var(--font-size-12);
+  --typo-body-b4-lh: var(--line-height-18);
+}
+
+/* =============================================================================
+   Layer 3 
+   ─────────────────────────────────────────────────────────────────────────────
+   [사용 원칙]
+   - 컴포넌트 SCSS  → @include typo('스타일명')  (BEM 클래스 안에서 사용)
+   - 단순 텍스트     → .type--스타일명 유틸리티 클래스 (추가 스타일 불필요 시)
+
+   [사용법]
+   @include typo('body-b1');                              // 기본 weight
+   @include typo('body-b1', var(--font-weight-semibold)); // weight 예외 있을 시
+============================================================================= */
+
+$typo-map: (
+  // Headline
+  'headline-h3': (
+      size: var(--typo-headline-h3-size),
+      lh: var(--typo-headline-h3-lh),
+      weight: var(--font-weight-semibold),
+      alt: var(--font-weight-regular),
+      alt-name: 'regular',
+    ),
+  'headline-h4': (
+    size: var(--typo-headline-h4-size),
+    lh: var(--typo-headline-h4-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'headline-h5': (
+    size: var(--typo-headline-h5-size),
+    lh: var(--typo-headline-h5-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'headline-h6': (
+    size: var(--typo-headline-h6-size),
+    lh: var(--typo-headline-h6-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  // Title
+  'title-t1': (
+      size: var(--typo-title-t1-size),
+      lh: var(--typo-title-t1-lh),
+      weight: var(--font-weight-semibold),
+      alt: var(--font-weight-regular),
+      alt-name: 'regular',
+    ),
+  'title-t2': (
+    size: var(--typo-title-t2-size),
+    lh: var(--typo-title-t2-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'title-t3': (
+    size: var(--typo-title-t3-size),
+    lh: var(--typo-title-t3-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'title-t4': (
+    size: var(--typo-title-t4-size),
+    lh: var(--typo-title-t4-lh),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'title-t5': (
+    size: var(--typo-title-t5-size),
+    lh: var(--typo-title-t5-lh),
+    weight: var(--typo-title-t5-sb-weight),
+    ls: var(--typo-title-t5-ls),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  // Body
+  'body-b1': (
+      size: var(--typo-body-b1-size),
+      lh: var(--typo-body-b1-lh),
+      weight: var(--font-weight-regular),
+      alt: var(--font-weight-semibold),
+      alt-name: 'semibold',
+    ),
+  'body-b2': (
+    size: var(--typo-body-b2-size),
+    lh: var(--typo-body-b2-lh),
+    weight: var(--font-weight-regular),
+    alt: var(--font-weight-semibold),
+    alt-name: 'semibold',
+  ),
+  'body-b3': (
+    size: var(--typo-body-b3-size),
+    lh: var(--typo-body-b3-lh),
+    weight: var(--font-weight-regular),
+    alt: var(--font-weight-semibold),
+    alt-name: 'semibold',
+  ),
+  'body-b4': (
+    size: var(--typo-body-b4-size),
+    lh: var(--typo-body-b4-lh),
+    weight: var(--font-weight-regular),
+    alt: var(--font-weight-semibold),
+    alt-name: 'semibold',
+  ),
+  // Caption
+  'caption-c1': (
+      size: var(--font-size-13),
+      lh: var(--line-height-18),
+      weight: var(--font-weight-regular),
+      alt: var(--font-weight-semibold),
+      alt-name: 'semibold',
+    ),
+  'caption-c2': (
+    size: var(--font-size-12),
+    lh: var(--line-height-18),
+    weight: var(--font-weight-regular),
+    alt: var(--font-weight-semibold),
+    alt-name: 'semibold',
+  ),
+  'caption-c3': (
+    size: var(--font-size-11),
+    lh: var(--line-height-16),
+    weight: var(--font-weight-regular),
+    alt: var(--font-weight-semibold),
+    alt-name: 'semibold',
+  ),
+  // Button
+  'button-but1': (
+      size: var(--font-size-16),
+      lh: var(--line-height-24),
+      weight: var(--font-weight-semibold),
+      alt: var(--font-weight-regular),
+      alt-name: 'regular',
+    ),
+  'button-but2': (
+    size: var(--font-size-14),
+    lh: var(--line-height-20),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'button-but3': (
+    size: var(--font-size-13),
+    lh: var(--line-height-18),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  ),
+  'button-but4': (
+    size: var(--font-size-12),
+    lh: var(--line-height-18),
+    weight: var(--font-weight-semibold),
+    alt: var(--font-weight-regular),
+    alt-name: 'regular',
+  )
+);
+
+@mixin typo($style, $weight: null) {
+  $config: map.get($typo-map, $style);
+
+  @if not $config {
+    @error '[typo] "#{$style}" is not defined in $typo-map.';
+  }
+
+  line-height: map.get($config, lh);
+  font-size: map.get($config, size);
+
+  @if $weight {
+    font-weight: $weight;
+  } @else {
+    font-weight: map.get($config, weight);
+  }
+
+  @if map.has-key($config, ls) {
+    letter-spacing: map.get($config, ls);
+  } @else {
+    letter-spacing: var(--letter-spacing-default);
+  }
+}
+
+/* =============================================================================
+   Utility Classes 
+============================================================================= */
+@each $name, $config in $typo-map {
+  .type--#{$name} {
+    @include typo($name);
+  }
+
+  @if map.has-key($config, alt) {
+    .type--#{$name}--#{map.get($config, alt-name)} {
+      @include typo($name, map.get($config, alt));
+    }
+  }
+}

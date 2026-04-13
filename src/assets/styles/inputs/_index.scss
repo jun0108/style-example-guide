@@ -1,0 +1,44 @@
+@use './textfield';
+@use './select';
+@use './selector';
+@use './textarea';
+@use './dropdown';
+@use './datepicker';
+@use './form';
+
+:root {
+  --inputs-label-size: var(--typo-body-b1-size);
+  --inputs-label-width: 120px;
+  --inputs-label-font-weight: var(--font-weight-semibold);
+  --inputs-label-text-color: var(--color-font-sub-2);
+  --inputs-required-text-color: var(--color-status-warning);
+  --inputs-required-space: var(--space-2);
+  --inputs-text-size: var(--typo-body-b1-size);
+  --inputs-text-color: var(--color-font-main);
+  --inputs-background-color: var(--color-bg-normal-white);
+  --inputs-desc-size: var(--typo-body-b3-size);
+  --inputs-desc-text-color: var(--color-font-sub-2);
+  --inputs-disabled-text-color: var(--color-font-disabled-b);
+  --inputs-placeholder-color: var(--color-font-disabled-b);
+  --inputs-vertical-space: var(--space-8);
+  --inputs-horizontal-space--sm: var(--space-12);
+  --inputs-horizontal-space: var(--space-20);
+  --inputs-line-height: var(--typo-body-b2-lh);
+  --inputs-height-xs: 36px;
+  --inputs-height-sm: 40px;
+  --inputs-height-md: 44px;
+  --inputs-height-lg: 48px;
+  --inputs-height-xl: 56px;
+
+  --inputs-border-radius: 8px;
+  --inputs-border-color: var(--color-line-regular);
+  --inputs-hover-border-color: var(--color-line-regular);
+  --inputs-hover-text-color: var(--color-font-main);
+  --inputs-focus-border-color: var(--color-line-black);
+  --inputs-focus-text-color: var(--color-font-main);
+  --inputs-disabled-border-color: var(--color-line-disabled);
+  --inputs-disabled-background-color: var(--color-bg-normal-disabled);
+  --inputs-error-color: var(--color-status-warning);
+
+  --inputs-cm-msg-font-size: var(--typo-body-b4-size);
+}

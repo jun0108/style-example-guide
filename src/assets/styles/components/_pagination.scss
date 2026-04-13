@@ -1,0 +1,94 @@
+@use '../mixins/index' as *;
+
+$icon-arrow: '../images/icon/arrow-l__line--484.svg';
+$icon-arrow-db: '../images/icon/arrow-db-l__line--484.svg';
+
+.cm-pagination {
+  --pagination-gap: var(--space-4);
+  --pagination-button-size: 32px;
+  --pagination-page-size-width: 134px;
+  --pagination-item-padding-x: var(--space-10);
+  --pagination-button-icon-color: var(--color-icon-regular);
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-right: var(--pagination-page-size-width);
+
+  &__size {
+    width: var(--pagination-page-size-width);
+  }
+
+  &__page {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pagination-gap);
+  }
+
+  &__button {
+    position: relative;
+    width: var(--pagination-button-size);
+    height: var(--pagination-button-size);
+    background-color: transparent;
+    color: var(--pagination-button-icon-color);
+
+    &:disabled {
+      opacity: 0.49;
+    }
+
+    &.first::after {
+      @include pseudo-icon($src: $icon-arrow-db);
+    }
+    &.prev::after {
+      @include pseudo-icon($src: $icon-arrow);
+    }
+    &.next::after {
+      @include pseudo-icon($src: $icon-arrow) {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+    }
+    &.last::after {
+      @include pseudo-icon($src: $icon-arrow-db) {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__jump {
+    display: flex;
+    align-items: center;
+    gap: var(--pagination-gap);
+  }
+
+  &__input {
+    width: calc(var(--digit, 1) * 1ch + var(--pagination-item-padding-x) * 2);
+    height: var(--pagination-button-size);
+    padding: var(--space-6) var(--pagination-item-padding-x);
+    background-color: var(--color-bg-normal-white);
+    border: 1px solid var(--inputs-border-color);
+    border-radius: var(--inputs-border-radius);
+    box-sizing: border-box;
+    color: var(--color-font-sub-2);
+    text-align: center;
+
+    &:focus {
+      border-color: var(--inputs-focus-border-color);
+      color: var(--inputs-text-color);
+      outline: none;
+    }
+  }
+
+  &__seperator {
+    height: var(--pagination-button-size);
+    padding: var(--space-6) var(--pagination-item-padding-x);
+    color: var(--color-font-sub-2);
+  }
+
+  &__total {
+    height: var(--pagination-button-size);
+    padding: var(--space-6) var(--pagination-item-padding-x);
+    color: var(--color-font-sub-2);
+  }
+}

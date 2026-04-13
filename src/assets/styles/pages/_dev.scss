@@ -1,0 +1,245 @@
+@use '@/assets/styles/variables/typography' as *;
+@use '@/assets/styles/mixins/breakpoint' as *;
+
+@include respond-down('tablet') {
+  .dev-detail {
+    .page-layout {
+      &__inner {
+        padding-right: 0;
+      }
+
+      &__title,
+      &__bottom-tab {
+        padding-right: 20px;
+      }
+
+      &__box {
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &__content--detail {
+        min-width: 1200px;
+      }
+    }
+
+    .context-bar {
+      &__search {
+        .v-dropdown, 
+        .v-textfield {
+          max-width: unset;
+        }
+      }
+    }
+
+    .cm-tab--line {
+      min-width: 1200px;
+    }
+  }
+}
+
+.dev {
+  --dev-gap-sm: var(--space-12);
+  --dev-gap: var(--space-20);
+  --dev-gap--lg: var(--space-40);
+  --dev-data-gap: var(--space-16);
+  --dev-header-min-height: 44px;
+  --dev-data-border-radius: 8px;
+  --dev-chart-min-height: 298px;
+  --dev-update-time-gap: var(--space-16);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--dev-gap);
+  width: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--dev-header-min-height);
+    gap: var(--dev-gap);
+  }
+
+  &__header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--dev-gap);
+  }
+
+  &__header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--dev-data-gap);
+  }
+
+  &__title {
+    @include typo('title-t4', var(--font-weight-semibold));
+    color: var(--color-font-main);
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--dev-gap);
+    padding-left: var(--dev-gap);
+    border-left: 1px solid var(--color-line-regular);
+
+    &-label {
+      @include typo('body-b1', var(--font-weight-regular));
+      color: var(--color-font-sub-1);
+    }
+
+    &-value {
+      @include typo('body-b1', var(--font-weight-semibold));
+      color: var(--color-font-sub-1);
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: var(--dev-gap--lg);
+    width: 100%;
+  }
+
+  &__table {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__period {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--dev-gap);
+
+    &-dropdown {
+      width: fit-content;
+      min-width: auto;
+
+      .dd-trigger,
+      .dd-trigger-container {
+        width: fit-content;
+      }
+
+      .dd-trigger-container .dd-default-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: fit-content;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0 !important;
+        color: inherit;
+        box-shadow: none;
+      }
+
+      .dd-trigger-container .dd-default-trigger:hover,
+      .dd-trigger-container .dd-default-trigger.dd-opened {
+        background: transparent;
+        border: 0 !important;
+        color: inherit;
+        box-shadow: none;
+      }
+    }
+
+    &-trigger {
+      @include typo('body-b1', var(--font-weight-semibold));
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+      color: var(--color-font-main);
+      cursor: pointer;
+    }
+
+    &-text {
+      white-space: nowrap;
+    }
+
+    &-dropdown-content {
+      min-width: 120px !important;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--dev-data-gap);
+    padding: var(--dev-gap--lg);
+    border: 1px solid var(--color-line-regular);
+    border-radius: var(--dev-data-border-radius);
+
+    &-body {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--dev-gap);
+      width: 100%;
+    }
+
+    &-chart-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--dev-data-gap);
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+    }
+
+    &-chart-label {
+      @include typo('body-b1', var(--font-weight-semibold));
+      color: var(--color-font-sub-2);
+    }
+
+    &-chart {
+      @include typo('title-t5', var(--font-weight-regular));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      min-height: var(--dev-chart-min-height);
+      // TODO : 임시 스타일. 차트 삽입 이후 수정 필요
+      background-color: var(--color-bg-normal-light);
+      color: var(--color-font-disabled-b);
+    }
+
+    &-usage-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--dev-gap);
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+    }
+  }
+
+  // 월 청구 금액, 셀프 고장 진단 탭 개별 스타일
+  &-month-claim,
+  &-for-self {
+    .dev__body {
+      flex-direction: column;
+      gap: var(--dev-data-gap);
+      width: 100%;
+    }
+  }
+
+  &__update-time {
+    @include typo('body-b3', var(--font-weight-semibold));
+    display: inline-flex;
+    align-items: center;
+    gap: var(--dev-update-time-gap);
+    color: var(--color-font-sub-2);
+
+    span {
+      color: var(--color-font-main);
+    }
+  }
+}

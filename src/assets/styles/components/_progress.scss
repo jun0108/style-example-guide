@@ -1,0 +1,114 @@
+@use '@/assets/styles/variables/typography' as *;
+
+.progress {
+  --progress-gap-y: var(--space-16);
+  --progress-body-gap: var(--space-20);
+  --progress-track-gap: var(--space-8);
+  --progress-inline-gap-sm: var(--space-2);
+  --progress-track-height: 8px;
+  --progress-track-radius: 999px;
+  --progress-pattern-size: 4px;
+  --progress-pattern-opacity: 0.5;
+  --progress-min-height: 104px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: var(--progress-min-height);
+  gap: var(--progress-gap-y);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__label {
+    @include typo('body-b1', var(--font-weight-semibold));
+    color: var(--color-font-sub-2);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--progress-body-gap);
+  }
+
+  &__track-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    width: auto;
+    max-width: 405px;
+    padding-bottom: var(--progress-track-gap);
+    gap: var(--progress-track-gap);
+  }
+
+  &__percent {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--progress-inline-gap-sm);
+
+    &-number {
+      @include typo('body-b1', var(--font-weight-semibold));
+      color: var(--color-font-sub-1);
+    }
+
+    &-unit {
+      @include typo('body-b1', var(--font-weight-regular));
+      color: var(--color-font-sub-2);
+    }
+  }
+
+  &__track {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: var(--progress-track-height);
+    background-color: var(--color-bg-normal-light);
+    border-radius: var(--progress-track-radius);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('../../images/progress-track-pattern.png');
+      background-repeat: repeat;
+      background-size: var(--progress-pattern-size);
+      opacity: var(--progress-pattern-opacity);
+      border-radius: inherit;
+    }
+  }
+
+  &__fill {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-primary-normal);
+  }
+
+  &__value {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: var(--progress-inline-gap-sm);
+    flex: 0 0 auto;
+    width: auto;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  &__value-number {
+    @include typo('headline-h3', var(--font-weight-semibold));
+    color: var(--color-font-main);
+  }
+
+  &__value-unit {
+    @include typo('title-t5', var(--font-weight-regular));
+    color: var(--color-font-sub-1);
+  }
+}

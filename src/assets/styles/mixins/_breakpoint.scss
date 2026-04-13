@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '../variables/breakpoint' as *;
+
+$breakpoint-map: (
+  'tablet': $bp-tablet-max,
+  'mobile': $bp-mobile-max,
+);
+
+@function breakpoint-value($name) {
+  @if map.has-key($breakpoint-map, $name) {
+    @return map.get($breakpoint-map, $name);
+  }
+
+  @error "Unknown breakpoint: #{$name}";
+}
+
+@mixin respond-down($name) {
+  @media (max-width: breakpoint-value($name)) {
+    @content;
+  }
+}

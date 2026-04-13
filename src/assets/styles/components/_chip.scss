@@ -1,0 +1,101 @@
+@use 'sass:map';
+@use '../variables/typography' as *;
+
+$chip-variants: (
+  'gray': (
+    bg: var(--color-badge-bg-gray),
+    color: var(--color-font-sub-1),
+  ),
+  'red': (
+    bg: var(--color-badge-bg-red),
+    color: var(--color-badge-text-red),
+  ),
+  'green': (
+    bg: var(--color-badge-bg-green),
+    color: var(--color-badge-text-green),
+  ),
+  'orange': (
+    bg: var(--color-badge-bg-red-orange),
+    color: var(--color-badge-text-red-orange),
+  ),
+  'muted': (
+    bg: var(--color-bg-opacity-black-6),
+    color: var(--color-badge-text-disabled),
+  ),
+  'blue': (
+    bg: var(--color-badge-bg-blue),
+    color: var(--color-badge-text-blue),
+  ),
+  'primary': (
+    bg: var(--color-primary-normal),
+    color: var(--color-font-white),
+  ),
+  'disabled': (
+    bg: var(--color-bg-normal-disabled-dark),
+    color: var(--color-font-disabled-b),
+  ),
+);
+
+.cm-chip {
+  --chip-height-md: 28px;
+  --chip-height-sm: 18px;
+  --chip-padding-x: var(--space-6);
+  --chip-radius: 4px;
+  --chip-radius-pill: 99px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  white-space: nowrap;
+
+  &--md {
+    @include typo('body-b2');
+    height: var(--chip-height-md);
+    padding: 0 var(--chip-padding-x);
+    border-radius: var(--chip-radius);
+  }
+
+  &--sm {
+    @include typo('caption-c1', var(--font-weight-semibold));
+    height: var(--chip-height-sm);
+    padding: 0 var(--chip-padding-x);
+    border-radius: var(--chip-radius-pill);
+  }
+
+  @each $name, $props in $chip-variants {
+    &--#{$name} {
+      background-color: map.get($props, bg);
+      color: map.get($props, color);
+    }
+  }
+}
+.chip {
+  &__line--gray {
+    @include typo('body-b3');
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 var(--space-12);
+    border: 1px solid var(--color-line-regular);
+    border-radius: 6px;
+
+    &.size--lg {
+      flex: 1 1 0%;
+      overflow: hidden;
+      justify-content: space-between;
+      max-width: fit-content;
+      min-height: var(--btn-height-lg);
+      padding: 0 var(--space-16);
+      span {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      button {
+        margin-left: var(--space-4);
+      }
+    }
+  }
+}

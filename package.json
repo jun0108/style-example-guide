@@ -1,0 +1,32 @@
+{
+  "name": "style-example-guide",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "sass": "^1.99.0",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^32.0.0",
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4",
+    "dayjs": "^1.11.19",
+    "@vuepic/vue-datepicker": "^12.1.0",
+    "@vueuse/core": "^14.1.0",
+    "v-dropdown": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.4",
+    "vue-tsc": "^3.2.6"
+  }
+}
