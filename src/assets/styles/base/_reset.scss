@@ -1,14 +1,20 @@
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -18,13 +24,14 @@ html {
 }
 
 body {
+  overflow: hidden;
   min-height: 100vh;
-  font-family: var(--font-family);
-  line-height: 1.5;
+  min-height: 100dvh;
   background-color: var(--color-bg-normal-white);
   color: var(--color-font-main);
+  font-family: var(--font-family);
+  line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
-  overflow: hidden;
 }
 
 #app {
@@ -42,18 +49,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-}
-
-:root {
-  color-scheme: light;
-}
-
-:root[data-theme='dark'] {
-  color-scheme: dark;
 }
 
 img,
@@ -74,14 +72,6 @@ select {
   color: inherit;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  cursor: pointer;
-  border: 0;
-}
-
 button:disabled,
 [type='button']:disabled,
 [type='reset']:disabled,
@@ -93,11 +83,13 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
+  cursor: pointer;
   padding: 0;
   background: none;
+  border: 0;
+  border-radius: 0;
   box-shadow: none;
   appearance: none;
-  border-radius: 0;
   vertical-align: baseline;
 }
 
@@ -130,9 +122,10 @@ em {
   font-style: normal;
 }
 
-:focus {
+:focus:not(:focus-visible) {
   outline: none;
 }
+
 
 :focus-visible {
   outline: 2px solid var(--color-primary-default);
@@ -144,17 +137,17 @@ em {
   color: var(--color-font-main);
 }
 
-::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
-}
+::-webkit-scrollbar { width: 14px; height: 14px; }
 
-::-webkit-scrollbar-track {
-  background: var(--color-bg-normal-white);
-}
-
+::-webkit-scrollbar-track { background: var(--color-bg-normal-white); }
 ::-webkit-scrollbar-thumb {
   background: var(--color-scrollbar-thumb);
   border-radius: 999px;
   border: 5px solid var(--color-bg-normal-white);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb) var(--color-bg-normal-white);
 }
