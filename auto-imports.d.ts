@@ -16,11 +16,17 @@ declare global {
   const defineComponent: typeof import('vue').defineComponent
   const defineStore: typeof import('pinia').defineStore
   const effectScope: typeof import('vue').effectScope
+  const extractRoutePath: typeof import('./src/composables/go').extractRoutePath
   const formatMesage: typeof import('./src/composables/messages').formatMesage
   const getActivePinia: typeof import('pinia').getActivePinia
   const getCurrentInstance: typeof import('vue').getCurrentInstance
   const getCurrentScope: typeof import('vue').getCurrentScope
   const getCurrentWatcher: typeof import('vue').getCurrentWatcher
+  const getCustUrl: typeof import('./src/composables/useLocalStore').getCustUrl
+  const getLocalStore: typeof import('./src/composables/useLocalStore').getLocalStore
+  const getRefreshToken: typeof import('./src/composables/useLocalStore').getRefreshToken
+  const getToken: typeof import('./src/composables/useLocalStore').getToken
+  const go: typeof import('./src/composables/go').default
   const h: typeof import('vue').h
   const inject: typeof import('vue').inject
   const isProxy: typeof import('vue').isProxy
@@ -56,9 +62,18 @@ declare global {
   const reactive: typeof import('vue').reactive
   const readonly: typeof import('vue').readonly
   const ref: typeof import('vue').ref
+  const removeCustUrl: typeof import('./src/composables/useLocalStore').removeCustUrl
+  const removeLocalStore: typeof import('./src/composables/useLocalStore').removeLocalStore
+  const removeRefreshToken: typeof import('./src/composables/useLocalStore').removeRefreshToken
+  const removeToken: typeof import('./src/composables/useLocalStore').removeToken
+  const request: typeof import('./src/composables/request').default
   const resolveComponent: typeof import('vue').resolveComponent
   const setActivePinia: typeof import('pinia').setActivePinia
+  const setCustUrl: typeof import('./src/composables/useLocalStore').setCustUrl
+  const setLocalStore: typeof import('./src/composables/useLocalStore').setLocalStore
   const setMapStoreSuffix: typeof import('pinia').setMapStoreSuffix
+  const setRefreshToken: typeof import('./src/composables/useLocalStore').setRefreshToken
+  const setToken: typeof import('./src/composables/useLocalStore').setToken
   const shallowReactive: typeof import('vue').shallowReactive
   const shallowReadonly: typeof import('vue').shallowReadonly
   const shallowRef: typeof import('vue').shallowRef
@@ -70,11 +85,16 @@ declare global {
   const triggerRef: typeof import('vue').triggerRef
   const unref: typeof import('vue').unref
   const useAttrs: typeof import('vue').useAttrs
+  const useComApi: typeof import('./src/composables/useComApi').useComApi
+  const useComMessage: typeof import('./src/composables/useComMessage').useComMessage
   const useCssModule: typeof import('vue').useCssModule
   const useCssVars: typeof import('vue').useCssVars
   const useDialog: typeof import('./src/composables/dialog/useDialog').default
   const useId: typeof import('vue').useId
+  const useImage: typeof import('./src/composables/useImage').useImage
+  const useKmlApi: typeof import('./src/composables/useKmlApi').useKmlApi
   const useLink: typeof import('vue-router').useLink
+  const useLocalStore: typeof import('./src/composables/useLocalStore').useLocalStore
   const useModal: typeof import('./src/composables/modal/useModal').default
   const useModel: typeof import('vue').useModel
   const useNoti: typeof import('./src/composables/noti/useNoti').default
@@ -82,6 +102,9 @@ declare global {
   const useRouter: typeof import('vue-router').useRouter
   const useSlots: typeof import('vue').useSlots
   const useTemplateRef: typeof import('vue').useTemplateRef
+  const useTokenRefresh: typeof import('./src/composables/useTokenRefresh').default
+  const useTokenStore: typeof import('./src/composables/useLocalStore').useTokenStore
+  const useValidate: typeof import('./src/composables/useValidate').useValidate
   const watch: typeof import('vue').watch
   const watchEffect: typeof import('vue').watchEffect
   const watchPostEffect: typeof import('vue').watchPostEffect
@@ -101,4 +124,7 @@ declare global {
   // @ts-ignore
   export type { NotiType, NotiPosition, NotiCommonOptions, NotiGlobalOptions, NotiOptions, NotiInstanceOptions, NotiContainerApi, NotiApi } from './src/composables/noti/type.noti'
   import('./src/composables/noti/type.noti')
+  // @ts-ignore
+  export type { AxiosRequestConfig } from './src/composables/request'
+  import('./src/composables/request')
 }

@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h2>기업IoT플랫폼 개발을 위한 가이드 문서</h2>
+    <h2>UI 컴포넌트 개발을 위한 가이드 문서</h2>
   </div>
 </template>
 

@@ -9,24 +9,38 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "sass": "^1.99.0",
-    "unplugin-auto-import": "^21.0.0",
-    "unplugin-vue-components": "^32.0.0",
     "@toast-ui/editor": "^3.2.2",
     "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
-    "vue": "^3.5.32",
-    "vue-router": "^5.0.4",
+    "ag-grid-community": "^35.0.0",
     "dayjs": "^1.11.19",
     "@vuepic/vue-datepicker": "^12.1.0",
     "@vueuse/core": "^14.1.0",
-    "v-dropdown": "^3.5.1"
+    "v-dropdown": "^3.5.1",
+    "hammerjs": "^2.0.8",
+    "pinia": "^3.0.4",
+    "tippy.js": "^6.3.7",
+    "vue": "^3.5.24",
+    "vue-color": "^3.3.3",
+    "vue-draggable-next": "^2.3.0",
+    "echarts": "^6.0.0",
+    "vue-router": "4"
   },
   "devDependencies": {
-    "@types/node": "^24.12.2",
+    "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.5",
-    "@vue/tsconfig": "^0.9.1",
-    "typescript": "~6.0.2",
+    "@vue/tsconfig": "^0.8.1",
+    "axios": "^1.13.3",
+    "typescript": "~5.9.3",
     "vite": "^8.0.4",
-    "vue-tsc": "^3.2.6"
+    "vue-tsc": "^3.2.6",
+    "@types/hammerjs": "^2.0.46",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-vue": "^10.6.2",
+    "prettier": "^3.8.0",
+    "sass": "^1.97.2",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^31.0.0"
   }
 }

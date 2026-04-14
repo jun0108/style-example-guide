@@ -21,7 +21,6 @@ const menus = [
   { name: '타이머', path: '/guide/component/timer' },
   { name: '컬러피커', path: '/guide/component/colorpicker' },
   { name: '차트', path: '/guide/component/chart' },
-  { name: '지도', path: '/guide/component/map' },
   { name: '탭', path: '/guide/component/tab' },
   { name: '아코디언', path: '/guide/component/accordion' },
   { name: '에디터', path: '/guide/component/editor' },
@@ -37,7 +36,6 @@ const menus = [
   { name: '공통 함수', path: '/guide/connection/com-api' },
   { name: '퍼블', isGroup: true },
   { name: '퍼블 목록', path: '/guide/pub/list' },
-  { name: '대시보드 위젯', path: '/guide/pub/widget' },
   { name: '기타', isGroup: true },
   { name: '반응형', path: '/guide/etc/responsive' },
   { name: '업로드 이미지 및 파일', path: '/guide/etc/image-file' },
@@ -51,7 +49,7 @@ function go(path: string) {
 <template>
   <div class="layout-guide">
     <div class="layout-guide__lnb">
-      <div class="layout-guide__title" @click="go('/guide')">기업IoT플랫폼 가이드</div>
+      <div class="layout-guide__title" @click="go('/guide')">UI 컴포넌트 가이드</div>
       <div class="layout-guide__nav">
         <ul>
           <li v-for="(menu, index) in menus" :key="`menu-${index}`">

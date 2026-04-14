@@ -39,7 +39,6 @@ export default {
     { path: 'connection/com-api', component: () => import('@/guides/connection/GuideComApi.vue') },
     // publishing
     { path: 'pub/list', component: () => import('@/guides/pub/GuidePubList.vue') },
-    { path: 'pub/widget', component: () => import('@/guides/pub/GuidePubWidget.vue') },
     // etc
     { path: 'etc/responsive', component: () => import('@/guides/etc/GuideResponsive.vue') },
     { path: 'etc/image-file', component: () => import('@/guides/etc/GuideImageFile.vue') },
