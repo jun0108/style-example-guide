@@ -9,6 +9,7 @@ import Error500 from '@/pages/errors/Error500.vue';
 
 // modules
 import routerGuide from './router.guide';
+import routerTemplate from './router.template';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +23,7 @@ const router = createRouter({
       ],
     },
     routerGuide,
+    routerTemplate,
     { path: '/not-found', name: 'NotFound', component: Error404, meta: { requireAuth: false } },
     { path: '/500', name: 'ServiceError', component: Error500, meta: { requireAuth: false } },
     { path: '/:pathMatch(.*)*', redirect: '/not-found' },
