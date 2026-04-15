@@ -16,8 +16,6 @@
     --header-nav-selected-color: var(--color-text-primary);
     --header-nav-selected-border-color: var(--color-border-primary);
 
-    --header-icon-color: var(--color-icon-blue-gray-4);
-
     @include flex();
     @include space(var(--space-64));
     position: sticky;
@@ -41,7 +39,6 @@
           bottom: -9px;
           width: var(--header-icon-size);
           height: var(--header-icon-size);
-          color: var(--header-icon-color);
           justify-self: end;
         }
       }
@@ -154,7 +151,6 @@
         color: var(--color-text-neutral-3);
         .cm-icon {
           margin: var(--space-6) var(--space-6) var(--space-6) var(--space-10);
-          color: var(--header-icon-color);
         }
        }
     }

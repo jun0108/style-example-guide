@@ -24,10 +24,10 @@ function toggleUserMenu() {
       </div>
       <!-- TODO: 공통 버튼 스타일 추가되면 수정할 버튼 -->
       <button type="button">
-        <cm-icon name="panel-left-close__line" :size="32" />
+        <cm-icon name="panel-left-close__line" :size="32" color="var(--color-icon-blue-gray-4)" />
       </button>
       <!-- <button type="button">
-        <cm-icon name="panel-left-open__line" :size="32" />
+        <cm-icon name="panel-left-open__line" :size="32" color="var(--color-icon-blue-gray-4)" />
       </button> -->
     </div>
     <nav class="header__nav">
@@ -57,13 +57,13 @@ function toggleUserMenu() {
       </div>
       <button type="button" class="header__button">
         <span>로그아웃</span>
-        <cm-icon name="log-out__line" :size="24" />
+        <cm-icon name="log-out__line" :size="24" color="var(--color-icon-blue-gray-4)" />
       </button>
 
       <!-- FIXME: 로그아웃한 경우 노출되는 항목  -->
       <!-- <button type="button" class="header__button">
         <span>로그인</span>
-        <cm-icon name="log-in__line" :size="24" />
+        <cm-icon name="log-in__line" :size="24" color="var(--color-icon-blue-gray-4)" />
       </button> -->
     </div>
   </header>
