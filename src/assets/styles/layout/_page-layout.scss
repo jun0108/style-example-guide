@@ -128,13 +128,13 @@
   }
 
   &__title-text {
-    @include typo('headline-h5');
+    @include typo-old('headline-h5');
     flex: none;
     color: var(--color-font-main);
   }
 
   &__sub-title {
-    @include typo('title-t5', var(--font-weight-regular));
+    @include typo-old('title-t5', var(--font-weight-regular));
     flex: none;
     color: var(--color-font-sub-2);
   }
@@ -158,12 +158,12 @@
     }
 
     &-update-time {
-      @include typo('body-b3', var(--font-weight-regular));
+      @include typo-old('body-b3', var(--font-weight-regular));
       @include page-layout-flex-center(var(--page-layout-toolbar-item-gap));
       color: var(--color-font-main);
 
       span {
-        @include typo('body-b2', var(--font-weight-semibold));
+        @include typo-old('body-b2', var(--font-weight-semibold));
       }
     }
 
@@ -201,7 +201,7 @@
   }
 
   &__box-header {
-    @include typo('title-t4', var(--font-weight-semibold));
+    @include typo-old('title-t4', var(--font-weight-semibold));
     display: flex;
     justify-content: space-between;
     min-height: var(--page-layout-box-header-min-height);
@@ -371,7 +371,7 @@
     gap: var(--list-data-inner-gap);
 
     &-label {
-      @include typo('title-t5', var(--font-weight-semibold));
+      @include typo-old('title-t5', var(--font-weight-semibold));
       color: var(--color-font-main);
     }
 
@@ -379,12 +379,12 @@
       display: inline-flex;
       align-items: center;
       gap: var(--space-2);
-      @include typo('headline-h6');
+      @include typo-old('headline-h6');
       color: var(--color-primary-normal);
     }
 
     &-value-unit {
-      @include typo('title-t5', var(--font-weight-regular));
+      @include typo-old('title-t5', var(--font-weight-regular));
       color: var(--color-font-sub-1);
     }
   }
@@ -399,7 +399,7 @@
     gap: var(--list-data-inner-gap);
 
     &-label {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
       color: var(--color-font-sub-2);
     }
 
@@ -418,11 +418,11 @@
       display: inline-flex;
       align-items: center;
       gap: var(--space-2);
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
       color: var(--color-font-sub-1);
 
       &-unit {
-        @include typo('body-b2');
+        @include typo-old('body-b2');
         color: var(--color-font-sub-1);
       }
     }
@@ -431,13 +431,13 @@
   @media (max-width: 1023px) {
     &__count {
       &-label {
-        @include typo('title-t3', var(--font-weight-semibold));
+        @include typo-old('title-t3', var(--font-weight-semibold));
       }
       &-value {
-        @include typo('headline-h4');
+        @include typo-old('headline-h4');
 
         &-unit {
-          @include typo('title-t3', var(--font-weight-regular));
+          @include typo-old('title-t3', var(--font-weight-regular));
         }
       }
     }
@@ -449,15 +449,15 @@
       }
 
       &-label {
-        @include typo('headline-h6', var(--font-weight-semibold));
+        @include typo-old('headline-h6', var(--font-weight-semibold));
       }
 
       &-value {
         &-value {
-          @include typo('headline-h6', var(--font-weight-semibold));
+          @include typo-old('headline-h6', var(--font-weight-semibold));
 
           &-unit {
-            @include typo('body-b1', var(--font-weight-regular));
+            @include typo-old('body-b1', var(--font-weight-regular));
           }
         }
       }
@@ -496,12 +496,12 @@
     @include page-layout-flex-center(var(--context-bar-info-gap));
 
     &-label {
-      @include typo('title-t5');
+      @include typo-old('title-t5');
       color: var(--color-primary-normal);
     }
 
     &-value {
-      @include typo('body-b2', var(--font-weight-semibold));
+      @include typo-old('body-b2', var(--font-weight-semibold));
       color: var(--color-font-main);
 
       @include page-layout-inline-divider(-8px, 16px);
@@ -565,12 +565,12 @@
     gap: var(--space-8);
 
     &-label {
-      @include typo('headline-h6');
+      @include typo-old('headline-h6');
       color: var(--color-font-main);
     }
 
     &-value {
-      @include typo('headline-h5');
+      @include typo-old('headline-h5');
       color: var(--color-primary-normal);
     }
   }
@@ -602,7 +602,7 @@
   .list-header {
     &__count {
       &-value {
-        @include typo('title-t1');
+        @include typo-old('title-t1');
       }
     }
 

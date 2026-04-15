@@ -144,7 +144,7 @@
       flex: 1;
     }
     &-desc {
-      @include typo('body-b2');
+      @include typo-old('body-b2');
 
       display: flex;
       flex-wrap: wrap;
@@ -182,7 +182,7 @@
         }
 
         &.is-guide {
-          @include typo('body-b3');
+          @include typo-old('body-b3');
 
           padding-left: 26px;
           color: var(--color-font-sub-2);
@@ -205,7 +205,7 @@
     }
   }
   &__title {
-    @include typo('title-t5', var(--font-weight-semibold));
+    @include typo-old('title-t5', var(--font-weight-semibold));
     display: inline-flex;
     align-items: center;
     color: var(--color-font-main);
@@ -219,11 +219,11 @@
       }
     }
     &.size--sm {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
     }
   }
   &__content {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
     display: flex;
     align-items: flex-start;
     flex: 1;
@@ -240,7 +240,7 @@
     overflow-y: auto;
   }
   &__label {
-    @include typo('body-b1', var(--inputs-label-font-weight));
+    @include typo-old('body-b1', var(--inputs-label-font-weight));
     position: relative;
     color: var(--inputs-label-text-color);
 

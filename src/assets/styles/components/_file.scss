@@ -18,7 +18,7 @@
     }
   }
   &__header {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     display: flex;
     color: var(--color-font-sub-2);
     line-height: 24px;
@@ -44,7 +44,7 @@
     --list-status-text-color: var(--color-font-sub-1);
     --list-icon-color: var(--color-status-positive);
       
-      @include typo('body-b2');
+      @include typo-old('body-b2');
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -65,7 +65,7 @@
           }
         }
         &__status {
-          @include typo('button-but2', var(--font-weight-regular));
+          @include typo-old('button-but2', var(--font-weight-regular));
           position: relative;
           padding-right: 24px;
           margin-left: auto;
@@ -81,7 +81,7 @@
         }
         &__progress {
           --progress: 0;
-          @include typo('button-but2', var(--font-weight-regular));
+          @include typo-old('button-but2', var(--font-weight-regular));
           display: flex;
           align-items: center;
           justify-content: center;

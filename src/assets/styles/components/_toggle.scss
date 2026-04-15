@@ -41,7 +41,7 @@
     width: 54px;
 
     &::before {
-      @include typo('caption-c2', var(--font-weight-semibold));
+      @include typo-old('caption-c2', var(--font-weight-semibold));
       content: 'OFF';
       position: absolute;
       top: 50%;
@@ -75,7 +75,7 @@
   height: 44px;
 
   label {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     color: var(--color-font-main);
   }
 

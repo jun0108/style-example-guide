@@ -45,7 +45,7 @@ $dropdown-typo-map: (
 );
 
 ul.v-dropdown__content {
-  @include typo('body-b1');
+  @include typo-old('body-b1');
 
   overflow: auto;
   min-width: 80px;
@@ -54,7 +54,7 @@ ul.v-dropdown__content {
   box-shadow: 0px 2px 12px 0px var(--color-opacity-black-20);
 
   li:not(.v-dropdown__nodata) {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
 
     overflow: hidden;
     height: $dropdown-default-height;
@@ -70,7 +70,7 @@ ul.v-dropdown__content {
     }
 
     &.selected {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
 
       color: var(--color-primary-normal);
     }
@@ -97,7 +97,7 @@ ul.v-dropdown__content {
     }
 
     &[data-size='#{$size-key}'] li:not(.v-dropdown__nodata) {
-      @include typo($typo-key);
+      @include typo-old($typo-key);
 
       height: map.get($cfg, height);
       padding: map.get($cfg, padding);
@@ -126,7 +126,7 @@ ul.v-dropdown__content {
 
     &.size--#{$size-key} .dd-trigger-container .dd-default-trigger,
     &.size--#{$size-key} .v-dropdown__header {
-      @include typo($typo-key);
+      @include typo-old($typo-key);
     }
   }
 

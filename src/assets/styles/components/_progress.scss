@@ -25,7 +25,7 @@
   }
 
   &__label {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
     color: var(--color-font-sub-2);
   }
 
@@ -54,12 +54,12 @@
     gap: var(--progress-inline-gap-sm);
 
     &-number {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
       color: var(--color-font-sub-1);
     }
 
     &-unit {
-      @include typo('body-b1', var(--font-weight-regular));
+      @include typo-old('body-b1', var(--font-weight-regular));
       color: var(--color-font-sub-2);
     }
   }
@@ -107,12 +107,12 @@
   }
 
   &__value-number {
-    @include typo('headline-h3', var(--font-weight-semibold));
+    @include typo-old('headline-h3', var(--font-weight-semibold));
     color: var(--color-font-main);
   }
 
   &__value-unit {
-    @include typo('title-t5', var(--font-weight-regular));
+    @include typo-old('title-t5', var(--font-weight-regular));
     color: var(--color-font-sub-1);
   }
 }

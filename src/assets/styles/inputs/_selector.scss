@@ -85,7 +85,7 @@
   min-width: 50px;
 
   &__label {
-    @include typo('body-b1', var(--inputs-label-font-weight));
+    @include typo-old('body-b1', var(--inputs-label-font-weight));
     position: relative;
     color: var(--inputs-label-text-color);
 
@@ -116,7 +116,7 @@
       color: var(--color-font-main);
 
       span {
-        @include typo('body-b1');
+        @include typo-old('body-b1');
         display: block;
         padding-left: var(--space-10);
         white-space: nowrap;
@@ -438,7 +438,7 @@
   }
 
   .total-count {
-    @include typo('body-b3', var(--font-weight-semibold));
+    @include typo-old('body-b3', var(--font-weight-semibold));
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
@@ -459,7 +459,7 @@
         }
         label {
           span {
-            @include typo('body-b3');
+            @include typo-old('body-b3');
           }
         }
       }
@@ -493,7 +493,7 @@
       &__input {
         label {
           span {
-            @include typo('body-b3');
+            @include typo-old('body-b3');
           }
         }
       }

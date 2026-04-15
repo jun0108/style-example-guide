@@ -8,7 +8,7 @@
   gap: var(--inputs-vertical-space);
 
   &__label {
-    @include typo('body-b1', var(--inputs-label-font-weight));
+    @include typo-old('body-b1', var(--inputs-label-font-weight));
     display: inline-flex;
     align-items: center;
 
@@ -56,7 +56,7 @@
   }
 
   &__input {
-    @include typo('body-b2');
+    @include typo-old('body-b2');
 
     width: 100%;
     height: var(--inputs-height-md);
@@ -98,7 +98,7 @@
   }
 
   &__desc {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     position: relative;
     color: var(--color-font-sub-1);
 

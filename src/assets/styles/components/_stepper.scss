@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   &__index {
-    @include typo('body-b2', var(--font-weight-semibold));
+    @include typo-old('body-b2', var(--font-weight-semibold));
     position: relative;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@
     color: var(--color-font-sub-2);
   }
   &__item {
-    @include typo('title-t5', var(--font-weight-regular));
+    @include typo-old('title-t5', var(--font-weight-regular));
     position: relative;
     display: flex;
     align-items: center;
