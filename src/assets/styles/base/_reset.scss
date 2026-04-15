@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  min-width: var(--bp-viewport-min);
   min-height: 100vh;
   min-height: 100dvh;
   background-color: var(--color-bg-normal-white);
@@ -32,15 +32,6 @@ body {
   font-family: var(--font-family);
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
-}
-
-#app {
-  min-height: 100vh;
-  overflow-x: auto;
-}
-
-#app > * {
-  min-width: var(--bp-viewport-min);
 }
 
 h1,
@@ -126,7 +117,6 @@ em {
   outline: none;
 }
 
-
 :focus-visible {
   outline: 2px solid var(--color-primary-default);
   outline-offset: 2px;
@@ -137,9 +127,14 @@ em {
   color: var(--color-font-main);
 }
 
-::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
 
-::-webkit-scrollbar-track { background: var(--color-bg-normal-white); }
+::-webkit-scrollbar-track {
+  background: var(--color-bg-normal-white);
+}
 ::-webkit-scrollbar-thumb {
   background: var(--color-scrollbar-thumb);
   border-radius: 999px;
