@@ -1,3 +1,5 @@
+  /* TODO: 공통 스타일 작업 완료 후 해당 OLD 코드 삭제 필요 */
+// =============================== OLD START =============================== //
 :root {
   --z-index-noti: 810;
   --z-index-popup: 800;
@@ -5,4 +7,15 @@
   --z-index-location-sheet: 720;
   --z-index-swiper: 700;
   --z-index-tooltip: 700;
+}
+// =============================== OLD END =============================== //
+
+  /* TODO: 공통 UI 작업 하면서 필요시 수정/추가 필요 */
+:root {
+  --z-index-loading: 900;
+  --z-index-toast: 810;
+  --z-index-modal: 800;
+  --z-index-poppover: 790;
+  --z-index-tooltip: 780;
+  --z-index-header: 700;
 }
