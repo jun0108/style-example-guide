@@ -148,7 +148,7 @@ ul.v-dropdown__content {
     height: 16px;
 
     &::after {
-      @include pseudo-icon($src: '../images/icon/arrow-d__line--111.svg');
+      @include pseudo-icon($src: '/images/icon/chevron-down__line.svg');
     }
   }
 

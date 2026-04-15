@@ -68,14 +68,14 @@
     // 비밀번호 보이기
     &.eye {
       &::before {
-        @include pseudo-icon($src: '../images/icon/eye.svg', $size: 24px);
+        @include pseudo-icon($src: '/images/icon/eye__line.svg', $size: 24px);
       }
     }
 
     // 비밀번호 보이지 않기
     &.eye-off {
       &::before {
-        @include pseudo-icon($src: '../images/icon/eye-off.svg', $size: 24px);
+        @include pseudo-icon($src: '/images/icon/eye-off__line.svg', $size: 24px);
       }
     }
 
@@ -84,7 +84,7 @@
       display: block;
 
       &::before {
-        @include mask-icon('../images/icon/delete__circle--111.svg', 20px);
+        @include mask-icon('/images/icon/circle-x__line.svg', 20px);
         content: '';
         display: inline-block;
         position: absolute;
@@ -110,7 +110,7 @@
 
     &.search {
       &::before {
-        @include pseudo-icon($src: '../images/icon/search__line--111.svg', $size: 24px);
+        @include pseudo-icon($src: '/images/icon/search__line.svg', $size: 24px);
       }
     }
   }

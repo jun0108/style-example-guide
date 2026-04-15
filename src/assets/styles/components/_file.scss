@@ -61,7 +61,7 @@
             width: 16px;
             height: 16px;
             margin-right: 4px;
-            background: url('../../images/icon/excel.svg');
+            background: url('/images/icon/file-chart-column__line.svg');
           }
         }
         &__status {
@@ -71,7 +71,7 @@
           margin-left: auto;
           color: var(--list-status-text-color);
           &::after {
-            @include pseudo-icon(20px, '../images/icon/check-cercle__line--00b.svg') {
+            @include pseudo-icon(20px, '/images/icon/circle-check__line.svg') {
               left: unset;
               right: 0;
               color: var(--list-icon-color);
@@ -138,7 +138,7 @@
         --list-icon-color: var(--color-status-warning);
         .list__status {
           &::after {
-            @include pseudo-icon(20px, '../images/icon/info__circle--818.svg') {
+            @include pseudo-icon(20px, '/images/icon/info__line.svg') {
               left: unset;
               right: 0;
               color: var(--list-icon-color);

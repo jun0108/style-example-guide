@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import closeIcon from '@/assets/images/icon/close__line--818.svg?url';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
+
+const closeIconUrl = `${import.meta.env.BASE_URL}images/icon/custom-x-small__line.svg`;
 
 type Placement =
   | 'top'
@@ -49,7 +50,7 @@ function createTooltip() {
   
   button.onclick = hide;
   const img = document.createElement('img');
-  img.src = closeIcon;
+  img.src = closeIconUrl;
 
   button.appendChild(img);
   close.appendChild(button);

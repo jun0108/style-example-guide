@@ -4,7 +4,7 @@ export const frameworkEnv = {
   defaultTheme: 'pink',
   defaultLightLogo: import.meta.env.BASE_URL + '/images/default_logo_light.png',
   defaultDarkLogo: import.meta.env.BASE_URL + '/images/default_logo_dark.png',
-  defaultDevIcon: import.meta.env.BASE_URL + '/icons/device--object-location.svg',
+  defaultDevIcon: import.meta.env.BASE_URL + 'images/icon/component__line.svg',
 };
 
 export const requestEnv = {

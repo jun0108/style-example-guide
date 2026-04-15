@@ -1,4 +1,4 @@
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 @use '../variables/typography' as *;
 
 @mixin tab-active-underline($bottom: 0) {
@@ -67,11 +67,11 @@
     color: var(--color-icon-light);
 
     &--search {
-      @include mask-icon('../images/icon/search__loupe--484.svg', 20px);
+      @include mask-icon('/images/icon/search__line.svg', 20px);
     }
 
     &--filter {
-      @include mask-icon('../images/icon/filter__sliders--818.svg', 20px);
+      @include mask-icon('/images/icon/sliders-horizontal__line.svg', 20px);
     }
   }
 

@@ -1,6 +1,6 @@
 @use '../mixins/index' as *;
 @use '../variables/typography' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 .cm-editor {
   width: 100%;
@@ -17,7 +17,7 @@
       background-color: var(--color-bg-normal-light);
       border-color: var(--color-line-regular);
       border-radius: 8px 8px 0 0;
-  
+
       button {
         margin: var(--space-8);
         border: 1px solid transparent;
@@ -27,54 +27,54 @@
             border: 1px solid transparent;
           }
         }
-      
+
         &.heading {
-          @include mask-icon('../images/icon/editor--heading.svg', 16px);
+          @include mask-icon('/images/icon/layout-template__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.bold {
-          @include mask-icon('../images/icon/editor--bold.svg', 16px);
+          @include mask-icon('/images/icon/file-pen-line__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.italic {
-          @include mask-icon('../images/icon/editor--italic.svg', 16px);
+          @include mask-icon('/images/icon/pencil-line__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.strike {
-          @include mask-icon('../images/icon/editor--strike.svg', 16px);
+          @include mask-icon('/images/icon/circle-x__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.color {
-          @include mask-icon('../images/icon/editor--color.svg', 16px);
+          @include mask-icon('/images/icon/custom-light__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.link {
-          @include mask-icon('../images/icon/editor--link.svg', 16px);
+          @include mask-icon('/images/icon/link-2__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.table {
-          @include mask-icon('../images/icon/editor--table.svg', 16px);
+          @include mask-icon('/images/icon/layout-template__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.bullet-list {
-          @include mask-icon('../images/icon/editor--bullet-list.svg', 16px);
+          @include mask-icon('/images/icon/list-plus__line.svg', 16px);
           background: var(--color-icon-regular);
         }
 
         &.ordered-list {
-          @include mask-icon('../images/icon/editor--ordered-list.svg', 16px);
+          @include mask-icon('/images/icon/list-indent-increase__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.indent {
-          @include mask-icon('../images/icon/editor--indent.svg', 16px);
-          background: var(--color-icon-regular);  
+          @include mask-icon('/images/icon/chevrons-right__line.svg', 16px);
+          background: var(--color-icon-regular);
         }
         &.outdent {
-          @include mask-icon('../images/icon/editor--outdent.svg', 16px);
+          @include mask-icon('/images/icon/chevrons-left__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.more {
-          @include mask-icon('../images/icon/editor--more.svg', 16px);
+          @include mask-icon('/images/icon/ellipsis__line.svg', 16px);
           background: var(--color-icon-regular);
         }
         &.active {
@@ -115,7 +115,7 @@
           ul {
             li {
               &:hover {
-                background-color: var(--color-bg-normal-light);;
+                background-color: var(--color-bg-normal-light);
               }
             }
           }

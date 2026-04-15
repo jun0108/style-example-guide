@@ -71,7 +71,7 @@
             opacity: 0.2;
           }
           &::after {
-            @include mask-icon('../images/icon/check__line--fff.svg', 24px);
+            @include mask-icon('/images/icon/check__line.svg', 24px);
             content: '';
             position: absolute;
             top: 50%;

@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use './mask-icon' as *;
+@use './icon' as *;
 @use '../variables/typography' as *;
 
 @mixin textfield-base {
@@ -25,7 +25,7 @@
         margin-left: var(--inputs-required-space);
         margin-top: -14px;
         vertical-align: middle;
-        background: url('../../images/icon/required.svg') no-repeat center / contain;
+        // background: url('/images/icon/required__fill.svg') no-repeat center / contain;
       }
     }
 
@@ -105,7 +105,7 @@
     &.valid {
       padding-left: var(--space-18);
       &::before {
-        @include pseudo-icon($src: '../images/icon/check__circle--00b.svg', $size: 16px);
+        @include pseudo-icon($src: '/images/icon/circle-check__line.svg', $size: 16px);
         left: 0;
         transform: translateY(-50%);
         color: var(--color-status-positive);

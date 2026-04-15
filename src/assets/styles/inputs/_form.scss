@@ -157,7 +157,7 @@
         color: var(--color-font-sub-1);
 
         &::before {
-          @include pseudo-icon($src: '../images/icon/check__circle--818.svg', $size: 16px);
+          @include pseudo-icon($src: '/images/icon/circle-check__line.svg', $size: 16px);
           left: 0;
           transform: translateY(-50%);
         }
@@ -166,7 +166,7 @@
           color: var(--color-status-warning);
 
           &::before {
-            @include pseudo-icon($src: '../images/icon/check__circle--ff4.svg', $size: 16px);
+            @include pseudo-icon($src: '/images/icon/circle-check__line.svg', $size: 16px);
             left: 0;
             transform: translateY(-50%);
           }
@@ -174,7 +174,7 @@
 
         &.is-success {
           &::before {
-            @include pseudo-icon($src: '../images/icon/check__circle--00b.svg', $size: 16px);
+            @include pseudo-icon($src: '/images/icon/circle-check__line.svg', $size: 16px);
             left: 0;
             transform: translateY(-50%);
             color: var(--color-status-positive);
@@ -188,7 +188,7 @@
           color: var(--color-font-sub-2);
 
           &::before {
-            @include pseudo-icon($src: '../images/icon/info__circle--818.svg', $size: 20px);
+            @include pseudo-icon($src: '/images/icon/info__line.svg', $size: 20px);
             top: 0;
             left: 0;
             transform: translate(0, 0);
@@ -253,7 +253,7 @@
         margin-left: var(--inputs-required-space);
         margin-top: -14px;
         vertical-align: middle;
-        background: url('../images/icon/required.svg') no-repeat center / contain;
+        // background: url('/images/icon/required__fill.svg') no-repeat center / contain;
       }
     }
   }
