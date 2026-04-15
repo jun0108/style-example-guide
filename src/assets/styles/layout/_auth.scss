@@ -1,6 +1,6 @@
 .layout-auth {
   --layout-default-header-height: 80px;
-  --layout-default-inner-max-width: 1920px;
+  --layout-default-inner-max-width: var(--bp-viewport-max);
   --layout-default-inner-padding-x: var(--space-24);
 
   display: flex;
