@@ -1,0 +1,108 @@
+/// @example — 기본 사용
+///   @include flex(center);                           // = @apply flex items-center
+///   @include flex(center, between);                  // = @apply flex items-center justify-between
+///   @include flex(center, center, var(--space-8));   // = @apply flex items-center justify-center gap-2
+///   @include flex(stretch, $gap: var(--space-16));   // = @apply flex items-stretch gap-4
+///   @include flex(center, $wrap: true);              // = @apply flex items-center flex-wrap
+///
+/// @example — 프리셋
+///   @include flex-center;                            // = @apply flex items-center justify-center
+///   @include flex-center(var(--space-8));             // + gap
+///   @include flex-between(var(--space-12));           // = @apply flex items-center justify-between gap-3
+///
+/// @example — 컬럼
+///   @include flex-col;                               // = @apply flex flex-col
+///   @include flex-col(center, center);               // = @apply flex flex-col items-center justify-center
+///   @include flex-col-fill(var(--space-16));          // column + flex:1 + min-height:0 + gap
+///
+/// @example — 인라인
+///   @include inline-flex(center, center);            // = @apply inline-flex items-center justify-center
+
+// ─── Private ────────────────────────────────
+@function _resolve-justify($val) {
+  @if $val == 'between' {
+    @return space-between;
+  }
+
+  @if $val == 'around' {
+    @return space-around;
+  }
+
+  @if $val == 'evenly' {
+    @return space-evenly;
+  }
+
+  @return $val;
+}
+
+// ─── Core ───────────────────────────────────
+/// @param {String}  $align   [null]  — align-items   (center | flex-start | flex-end | stretch | baseline)
+/// @param {String}  $justify [null]  — justify-content (center | between | around | evenly | flex-start | flex-end)
+/// @param {Length}   $gap     [null]  — gap
+/// @param {Bool}     $wrap    [false] — flex-wrap: wrap
+/// @param {Bool}     $inline  [false] — inline-flex 사용 여부
+///
+///
+@mixin flex($align: null, $justify: null, $gap: null, $wrap: false, $inline: false) {
+  @if $inline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $justify {
+    justify-content: _resolve-justify($justify);
+  }
+
+  @if $wrap {
+    flex-wrap: wrap;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin inline-flex($align: null, $justify: null, $gap: null, $wrap: false) {
+  @include flex($align, $justify, $gap, $wrap, $inline: true);
+}
+
+@mixin flex-col($align: null, $justify: null, $gap: null, $wrap: false) {
+  display: flex;
+  flex-direction: column;
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $justify {
+    justify-content: _resolve-justify($justify);
+  }
+
+  @if $wrap {
+    flex-wrap: wrap;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// ─── Presets ────────────────────────────────
+@mixin flex-center($gap: null, $inline: false) {
+  @include flex(center, center, $gap, $inline: $inline);
+}
+
+@mixin flex-between($gap: null, $wrap: false) {
+  @include flex(center, space-between, $gap, $wrap: $wrap);
+}
+
+@mixin flex-col-fill($gap: null) {
+  @include flex-col($gap: $gap);
+  flex: 1;
+  min-height: 0;
+}
