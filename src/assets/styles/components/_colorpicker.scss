@@ -1,4 +1,4 @@
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 :root {
   --cm-colorpicker-saturation-ratio: 78%;
@@ -127,7 +127,7 @@
       height: var(--cm-colorpicker-size-sm);
 
       .toggle-icon {
-        @include mask-icon($src: '../images/icon/arrow__up-down--2a2.svg', $size: var(--cm-colorpicker-size-sm));
+        @include mask-icon($src: '/images/icon/chevrons-up-down__line.svg', $size: var(--cm-colorpicker-size-sm));
         display: block;
         margin: 0 !important;
         color: var(--color-icon-black);

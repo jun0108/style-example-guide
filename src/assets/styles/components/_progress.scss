@@ -76,9 +76,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('../../images/progress-track-pattern.png');
-      background-repeat: repeat;
-      background-size: var(--progress-pattern-size);
+      background-image: repeating-linear-gradient(
+        135deg,
+        var(--color-bg-opacity-black-20) 0,
+        var(--color-bg-opacity-black-20) 2px,
+        transparent 2px,
+        transparent calc(var(--progress-pattern-size) * 2)
+      );
       opacity: var(--progress-pattern-opacity);
       border-radius: inherit;
     }

@@ -1,7 +1,7 @@
 @use '../mixins/index' as *;
 
-$icon-arrow: '../images/icon/arrow-l__line--484.svg';
-$icon-arrow-db: '../images/icon/arrow-db-l__line--484.svg';
+$icon-arrow: '/images/icon/chevron-left__line.svg';
+$icon-arrow-db: '/images/icon/chevrons-left__line.svg';
 
 .cm-pagination {
   --pagination-gap: var(--space-4);

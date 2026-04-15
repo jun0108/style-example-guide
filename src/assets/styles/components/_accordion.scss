@@ -46,7 +46,7 @@
     color: var(--color-font-sub-2);
   }
   &__arrow {
-    @include mask-icon('../images/icon/arrow-d__line--2a2.svg', 24px);
+    @include mask-icon('/images/icon/chevron-down__line.svg', 24px);
   }
   &__body {
     @include typo('body-b3');

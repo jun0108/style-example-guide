@@ -14,6 +14,7 @@ export default {
     // components
     { path: 'component/button', component: () => import('@/guides/component/GuideButton.vue') },
     { path: 'component/chip', component: () => import('@/guides/component/GuideChip.vue') },
+    { path: 'component/icon', component: () => import('@/guides/component/GuideIcon.vue') },
     { path: 'component/tooltip', component: () => import('@/guides/component/GuideTooltip.vue') },
     { path: 'component/toggle', component: () => import('@/guides/component/GuideToggle.vue') },
     { path: 'component/tree', component: () => import('@/guides/component/GuideTree.vue') },

@@ -1,5 +1,5 @@
 @use '../variables/typography' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 .cm-tooltip {
   position: relative;
@@ -51,13 +51,11 @@
 }
 
 .tippy-box {
-max-width: 260px !important;
+  max-width: 260px !important;
   border-radius: 8px !important;
   background-color: var(--color-bg-normal-light) !important;
-  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.08))
-  drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08))
-  drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.12));
-
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.08)) drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08))
+    drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.12));
 }
 
 .tippy-content {
@@ -68,5 +66,4 @@ max-width: 260px !important;
   width: 12px !important;
   height: 9px !important;
   color: var(--color-bg-normal-light) !important;
-
 }

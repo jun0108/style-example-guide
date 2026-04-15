@@ -1,5 +1,5 @@
 @use '../variables/typography' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 :root {
   --grid-table-border-color: var(--color-line-regular);
@@ -29,11 +29,11 @@
   --ag-icon-font-display-checkbox-unchecked: none;
   --ag-icon-font-display-checkbox-checked: none;
   --ag-icon-image-display-checkbox-unchecked: none;
-  --ag-icon-image-checkbox-checked: url('../../images/icon/check__line--fff.svg');
+  --ag-icon-image-checkbox-checked: url('/images/icon/check__line.svg');
   --ag-icon-image-display-checkbox-checked: block;
   --ag-icon-image-opacity-checkbox-checked: 1;
   --ag-icon-image-display-checkbox-indeterminate: block;
-  --ag-icon-image-checkbox-indeterminate: url('../../images/icon/minus__line--fff.svg');
+  --ag-icon-image-checkbox-indeterminate: url('/images/icon/minus__line.svg');
   --ag-icon-font-display-checkbox-indeterminate: none;
   --ag-icon-image-opacity-checkbox-indeterminate: 1;
 
@@ -119,7 +119,7 @@
   .ag-icon-asc,
   .ag-icon-desc,
   .ag-icon-none {
-    @include mask-icon('../images/icon/sort__arrows.svg', var(--grid-sort-icon-size));
+    @include mask-icon('/images/icon/chevrons-up-down__line.svg', var(--grid-sort-icon-size));
     display: inline-block;
     font-size: 0;
     color: var(--grid-sort-icon-color);

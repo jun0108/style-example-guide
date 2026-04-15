@@ -1,5 +1,5 @@
 @use '@/assets/styles/variables/typography' as *;
-@use '@/assets/styles/mixins/mask-icon' as *;
+@use '@/assets/styles/mixins/icon' as *;
 
 @mixin page-layout-flex-center($gap) {
   display: flex;
@@ -123,7 +123,7 @@
     color: var(--color-icon-black);
 
     &::before {
-      @include pseudo-icon(16px, '../images/icon/arrow__back--2a2.svg');
+      @include pseudo-icon(16px, '/images/icon/chevron-left__line.svg');
     }
   }
 

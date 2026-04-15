@@ -69,7 +69,7 @@
     border-color: var(--color-primary-normal);
 
     &::before {
-      background: url('../../images/icon/minus__line--fff.svg') no-repeat center/cover;
+      background: url('/images/icon/minus__line.svg') no-repeat center/cover;
     }
   }
 
@@ -98,7 +98,7 @@
         margin-left: var(--inputs-required-space);
         margin-top: -14px;
         vertical-align: middle;
-        background: url('../../images/icon/required.svg') no-repeat center / contain;
+        // background: url('/images/icon/required__fill.svg') no-repeat center / contain;
       }
     }
   }
@@ -127,7 +127,7 @@
         @include selector-input-base {
           &:checked {
             &::before {
-              background: url('../../images/icon/check__line--fff.svg') no-repeat center/cover;
+              background: url('/images/icon/check__line.svg') no-repeat center/cover;
             }
           }
         }
@@ -139,7 +139,7 @@
 
           &:checked {
             &::before {
-              background: url('../../images/icon/circle__full--fff.svg') no-repeat center/cover;
+              // background: url('/images/icon/circle__fill.svg') no-repeat center/cover;
               width: 50%;
               height: 50%;
             }
@@ -160,7 +160,7 @@
 
       &:checked {
         &::before {
-          background: url('../../images/icon/check__line--fff.svg') no-repeat center/cover;
+          background: url('/images/icon/check__line.svg') no-repeat center/cover;
           width: 100%;
           height: 100%;
         }
@@ -176,7 +176,7 @@
     .v-selector__input label input[type='radio'] {
       &:checked {
         &::before {
-          background: url('../../images/icon/check__line--fff.svg') no-repeat center/cover;
+          background: url('/images/icon/check__line.svg') no-repeat center/cover;
           width: 100%;
           height: 100%;
         }
@@ -324,7 +324,7 @@
         input[type='radio'] {
           &:checked {
             &::before {
-              background: url('../../images/icon/check__line--fff.svg') no-repeat center/cover;
+              background: url('/images/icon/check__line.svg') no-repeat center/cover;
               width: 100%;
               height: 100%;
             }
@@ -357,7 +357,9 @@
         label {
           span {
             &::before {
-              background: url('../../images/light-mode.png') no-repeat center/cover;
+              background:
+                radial-gradient(circle at 35% 35%, var(--color-white) 0 18%, transparent 19%),
+                linear-gradient(135deg, var(--color-yellow-300) 0%, var(--color-orange-300) 100%);
             }
           }
         }
@@ -367,7 +369,9 @@
         label {
           span {
             &::before {
-              background: url('../../images/dark-mode.png') no-repeat center/cover;
+              background:
+                radial-gradient(circle at 35% 35%, var(--color-blue-100) 0 14%, transparent 15%),
+                linear-gradient(135deg, var(--color-blue-gray-700) 0%, var(--color-neutral-900) 100%);
             }
           }
         }
@@ -493,7 +497,6 @@
           }
         }
       }
-
     }
     .v-selector__input {
       label {

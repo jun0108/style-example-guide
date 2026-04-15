@@ -1,5 +1,5 @@
 @use '../mixins/index' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 @use '../variables/typography' as *;
 
 :root {
@@ -31,10 +31,10 @@
     margin-bottom: var(--nodata-gap);
     color: var(--nodata-icon-color);
     &.is-nodata {
-      @include mask-icon('../images/icon/nodata__line--818.svg', var(--nodata-icon-size));
+      @include mask-icon('/images/icon/custom-empty__line.svg', var(--nodata-icon-size));
     }
     &.is-custom {
-      @include mask-icon('../images/icon/search__line--818.svg', var(--nodata-icon-size));
+      @include mask-icon('/images/icon/search__line.svg', var(--nodata-icon-size));
     }
   }
 

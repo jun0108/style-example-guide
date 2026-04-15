@@ -1,5 +1,5 @@
 @use '../variables/typography' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 .layout {
   &__header {
@@ -201,7 +201,7 @@
               width: 32px;
               height: 32px;
               border-radius: 50%;
-              background: url('../../images/icon/user.svg') no-repeat center / cover;
+              background: url('/images/icon/user__line.svg') no-repeat center / cover;
             }
           }
           &__text {
@@ -216,7 +216,7 @@
             user-select: none;
           }
           &__arrow {
-            @include mask-icon('../images/icon/arrow-d__line--111.svg', 16px);
+            @include mask-icon('/images/icon/chevron-down__line.svg', 16px);
             background-color: var(--header-icon-color);
           }
           &__menu {
@@ -256,10 +256,10 @@
         }
       }
       &__btn {
-        @include mask-icon('../images/icon/menu__line--2a2.svg', var(--header-btn-size));
+        @include mask-icon('/images/icon/panel-left-open__line.svg', var(--header-btn-size));
         background-color: var(--header-icon-color);
         &.is-open {
-          @include mask-icon('../images/icon/close__line--818.svg', var(--header-btn-size));
+          @include mask-icon('/images/icon/custom-x-large__line.svg', var(--header-btn-size));
           background-color: var(--header-icon-color);
         }
       }
@@ -341,7 +341,7 @@
             margin-top: 0;
           }
           &__arrow {
-            @include mask-icon('../images/icon/arrow-d__line--818.svg', 20px);
+            @include mask-icon('/images/icon/chevron-down__line.svg', 20px);
             background-color: var(--color-icon-light);
           }
         }

@@ -12,6 +12,7 @@ const menus = [
   { name: '컴포넌트', isGroup: true },
   { name: '버튼', path: '/guide/component/button' },
   { name: '칩', path: '/guide/component/chip' },
+  { name: '아이콘', path: '/guide/component/icon' },
   { name: '툴팁', path: '/guide/component/tooltip' },
   { name: 'Toggle', path: '/guide/component/toggle' },
   { name: '트리', path: '/guide/component/tree' },

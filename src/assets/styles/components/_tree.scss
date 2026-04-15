@@ -1,5 +1,5 @@
 @use '../variables/typography' as *;
-@use '../mixins/mask-icon' as *;
+@use '../mixins/icon' as *;
 
 :root {
   --tree-ghost-radius: 4px;
@@ -92,7 +92,7 @@
     margin-right: var(--space-40);
 
     &::before {
-      @include mask-icon('../images/icon/grip__dots--2a2.svg', 24px);
+      @include mask-icon('/images/icon/custom-ellipsis-small__line.svg', 24px);
       position: absolute;
       inset: 0;
       width: 24px;

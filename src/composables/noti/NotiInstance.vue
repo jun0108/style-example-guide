@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { type NotiInstanceOptions } from './type.noti';
-import notiSuccessIcon from '@/assets/images/icon/noti--success.svg?url';
-import notiErrorIcon from '@/assets/images/icon/noti--error.svg?url';
+
+const notiSuccessIcon = `${import.meta.env.BASE_URL}images/icon/circle-check__fill.svg`;
+const notiErrorIcon = `${import.meta.env.BASE_URL}images/icon/triangle-alert__fill.svg`;
 
 const props = withDefaults(defineProps<NotiInstanceOptions>(), {
   time: 3000,

@@ -23,6 +23,7 @@ declare module 'vue' {
     CmEditor: typeof import('./src/components/common/CmEditor.vue')['default']
     CmGrid: typeof import('./src/components/common/cmGrid/index.vue')['default']
     CmGridColumn: typeof import('./src/components/common/cmGrid/CmGridColumn.vue')['default']
+    CmIcon: typeof import('./src/components/common/CmIcon.vue')['default']
     CmLoader: typeof import('./src/components/common/CmLoader.vue')['default']
     CmMap: typeof import('./src/components/common/cmMap/index.vue')['default']
     CmNoData: typeof import('./src/components/common/CmNoData.vue')['default']
