@@ -510,4 +510,36 @@
 
   /* Custom */
   --color-custom-icon-1: var(--color-yellow-500);
+
+  /* State Layer ================================ */
+  /* Neutral — Hover */
+  --state-layer-hover-0: rgba(255, 255, 255, 0.06);
+  --state-layer-hover-99: rgba(0, 0, 0, 0.06);
+
+  /* Neutral — Focus */
+  --state-layer-focus-0: rgba(255, 255, 255, 0.06);
+  --state-layer-focus-99: rgba(0, 0, 0, 0.06);
+
+  /* Neutral — Pressed */
+  --state-layer-pressed-0: rgba(255, 255, 255, 0.12);
+  --state-layer-pressed-99: rgba(0, 0, 0, 0.12);
+
+  /* Primary (Violet 600) */
+  --state-layer-hover-primary: rgba(109, 53, 221, 0.06);
+  --state-layer-pressed-primary: rgba(109, 53, 221, 0.36);
+  --state-layer-selected-primary: rgba(109, 53, 221, 0.12);
+
+  /* Secondary (Pink 400) */
+  --state-layer-hover-secondary: rgba(254, 74, 246, 0.06);
+  --state-layer-pressed-secondary: rgba(254, 74, 246, 0.36);
+  --state-layer-selected-secondary: rgba(254, 74, 246, 0.12);
+
+  /* Disabled */
+  --state-layer-disabled-0: rgba(255, 255, 255, 0.6);
+
+  /* Dimmed */
+  --state-layer-dimmed-normal: rgba(0, 0, 0, 0.42);
+
+  /* Text Opacity */
+  --state-text-opacity-disabled: 0.4;
 }
