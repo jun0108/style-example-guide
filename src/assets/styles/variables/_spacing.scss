@@ -22,40 +22,18 @@
 }
 // =============================== OLD END =============================== //
 
-/* -----------------------------------------------------------------------------
-    Layer 1 (직접 참조 금지)
------------------------------------------------------------------------------ */
 :root {
-  --space-none: 0px;
-  --space-2xSmall: 2px;
-  --space-xSmall: 4px;
-  --space-small: 6px;
-  --space-medium: 8px;
-  --space-large: 12px;
-  --space-xLarge: 16px;
-  --space-2xLarge: 20px;
-  --space-3xLarge: 24px;
-  --space-4xLarge: 40px;
-  --space-5xLarge: 48px;
-  --space-6xLarge: 64px;
-  --space-7xLarge: 80px;
-}
-
-/* -----------------------------------------------------------------------------
-    Layer 2
------------------------------------------------------------------------------ */
-:root {
-  --spacing_scale_none: var(--space-none);
-  --spacing_scale_2xSmall: var(--space-2xSmall);
-  --spacing_scale_xSmall: var(--space-xSmall);
-  --spacing_scale_small: var(--space-small);
-  --spacing_scale_medium: var(--space-medium);
-  --spacing_scale_large: var(--space-large);
-  --spacing_scale_xLarge: var(--space-xLarge);
-  --spacing_scale_2xLarge: var(--space-2xLarge);
-  --spacing_scale_3xLarge: var(--space-3xLarge);
-  --spacing_scale_4xLarge: var(--space-4xLarge);
-  --spacing_scale_5xLarge: var(--space-5xLarge);
-  --spacing_scale_6xLarge: var(--space-6xLarge);
-  --spacing_scale_7xLarge: var(--space-7xLarge);
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
 }
