@@ -1,7 +1,6 @@
 @use 'sass:map';
 @use './mask-icon' as *;
 @use '../variables/typography' as *;
-@use './breakpoint' as *;
 
 @mixin textfield-base {
   display: flex;
@@ -111,10 +110,6 @@
         transform: translateY(-50%);
         color: var(--color-status-positive);
       }
-    }
-
-    @include respond-down('mobile') {
-      white-space: nowrap;
     }
   }
 

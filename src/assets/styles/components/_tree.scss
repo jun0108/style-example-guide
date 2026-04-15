@@ -1,6 +1,5 @@
 @use '../variables/typography' as *;
 @use '../mixins/mask-icon' as *;
-@use '../mixins/breakpoint' as *;
 
 :root {
   --tree-ghost-radius: 4px;
@@ -217,21 +216,6 @@
     &.selected {
       border: none;
       background-color: transparent;
-    }
-  }
-
-  @include respond-down('mobile') {
-    &.bordered {
-      .cm-tree__drag-node {
-        min-height: 48px;
-        padding: var(--space-12) var(--space-16);
-      }
-      .cm-tree__draggable {
-        margin-right: 0;
-      }
-      .cm-tree__node {
-        gap: var(--space-20);
-      }
     }
   }
 }

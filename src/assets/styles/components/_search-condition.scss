@@ -1,6 +1,5 @@
 @use '@/assets/styles/mixins/mask-icon' as *;
 @use '../variables/typography' as *;
-@use '../mixins/breakpoint' as *;
 
 .search-condition {
   --search-condition-gap: var(--space-40);
@@ -69,45 +68,5 @@
     align-items: center;
     gap: var(--search-condition-unit-gap);
     flex: none;
-  }
-
-  @include respond-down('mobile') {
-    --search-condition-gap: var(--space-16);
-    --search-condition-fields-gap: var(--space-20);
-    --search-condition-unit-gap: var(--space-8);
-    flex-direction: column;
-
-    &__body,
-    &__fields,
-    &__group {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    &__body {
-      gap: var(--space-20);
-    }
-
-    &__fields {
-      .v-dropdown,
-      .v-textfield,
-      .v-datepicker {
-        width: 100%;
-        min-width: unset;
-        max-width: none;
-      }
-    }
-
-    &__actions {
-      gap: var(--space-16);
-      width: 100%;
-      .cm-tooltip {
-        display: none;
-      }
-      .cm-button {
-        flex: 1;
-        width: 100%;
-      }
-    }
   }
 }
