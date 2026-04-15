@@ -1,5 +1,4 @@
 @use '../variables/typography' as *;
-@use '../mixins/breakpoint' as *;
 
 .login {
   --login-title-color: var(--color-font-main);
@@ -11,7 +10,7 @@
   align-items: center;
   width: 100%;
   min-height: 100dvh;
-  margin: auto; 
+  margin: auto;
   &.is-full {
     display: flex;
     width: 100%;
@@ -44,15 +43,10 @@
     flex: 1 1 0%;
     & > :not([hidden]) ~ :not([hidden]) {
       margin-top: var(--space-40);
-      @include respond-down('mobile') {
-        margin-top: var(--space-20);
-      }
     }
     .v-textfield {
       &.size--xl {
         .v-textfield__input {
-          @include respond-down('mobile') {
-          }
         }
       }
     }
@@ -96,15 +90,9 @@
     background-color: var(--login-bg-color);
     border-radius: 20px;
     box-shadow: 0px 2px 12px 0px var(--login-shadow-color);
-    @include respond-down('mobile') {
-      box-shadow: none;
-    }
     .login {
       &__form {
         padding: var(--space-40) var(--space-60);
-        @include respond-down('mobile') {
-         padding: var(--space-20);
-        }
       }
     }
   }
@@ -121,17 +109,9 @@
     border-radius: 24px;
     box-shadow: 0px 2px 12px 0px var(--login-shadow-color);
     box-sizing: border-box;
-    @include respond-down('mobile') {
-      flex-direction: column;
-      box-shadow: none;
-    }
     .login {
       &__background {
         max-width: 53%;
-        @include respond-down('mobile') {
-          height: 120px;
-          max-width: 100%;
-        }
       }
       &__header {
         align-items: flex-start;
@@ -139,9 +119,6 @@
       &__form {
         overflow-y: auto;
         padding: var(--space-60) 80px;
-        @include respond-down('mobile') {
-          padding: var(--space-20);
-        }
       }
     }
   }
@@ -150,29 +127,14 @@
     width: 100%;
     height: -webkit-fill-available;
     background-color: var(--login-bg-color);
-    @include respond-down('mobile') {
-      flex-direction: column;
-    }
     .login {
       &__background {
         width: 50%;
-        @include respond-down('mobile') {
-          height: 120px;
-          width: 100%;
-        }
       }
       &__header {
         width: 100%;
         flex-direction: row;
         justify-content: center;
-        @include respond-down('mobile') {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: var(--space-20);
-          img {
-            width: 160px;
-          }
-        }
       }
       &__form {
         display: flex;
@@ -182,11 +144,6 @@
         max-width: 580px;
         margin: 0 auto;
         padding: var(--space-20);
-        @include respond-down('mobile') {
-          max-width: 100%;
-          padding: 45px var(--space-60);
-          margin: 0;
-        }
       }
     }
     .cm-button--full {

@@ -6,12 +6,6 @@
   --form-label-height-sm: 24px;
   --form-grid-gap: var(--space-40);
   --form-grid-gap-sm: var(--space-20);
-  @include respond-down('mobile') {
-    --form-label-height: 24px;
-    --form-label-height-sm: 22px;
-    --form-grid-gap: var(--space-20);
-    --form-grid-gap-sm: var(--space-12);
-  }
   container-type: inline-size;
   container-name: form;
   width: 100%;
@@ -19,15 +13,6 @@
     display: flex;
     position: relative;
     gap: var(--inputs-vertical-space);
-
-    @include respond-down('mobile') {
-      &:not(.form__field--fixed) {
-        flex-direction: column;
-        & + .form__group-desc {
-          margin-left: 0;
-        }
-      }
-    }
 
     &__control {
       display: flex;
@@ -41,9 +26,6 @@
 
       .cm-button {
         margin-top: calc(var(--typo-body-b1-lh) + var(--inputs-vertical-space));
-        @include respond-down('mobile') {
-          width: auto;
-        }
       }
 
       &-timer {
@@ -74,9 +56,6 @@
 
     & + .form__group-desc {
       margin-left: calc(var(--inputs-label-width) + var(--inputs-vertical-space));
-      @include respond-down('mobile') {
-        margin-left: 0;
-      }
     }
 
     &--top {
@@ -97,18 +76,6 @@
       > .v-textarea__label {
         line-height: var(--inputs-height-lg);
       }
-      @include respond-down('mobile') {
-        > .v-textfield__label,
-        > .v-dropdown__label,
-        > .v-textarea__label {
-          line-height: var(--form-label-height-sm);
-        }
-        .form__input-url {
-          p {
-            line-height: var(--form-label-height);
-          }
-        }
-      }
     }
 
     &--column {
@@ -124,14 +91,7 @@
       }
     }
 
-    &--fixed {  
-      @include respond-down('mobile') {
-        gap: var(--space-20);
-        .v-textfield__label {
-          width: fit-content;
-          min-width: 60px;
-        }
-      }
+    &--fixed {
     }
 
     &.is-timer {
@@ -316,9 +276,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: var(--form-grid-gap);
-    @include respond-down('mobile') {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
   }
   &__input-util {
     display: flex;
@@ -351,12 +308,6 @@
       margin: 0;
       flex-shrink: 0;
     }
-    @include respond-down('mobile') {
-    flex-direction: column;
-      p {
-        line-height: 24px;
-      }
-    }
   }
   &__input-list {
     display: flex;
@@ -369,13 +320,6 @@
       flex-wrap: wrap;
       flex: 1;
       gap: var(--space-8);
-      @include respond-down('mobile') {
-        .cm-button {
-          &:not(.cm-button--icon-only) {
-            width: 100%;
-          }
-        }
-      }
       .v-textfield {
         min-width: 130px;
       }
@@ -390,9 +334,6 @@
       }
       &.is-child {
         max-width: calc(100% - 128px);
-        @include respond-down('mobile') {
-          max-width: 100%;
-        }
       }
     }
     .list {
@@ -401,11 +342,6 @@
         flex-wrap: wrap;
         align-items: center;
         gap: var(--space-8);
-        @include respond-down('mobile') {
-          .cm-button {
-            width: 100%;
-          }
-        }
       }
     }
   }

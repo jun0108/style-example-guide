@@ -1,5 +1,4 @@
 @use '../variables/typography' as *;
-@use '../mixins/breakpoint' as *;
 
 :root {
   --popup-backdrop: var(--color-bg-opacity-black-30);
@@ -134,104 +133,7 @@
         width: var(--modal-button-single-width);
       }
     }
-    @include respond-down('mobile') {
-      &.is-full {
-        .modal {
-          &-container {
-            // --modal-padding: var(--space-20);
-            --modal-header-height: auto;
-          }
-
-          &-instance {
-            &__box {
-              width: 100% !important;
-              height: 100dvh;
-              max-width: 100%;
-              max-height: 100%;
-              border-radius: 0;
-            }
-            &__header {
-              flex-wrap: wrap;
-              gap: var(--space-12);
-
-              &:has(.form-toggle) {
-                flex-direction: column;
-                align-items: flex-start;
-                > div {
-                  flex: 1;
-                  width: 100%;
-                  justify-content: space-between;
-                }
-              }
-              &__btn {
-                display: inline-block;
-                color: var(--color-icon-regular);
-              }
-            }
-            &__divider {
-              display: none;
-            }
-
-            &__body {
-              padding: 0;
-              max-height: 100%;
-              .form {
-                padding: 0 var(--space-20);
-              }
-            }
-
-            &__footer {
-              padding: var(--space-24) var(--space-24);
-
-              .cm-button {
-                &.cm-button--outline {
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
-
-  @include respond-down('tablet') {
-    &-container {
-      --modal-padding: var(--space-20);
-      --modal-header-height: auto;
-    }
-
-    &-instance {
-      &__header {
-        flex-wrap: wrap;
-        gap: var(--space-12);
-
-        &:has(.form-toggle) {
-          flex-direction: column;
-          align-items: flex-start;
-          > div {
-            flex: 1;
-            width: 100%;
-            justify-content: space-between;
-          }
-        }
-      }
-
-      &__body {
-        padding: var(--modal-padding) var(--space-24) 0;
-      }
-
-      &__footer {
-        padding: var(--modal-footer-pt) var(--space-24) var(--space-24);
-
-        .cm-button {
-          flex: 1;
-          width: 100%;
-        }
-      }
-    }
-  }
-
 }
 
 /* Dialog */
@@ -296,10 +198,9 @@
       flex-direction: column-reverse;
 
       .cm-button {
-        flex: none ;
+        flex: none;
         width: 100%;
       }
     }
   }
-
 }
