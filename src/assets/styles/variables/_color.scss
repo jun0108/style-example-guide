@@ -1,3 +1,6 @@
+  /* TODO: 공통 스타일 작업 완료 후 해당 OLD 코드 삭제 필요 */
+// =============================== OLD START =============================== //
+
 /* -----------------------------------------------------------------------------
     Layer 1 (직접 참조 금지)
 ----------------------------------------------------------------------------- */
@@ -287,4 +290,224 @@
 :root[data-brand='custom'] {
   --color-primary-normal: var(--color-custom-primary);
   --color-primary-default: var(--color-custom-primary);
+}
+// =============================== OLD END =============================== //
+
+
+
+/* -----------------------------------------------------------------------------
+    Layer 1 (직접 참조 금지)
+----------------------------------------------------------------------------- */
+:root {
+  /* Neutral */
+  --color-neutral-10: #FCFCFC;
+  --color-neutral-50: #F2F2F2;
+  --color-neutral-100: #EBEBEB;
+  --color-neutral-200: #E0E0E0;
+  --color-neutral-300: #BDBDBD;
+  --color-neutral-400: #A8A8A8;
+  --color-neutral-500: #969696;
+  --color-neutral-600: #747474;
+  --color-neutral-700: #696969;
+  --color-neutral-800: #474747;
+  --color-neutral-900: #1A1A1A;
+
+  /* Blue Gray */
+  --color-blue-gray-10: #FCFCFD;
+  --color-blue-gray-50: #F9FAFB;
+  --color-blue-gray-100: #F3F5F6;
+  --color-blue-gray-200: #E7EBEE;
+  --color-blue-gray-300: #DCE0E5;
+  --color-blue-gray-400: #A8B3BD;
+  --color-blue-gray-500: #7F8A94;
+  --color-blue-gray-600: #66707A;
+  --color-blue-gray-700: #525960;
+  --color-blue-gray-800: #3B4044;
+  --color-blue-gray-900: #181A1B;
+
+  /* Violet */
+  --color-violet-10: #F8F5FF;
+  --color-violet-50: #EFE7FE;
+  --color-violet-100: #E4D7FE;
+  --color-violet-200: #CCB4FD;
+  --color-violet-300: #AF89FA;
+  --color-violet-400: #9E70FA;
+  --color-violet-500: #8B54F7;
+  --color-violet-600: #6D35DD;
+  --color-violet-700: #5323AA;
+  --color-violet-800: #401590;
+  --color-violet-900: #371870;
+
+  /* Pink */
+  --color-pink-10: #FFF4FF;
+  --color-pink-50: #FFE7FE;
+  --color-pink-100: #FEB1FA;
+  --color-pink-200: #FF8CF4;
+  --color-pink-300: #FA67F3;
+  --color-pink-400: #FE4AF6;
+  --color-pink-500: #FF19F5;
+  --color-pink-600: #BF13B8;
+  --color-pink-700: #A00999;
+  --color-pink-800: #800D78;
+  --color-pink-900: #61035B;
+
+  /* Red */
+  --color-red-10: #FEF6F6;
+  --color-red-50: #FBDCDA;
+  --color-red-100: #F8C6C3;
+  --color-red-200: #F39591;
+  --color-red-300: #ED615A;
+  --color-red-400: #E93D35;
+  --color-red-500: #E22A21;
+  --color-red-600: #BA231C;
+  --color-red-700: #8C1C17;
+  --color-red-800: #671714;
+  --color-red-900: #4D120F;
+
+  /* Orange */
+  --color-orange-10: #FFF9F5;
+  --color-orange-50: #FFE7D6;
+  --color-orange-100: #FFD3B3;
+  --color-orange-200: #FFBB8A;
+  --color-orange-300: #FF9D57;
+  --color-orange-400: #FF8024;
+  --color-orange-500: #F86800;
+  --color-orange-600: #E05E00;
+  --color-orange-700: #B04A00;
+  --color-orange-800: #8F3C00;
+  --color-orange-900: #662B00;
+
+  /* Yellow */
+  --color-yellow-10: #FFFDF5;
+  --color-yellow-50: #FFFAE0;
+  --color-yellow-100: #FFF6C2;
+  --color-yellow-200: #FFF1A3;
+  --color-yellow-300: #FFE970;
+  --color-yellow-400: #FFDF33;
+  --color-yellow-500: #FFD600;
+  --color-yellow-600: #F0CB00;
+  --color-yellow-700: #E0BE00;
+  --color-yellow-800: #D1B100;
+  --color-yellow-900: #B89B00;
+
+  /* Green */
+  --color-green-10: #F6FEF6;
+  --color-green-50: #DFFBDF;
+  --color-green-100: #ACF6AD;
+  --color-green-200: #6AF66C;
+  --color-green-300: #3AE93C;
+  --color-green-400: #00CC02;
+  --color-green-500: #00AA02;
+  --color-green-600: #008502;
+  --color-green-700: #006601;
+  --color-green-800: #004D01;
+  --color-green-900: #003301;
+
+  /* Blue */
+  --color-blue-10: #F5FBFF;
+  --color-blue-50: #E6F4FE;
+  --color-blue-100: #C3E4FE;
+  --color-blue-200: #8ACCFF;
+  --color-blue-300: #70C1FF;
+  --color-blue-400: #3DABFF;
+  --color-blue-500: #0A95FF;
+  --color-blue-600: #007CDB;
+  --color-blue-700: #0065B2;
+  --color-blue-800: #004B85;
+  --color-blue-900: #003761;
+
+  --color-white: #FFFFFF;
+}
+
+/* -----------------------------------------------------------------------------
+    Layer 2
+----------------------------------------------------------------------------- */
+:root {
+  /* Background */
+  --color_frame_neutral_0: var(--color-white);
+  --color_frame_neutral_1: var(--color-neutral-50);
+  --color_frame_neutral_2: var(--color-neutral-100);
+  --color_frame_neutral_3: var(--color-neutral-200);
+  --color_container_primary_light: var(--color-violet-10);
+  --color_container_primary_medium: var(--color-violet-50);
+  --color_container_primary: var(--color-violet-600);
+  --color_container_secondary_light: var(--color-pink-10);
+  --color_container_secondary_medium: var(--color-pink-50);
+  --color_container_secondary: var(--color-pink-400);
+  --color_container_neutral_0: var(--color-white);
+  --color_container_neutral_1: var(--color-neutral-10);
+  --color_container_neutral_2: var(--color-neutral-50);
+  --color_container_neutral_3: var(--color-neutral-200);
+  --color_container_neutral_4: var(--color-neutral-300);
+  --color_container_neutral_5: var(--color-neutral-500);
+  --color_container_neutral_6: var(--color-neutral-900);
+  --color_container_statusSuccess_light: var(--color-green-50);
+  --color_container_statusSuccess: var(--color-green-500);
+  --color_container_statusWarning_light: var(--color-yellow-50);
+  --color_container_statusWarning: var(--color-yellow-700);
+  --color_container_statusError_light: var(--color-red-50);
+  --color_container_statusError: var(--color-red-500);
+  --color_container_statusInfo_light: var(--color-blue-50);
+  --color_container_statusInfo: var(--color-blue-500);
+
+  /* Text */
+  --color_text_onPrimary: var(--color-white);
+  --color_text_primary: var(--color-violet-600);
+  --color_text_primary_dark: var(--color-violet-700);
+  --color_text_onSecondary: var(--color-white);
+  --color_text_secondary: var(--color-pink-400);
+  --color_text_secondary_dark: var(--color-pink-700);
+  --color_text_onNeutral: var(--color-white);
+  --color_text_neutral_1: var(--color-neutral-300);
+  --color_text_neutral_2: var(--color-neutral-400);
+  --color_text_neutral_3: var(--color-neutral-600);
+  --color_text_neutral_4: var(--color-neutral-700);
+  --color_text_neutral_5: var(--color-neutral-900);
+  --color_text_statusSuccess: var(--color-green-500);
+  --color_text_statusWarning: var(--color-yellow-700);
+  --color_text_statusError: var(--color-red-500);
+  --color_text_statusInfo: var(--color-blue-500);
+  --color_text_statusInfo-dark: var(--color-blue-700);
+
+  /* Border */
+  --color_border_onPrimary: var(--color-white);
+  --color_border_primary_light: var(--color-violet-100);
+  --color_border_primary: var(--color-violet-600);
+  --color_border_onSecondary: var(--color-white);
+  --color_border_secondary_light: var(--color-pink-100);
+  --color_border_secondary: var(--color-pink-400);
+  --color_border_onNeutral: var(--color-white);
+  --color_border_neutral_1: var(--color-neutral-50);
+  --color_border_neutral_2: var(--color-neutral-100);
+  --color_border_neutral_3: var(--color-neutral-200);
+  --color_border_neutral_4: var(--color-neutral-300);
+  --color_border_neutral_5: var(--color-neutral-500);
+  --color_border_neutral_6: var(--color-neutral-900);
+  --color_border_statusSuccess_light: var(--color-green-100);
+  --color_border_statusSuccess: var(--color-green-500);
+  --color_border_statusWarning_light: var(--color-yellow-100);
+  --color_border_statusWarning: var(--color-yellow-700);
+  --color_border_statusError_light: var(--color-red-100);
+  --color_border_statusError: var(--color-red-500);
+  --color_border_statusInfo_light: var(--color-blue-100);
+  --color_border_statusInfo: var(--color-blue-500);
+
+  /* Icon */
+  --color_icon_onPrimary: var(--color_white);
+  --color_icon_primary: var(--color-violet-600);
+  --color_icon_onSecondary: var(--color-white);
+  --color_icon_secondary: var(--color-pink-400);
+  --color_icon_onNeutral: var(--color-white);
+  --color_icon_blueGray_1: var(--color-blue-gray-200);
+  --color_icon_blueGray_2: var(--color-blue-gray-300);
+  --color_icon_blueGray_3: var(--color-blue-gray-400);
+  --color_icon_blueGray_4: var(--color-blue-gray-500);
+  --color_icon_blueGray_5: var(--color-blue-gray-900);
+  --color_icon_statusSuccess: var(--color-green-500);
+  --color_icon_statusWarning: var(--color-yellow-700);
+  --color_icon_statusError: var(--color-red-500);
+  --color_icon_statusInfo: var(--color-blue-500);
+
+  /* Custom */
+  --color_custom_icon_1: var(--color-yellow-500);
 }
