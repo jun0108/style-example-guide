@@ -14,7 +14,7 @@ function toggleUserMenu() {
   <header class="layout__header">
     <div class="header__left">
       <div class="header__logo">
-        <div class="header__icon"/>
+        <cm-icon name="logo--ixi" type="img" :size="32" alt="ixi 로고" class="header__logo"/>
         <!-- FIXME: header__title, button 영역은 로그인한 경우 노출되는 항목 -->
         <div class="header__title" >
           enterprise
@@ -26,11 +26,11 @@ function toggleUserMenu() {
        <!-- 사용자 전용 버튼 -->
        <!-- // 사이드바 닫기 버튼
        <button type="button">
-         <cm-icon name="panel-left-close__line" :size="32" color="var(--color-icon-blue-gray-4)" />
+         <cm-icon name="panel-left-close__line" :size="32" />
        </button>
         // 사이드바 열기 버튼
       <button type="button">
-        <cm-icon name="panel-left-open__line" :size="32" color="var(--color-icon-blue-gray-4)" />
+        <cm-icon name="panel-left-open__line" :size="32" />
       </button> -->
     </div>
 
@@ -58,21 +58,21 @@ function toggleUserMenu() {
       <button type="button">사용자 콘솔</button>
 
       <div class="header__profile" :class="{ 'is-open': isShowUserMenu }" @click="toggleUserMenu">
-        <div class="profile__icon"></div>
-        <span class="profile__name" >
+        <div class="header__profile-icon"></div>
+        <span class="header__profile-name" >
           홍길동
         </span>
       </div>
 
       <button type="button" class="header__button">
         <span>로그아웃</span>
-        <cm-icon name="log-out__line" :size="24" color="var(--color-icon-blue-gray-4)" />
+        <cm-icon name="log-out__line" :size="24" />
       </button>
 
       <!-- FIXME: 로그아웃한 경우 노출되는 항목  -->
       <!-- <button type="button" class="header__button">
         <span>로그인</span>
-        <cm-icon name="log-in__line" :size="24" color="var(--color-icon-blue-gray-4)" />
+        <cm-icon name="log-in__line" :size="24" />
       </button> -->
     </div>
   </header>

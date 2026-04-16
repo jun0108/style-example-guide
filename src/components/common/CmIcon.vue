@@ -17,7 +17,10 @@ const props = withDefaults(
   },
 );
 
-const resolvedSrc = computed(
+const resolvedImgSrc = computed(
+  () => props.src ?? `${import.meta.env.BASE_URL}images/${props.name}.svg`,
+);
+const resolvedIconSrc = computed(
   () => props.src ?? `${import.meta.env.BASE_URL}images/icon/${props.name}.svg`,
 );
 </script>
@@ -25,7 +28,7 @@ const resolvedSrc = computed(
 <template>
   <img
     v-if="type === 'img'"
-    :src="resolvedSrc"
+    :src="resolvedImgSrc"
     class="cm-icon cm-icon--img"
     :alt="alt"
     :aria-hidden="alt ? undefined : 'true'"
@@ -39,7 +42,7 @@ const resolvedSrc = computed(
     :aria-hidden="alt ? undefined : 'true'"
     :style="{
       '--cm-icon-size': `var(--icon-size-${size})`,
-      '--cm-icon-src': `url('${resolvedSrc}')`,
+      '--cm-icon-src': `url('${resolvedIconSrc}')`,
       '--cm-icon-color': color,
     }"
   />

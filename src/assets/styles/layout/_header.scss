@@ -8,13 +8,16 @@
   &__header {
     --header-height: 70px;
     --header-bg-color: var(--color-container-primary-light);
+    --header-title-size: 26px;
     --header-title-color: var(--color-font-main);
     --header-icon-size: 48px;
-
-    --header-nav-color: var(--color-font-sub-1);
+    
+    --header-nav-color: var(--color-text-neutral-5);
     --header-nav-hover-color: var(--color-container-primary-medium);
     --header-nav-selected-color: var(--color-text-primary);
     --header-nav-selected-border-color: var(--color-border-primary);
+    
+    --header-profile-size: 32px;
 
     @include flex(center, space-between);
     @include space(var(--space-64));
@@ -47,13 +50,12 @@
         @include space(var(--space-8));
         cursor: pointer;
       }
-      &__icon {
+      &__logo {
         width: var(--header-icon-size);
         height: var(--header-icon-size);
-        background: url(../../images/icon/logo--ixi.svg) no-repeat center / cover;
       }
       &__title {
-        font-size: 26px;
+        font-size: var(--header-title-size);
         font-weight: var(--font-weight-semibold);
         color: var(--color-text-neutral-5);
         justify-self: start;
@@ -110,25 +112,23 @@
       &__profile {
         @include space(var(--space-8));
         @include flex(center);
-        height: 32px;
-        .profile {
-          &__icon {
-            position: relative;
-            width: 32px;
-            height: 32px;
-            background-color: var(--color-container-primary-medium);
-            border-radius: 50%;
-            &::after {
-              @include pseudo-icon(20px, '../../images/icon/user__fill.svg') {
-                color: var(--color-icon-blue-gray-4);
-              }
+        margin-left: var(--space-16);
+        &-icon {
+          position: relative;
+          width: var(--header-profile-size);
+          height: var(--header-profile-size);
+          background-color: var(--color-container-primary-medium);
+          border-radius: var(--radius-full);
+          &::after {
+            @include pseudo-icon(20px, '../../images/icon/user__fill.svg') {
+              color: var(--color-icon-blue-gray-4);
             }
           }
-          &__name {
-            @include typo('label-2sb');
-            color: var(--color-text-neutral-4);
-            cursor: default;
-          }
+        }
+        &-name {
+          @include typo('label-2sb');
+          color: var(--color-text-neutral-4);
+          cursor: default;
         }
         & + .header__button {
           position: relative;
