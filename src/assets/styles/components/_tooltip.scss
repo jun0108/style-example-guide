@@ -12,7 +12,7 @@
     align-items: center;
     margin-bottom: var(--tooltip-label-margin);
     > label {
-      @include typo('title-t5');
+      @include typo-old('title-t5');
       margin-right: var(--space-16);
     }
   }
@@ -25,7 +25,7 @@
   }
 
   &__message {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     color: var(--color-font-sub-1) !important;
   }
 

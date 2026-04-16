@@ -209,7 +209,7 @@
 
 .cm-editor-content,
 .cm-editor .toastui-editor-contents {
-  @include typo('body-b2');
+  @include typo-old('body-b2');
   display: block;
   font-family: var(--font-family);
   color: var(--color-font-main);
@@ -262,24 +262,24 @@
   }
 
   h1 {
-    @include typo('headline-h4');
+    @include typo-old('headline-h4');
   }
 
   h2 {
-    @include typo('headline-h5');
+    @include typo-old('headline-h5');
   }
 
   h3 {
-    @include typo('headline-h6');
+    @include typo-old('headline-h6');
   }
 
   h4 {
-    @include typo('title-t5', var(--font-weight-semibold));
+    @include typo-old('title-t5', var(--font-weight-semibold));
   }
 
   h5,
   h6 {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
   }
 
   h1 + *,
@@ -388,14 +388,14 @@
   }
 
   th {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
     white-space: nowrap;
     background-color: var(--grid-table-header-stripe-bg);
     color: var(--color-font-sub-1);
   }
 
   td {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
     background-color: var(--grid-table-row-bg-stripe);
     color: var(--color-font-sub-1);
   }

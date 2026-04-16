@@ -76,7 +76,7 @@
     }
 
     &__header {
-      @include typo('headline-h6');
+      @include typo-old('headline-h6');
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -94,13 +94,13 @@
     }
 
     &__sub-header {
-      @include typo('body-b3');
+      @include typo-old('body-b3');
       flex: none;
       padding: 0 var(--modal-padding) var(--modal-gap);
       color: var(--color-font-sub-1);
 
       p {
-        @include typo('title-t5', var(--font-weight-regular));
+        @include typo-old('title-t5', var(--font-weight-regular));
       }
     }
 
@@ -162,7 +162,7 @@
     }
 
     &__body {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
       padding: var(--dialog-body-pt) var(--dialog-body-padding-x) 0;
       color: var(--color-font-main);
       text-align: center;
@@ -170,7 +170,7 @@
     }
 
     &__additional {
-      @include typo('body-b2');
+      @include typo-old('body-b2');
       margin-top: var(--dialog-text-gap);
       color: var(--color-font-sub-1);
 

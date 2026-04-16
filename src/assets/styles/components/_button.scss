@@ -47,40 +47,40 @@
 
   /* Sizes */
   &--2xs {
-    @include typo('button-but4', var(--font-weight-regular));
+    @include typo-old('button-but4', var(--font-weight-regular));
     --cm-button-icon-size: var(--btn-icon-size-sm);
     height: var(--btn-height-2xs);
     padding: 0 var(--space-10);
   }
 
   &--xs {
-    @include typo('button-but4', var(--font-weight-regular));
+    @include typo-old('button-but4', var(--font-weight-regular));
     --cm-button-icon-size: var(--btn-icon-size-sm);
     height: var(--btn-height-xs);
     padding: 0 var(--space-12);
   }
 
   &--sm {
-    @include typo('button-but2', var(--font-weight-regular));
+    @include typo-old('button-but2', var(--font-weight-regular));
     height: var(--btn-height-sm);
     padding: 0 var(--space-16);
   }
 
   &--md {
-    @include typo('button-but2', var(--font-weight-regular));
+    @include typo-old('button-but2', var(--font-weight-regular));
     height: var(--btn-height-md);
     padding: 0 var(--space-16);
   }
 
   &--lg {
-    @include typo('button-but2');
+    @include typo-old('button-but2');
     --cm-button-icon-size: var(--btn-icon-size-lg);
     height: var(--btn-height-lg);
     padding: 0 var(--space-16);
   }
 
   &--xl {
-    @include typo('button-but1');
+    @include typo-old('button-but1');
     --cm-button-icon-size: var(--btn-icon-size-xl);
     height: var(--btn-height-xl);
     padding: 0 var(--space-20);

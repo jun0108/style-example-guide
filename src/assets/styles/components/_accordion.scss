@@ -29,7 +29,7 @@
     user-select: none;
   }
   &__desc {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
     color: var(--color-font-main);
     margin-right: var(--space-4);
     &.is-required {
@@ -37,7 +37,7 @@
     }
   }
   &__title {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
     flex: 1 1 0%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -49,7 +49,7 @@
     @include mask-icon('/images/icon/chevron-down__line.svg', 24px);
   }
   &__body {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     overflow: auto;
     flex: 1 1 0%;
     max-height: 325px;
@@ -59,11 +59,11 @@
     border-radius: 0 0 12px 12px;
 
     h3 {
-      @include typo('body-b1', var(--font-weight-semibold));
+      @include typo-old('body-b1', var(--font-weight-semibold));
       margin-bottom: var(--space-12);
     }
     h4 {
-      @include typo('body-b3', var(--font-weight-semibold));
+      @include typo-old('body-b3', var(--font-weight-semibold));
       margin-bottom: var(--space-8);
     }
     em {

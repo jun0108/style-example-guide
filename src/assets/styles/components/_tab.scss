@@ -88,7 +88,7 @@
     }
 
     button {
-      @include typo('title-t5');
+      @include typo-old('title-t5');
       width: 100%;
       min-height: 64px;
       padding: 0 var(--space-36);
@@ -111,7 +111,7 @@
     }
 
     button {
-      @include typo('title-t4');
+      @include typo-old('title-t4');
       min-height: 64px;
       padding: 0 var(--space-4);
     }
@@ -135,7 +135,7 @@
     }
 
     button {
-      @include typo('body-b1');
+      @include typo-old('body-b1');
       gap: var(--space-4);
       min-height: 52px;
       padding: 0 var(--space-16);
@@ -175,7 +175,7 @@
     }
 
     button {
-      @include typo('body-b3');
+      @include typo-old('body-b3');
       min-height: 32px;
       padding: var(--space-6) var(--space-16);
     }

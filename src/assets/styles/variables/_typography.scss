@@ -197,10 +197,10 @@ $typo-tokens: (
 }
 
 /* Layer 3: Usage
-   Use in component SCSS: @include typo('style-name')
+   Use in component SCSS: @include typo-old('style-name')
    Use for plain text: .type--style-name utility class
-   Example: @include typo('body-b1')
-   Example with custom weight: @include typo('body-b1', var(--font-weight-semibold)) */
+   Example: @include typo-old('body-b1')
+   Example with custom weight: @include typo-old('body-b1', var(--font-weight-semibold)) */
 
 $typo-map: (
   /* Headline */
@@ -351,7 +351,7 @@ $typo-map: (
   )
 );
 
-@mixin typo($style, $weight: null) {
+@mixin typo-old($style, $weight: null) {
   $config: map.get($typo-map, $style);
 
   @if not $config {
@@ -377,12 +377,12 @@ $typo-map: (
 /* Utility classes */
 @each $name, $config in $typo-map {
   .type--#{$name} {
-    @include typo($name);
+    @include typo-old($name);
   }
 
   @if map.has-key($config, alt) {
     .type--#{$name}--#{map.get($config, alt-name)} {
-      @include typo($name, map.get($config, alt));
+      @include typo-old($name, map.get($config, alt));
     }
   }
 }

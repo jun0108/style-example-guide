@@ -39,6 +39,6 @@
   }
 
   &__message {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
   }
 }

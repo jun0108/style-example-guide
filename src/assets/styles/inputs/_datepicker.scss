@@ -14,7 +14,7 @@
   .dp {
     @include textfield-base;
     &__main {
-      @include typo('body-b2');
+      @include typo-old('body-b2');
       .dp__theme_light {
         --dp-font-family: var(--font-family);
         --dp-menu-min-width: 300px;
@@ -138,7 +138,7 @@
           }
         }
         &__btn {
-          @include typo('body-b1', var(--font-weight-semibold));
+          @include typo-old('body-b1', var(--font-weight-semibold));
           padding: 0 var(--space-4);
    
         }

@@ -207,7 +207,7 @@
     min-width: 0;
   }
   &.bordered &__name {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
     padding: 0;
     border: none;
     border-radius: 0;

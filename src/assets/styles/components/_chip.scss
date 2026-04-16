@@ -50,14 +50,14 @@ $chip-variants: (
   white-space: nowrap;
 
   &--md {
-    @include typo('body-b2');
+    @include typo-old('body-b2');
     height: var(--chip-height-md);
     padding: 0 var(--chip-padding-x);
     border-radius: var(--chip-radius);
   }
 
   &--sm {
-    @include typo('caption-c1', var(--font-weight-semibold));
+    @include typo-old('caption-c1', var(--font-weight-semibold));
     height: var(--chip-height-sm);
     padding: 0 var(--chip-padding-x);
     border-radius: var(--chip-radius-pill);
@@ -72,7 +72,7 @@ $chip-variants: (
 }
 .chip {
   &__line--gray {
-    @include typo('body-b3');
+    @include typo-old('body-b3');
     display: flex;
     align-items: center;
     height: 32px;

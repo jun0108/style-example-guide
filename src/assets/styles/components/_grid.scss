@@ -76,7 +76,7 @@
   }
 
   .ag-header-cell-text {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
     color: var(--grid-header-font-color);
   }
 
@@ -94,7 +94,7 @@
   }
 
   .ag-cell {
-    @include typo('title-t5', var(--font-weight-regular));
+    @include typo-old('title-t5', var(--font-weight-regular));
     display: inline-flex;
     align-items: center;
     padding: calc(var(--grid-cell-padding) / 2) var(--grid-cell-padding);
@@ -232,11 +232,11 @@
   }
 
   &__th {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
   }
 
   &__td {
-    @include typo('body-b1', var(--font-weight-semibold));
+    @include typo-old('body-b1', var(--font-weight-semibold));
     color: var(--color-font-sub-1);
   }
 }

@@ -34,7 +34,7 @@
       @include box-size('md');
       width: 100%;
       li {
-        @include typo('body-b3');
+        @include typo-old('body-b3');
         margin-left: var(--space-20);
         color: var(--color-font-sub-2);
         list-style: disc;

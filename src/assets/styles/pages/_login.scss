@@ -36,7 +36,7 @@
     }
   }
   &__title {
-    @include typo('title-t1');
+    @include typo-old('title-t1');
     text-align: center;
   }
   &__form {
@@ -55,7 +55,7 @@
     padding-top: var(--space-4);
   }
   &__button {
-    @include typo('button-but2', var(--font-weight-regular));
+    @include typo-old('button-but2', var(--font-weight-regular));
     position: relative;
     display: inline-flex;
     justify-content: center;

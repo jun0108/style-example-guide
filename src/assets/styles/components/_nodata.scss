@@ -39,7 +39,7 @@
   }
 
   &__text {
-    @include typo('body-b1');
+    @include typo-old('body-b1');
     color: var(--nodata-text-color);
     text-align: center;
     white-space: pre-wrap;
