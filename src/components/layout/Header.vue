@@ -20,19 +20,24 @@ function toggleUserMenu() {
           enterprise
         </div>
         <!-- TODO: admin 페이지 전용 작업시 분리 필요 -->
-        <!-- <div class="header__chip">Admin</div> -->
+        <div class="header__chip">Admin</div>
       </div>
       <!-- TODO: 공통 버튼 스타일 추가되면 수정할 버튼 -->
+       <!-- 사용자 전용 버튼 -->
+       <!-- // 사이드바 닫기 버튼
+       <button type="button">
+         <cm-icon name="panel-left-close__line" :size="32" color="var(--color-icon-blue-gray-4)" />
+       </button>
+        // 사이드바 열기 버튼
       <button type="button">
-        <cm-icon name="panel-left-close__line" :size="32" color="var(--color-icon-blue-gray-4)" />
-      </button>
-      <!-- <button type="button">
         <cm-icon name="panel-left-open__line" :size="32" color="var(--color-icon-blue-gray-4)" />
       </button> -->
     </div>
-    <nav class="header__nav">
+
+    <!-- 사용자 전용 nav -->
+    <!-- <nav class="header__nav">
       <ul>
-        <!-- FIXME: is-select 클래스 바인딩으로 현재 메뉴 표시 가능합니다. -->
+        // FIXME: is-select 클래스 바인딩으로 현재 메뉴 표시 가능합니다.
         <li class="is-select">
           Ask Agent
         </li>
@@ -43,11 +48,14 @@ function toggleUserMenu() {
           Agent Studio
         </li>
       </ul>
-    </nav>
+    </nav> -->
     <div class="header__util">
       <!-- FIXME: 로그인한 경우 노출되는 항목  -->
       <!-- TODO: 공통 버튼 스타일 추가되면 수정할 버튼 -->
-      <button type="button" >관리자 콘솔</button>
+      <!-- 사용자 전용 버튼 -->
+      <!-- <button type="button">관리자 콘솔</button> -->
+      <!-- 관리자 전용 버튼 -->
+      <button type="button">사용자 콘솔</button>
 
       <div class="header__profile" :class="{ 'is-open': isShowUserMenu }" @click="toggleUserMenu">
         <div class="profile__icon"></div>
@@ -55,6 +63,7 @@ function toggleUserMenu() {
           홍길동
         </span>
       </div>
+
       <button type="button" class="header__button">
         <span>로그아웃</span>
         <cm-icon name="log-out__line" :size="24" color="var(--color-icon-blue-gray-4)" />

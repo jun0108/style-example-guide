@@ -16,7 +16,7 @@
     --header-nav-selected-color: var(--color-text-primary);
     --header-nav-selected-border-color: var(--color-border-primary);
 
-    @include flex();
+    @include flex(center, space-between);
     @include space(var(--space-64));
     position: sticky;
     top: 0;
