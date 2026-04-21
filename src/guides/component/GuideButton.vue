@@ -1,148 +1,202 @@
 <script lang="ts" setup>
-const variants = [
-  { value: 'primary', label: 'Primary' },
-  { value: 'outline-primary', label: 'Outline Primary' },
-  { value: 'outline', label: 'Outline' },
-  { value: 'outline-dark', label: 'Outline Dark' },
-  { value: 'outline-shadow', label: 'Outline Shadow' },
-  { value: 'solid-black', label: 'Solid Black' },
-  { value: 'solid-gray', label: 'Solid Gray' },
-  { value: 'text', label: 'Text Only' },
-] as const;
+type ButtonColor = 'primary' | 'secondary' | 'neutral';
+type ButtonType = 'fill' | 'line' | 'text' | 'underline';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
 
-const sizes = [
-  { value: 'xl', label: 'xl (56px)' },
-  { value: 'lg', label: 'lg (48px)' },
-  { value: 'md', label: 'md (44px)' },
-  { value: 'sm', label: 'sm (40px)' },
-  { value: 'xs', label: 'xs (36px)' },
-  { value: '2xs', label: '2xs (30px)' },
-] as const;
+const colors: ButtonColor[] = ['primary', 'secondary', 'neutral'];
+const types: ButtonType[] = ['fill', 'line', 'text', 'underline'];
+
+const sizes: { value: ButtonSize; label: string }[] = [
+  { value: 'xl', label: 'xl · 56px' },
+  { value: 'lg', label: 'lg · 48px' },
+  { value: 'md', label: 'md · 36px (default)' },
+  { value: 'sm', label: 'sm · 24px' },
+];
+
+const iconOnlySizes: { value: Exclude<ButtonSize, 'xl'>; label: string; icon: number }[] = [
+  { value: 'lg', label: 'lg · 48px (icon 32px)', icon: 32 },
+  { value: 'md', label: 'md · 36px (icon 24px)', icon: 24 },
+  { value: 'sm', label: 'sm · 24px (icon 20px)', icon: 20 },
+];
+
+const props = [
+  { name: 'color', type: `'primary' | 'secondary' | 'neutral'`, default: `'primary'`, desc: '버튼 컬러 계열' },
+  { name: 'type', type: `'fill' | 'line' | 'text' | 'underline'`, default: `'fill'`, desc: '시각적 스타일' },
+  { name: 'size', type: `'sm' | 'md' | 'lg' | 'xl'`, default: `'md'`, desc: '버튼 크기 (높이)' },
+  { name: 'full', type: 'boolean', default: 'false', desc: '너비 100% 확장' },
+  { name: 'iconOnly', type: 'boolean', default: 'false', desc: '아이콘 단독 버튼(정사각 비율)' },
+  { name: 'disabled', type: 'boolean', default: 'false', desc: '비활성화 상태' },
+];
 </script>
 
 <template>
-  <div>
-    <h1>버튼</h1>
+  <div class="guide-page"></div>
+  <h1>버튼</h1>
 
-    <h2>Variants</h2>
-    <blockquote>variant prop으로 버튼 스타일 지정</blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button v-for="v in variants" :key="v.value" :variant="v.value">
-        {{ v.label }}
-      </cm-button>
-    </div>
-
-    <h2>Sizes</h2>
+  <section class="guide-section">
+    <h2>개요</h2>
     <blockquote>
-      size prop으로 버튼 크기 지정 <br />
-      기본값 = 'md'
+      <code>color</code> × <code>type</code> × <code>size</code> 조합으로 모든 버튼을 구성합니다.<br />
+      아이콘만 사용하는 버튼은 <code>icon-only</code>, 너비 확장은 <code>full</code> prop으로 제어합니다.
     </blockquote>
-    <div class="flex flex-wrap items-end gap-3">
+  </section>
+
+  <!-- Props table -->
+  <section class="guide-section">
+    <h2>Props</h2>
+    <table class="guide-table">
+      <thead>
+        <tr>
+          <th>Prop</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="p in props" :key="p.name">
+          <td>
+            <code>{{ p.name }}</code>
+          </td>
+          <td>
+            <code>{{ p.type }}</code>
+          </td>
+          <td>
+            <code>{{ p.default }}</code>
+          </td>
+          <td>{{ p.desc }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Variants -->
+  <section class="guide-section">
+    <h2>Variants</h2>
+    <blockquote>
+      <code>color</code>(3종) × <code>type</code>(4종) 조합으로 제공됩니다.<br />
+      활성/비활성 상태를 함께 확인하세요.
+    </blockquote>
+
+    <ul class="guide-list-stack">
+      <li v-for="color in colors" :key="color" class="guide-section guide-section--sm guide-surface">
+        <span class="guide-text-subtle"
+          ><code>color="{{ color }}"</code></span
+        >
+        <div class="guide-row">
+          <cm-button v-for="type in types" :key="type" :color="color" :type="type"> {{ color }} {{ type }} </cm-button>
+        </div>
+        <div class="guide-row">
+          <cm-button v-for="type in types" :key="type" :color="color" :type="type" disabled> disabled </cm-button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sizes -->
+  <section class="guide-section">
+    <h2>Sizes</h2>
+    <blockquote><code>size</code> prop으로 4단계 크기를 제공합니다. 기본값은 <code>md</code>입니다.</blockquote>
+    <div class="guide-row guide-row--end">
       <cm-button v-for="s in sizes" :key="s.value" :size="s.value">
         {{ s.label }}
       </cm-button>
     </div>
+  </section>
 
+  <!-- Full width -->
+  <section class="guide-section">
     <h2>Full Width</h2>
-    <blockquote>full prop으로 버튼 너비 100% 처리</blockquote>
+    <blockquote><code>full</code> prop으로 부모 너비 전체를 채웁니다.</blockquote>
     <cm-button full>확인</cm-button>
+  </section>
 
-    <h2>Fixed Width</h2>
-    <blockquote>고정 너비는 유틸리티 클래스로 지정</blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button variant="primary" size="lg" class="w-[120px]">저장</cm-button>
-      <cm-button variant="outline" size="lg" class="w-[260px]">조회</cm-button>
-    </div>
-
-    <h2>Icon — Prepend</h2>
+  <!-- Icon prepend / append -->
+  <section class="guide-section">
+    <h2>Icon prepend / append</h2>
     <blockquote>
-      #prepend 슬롯으로 아이콘을 텍스트 왼쪽에 배치<br />
-      기본 gap 사이즈 별로 적용되어 있으며, 직접 지정 시 인라인 스타일로 지정
+      <code>#prepend</code> / <code>#append</code> 슬롯으로 텍스트 좌·우에 아이콘을 배치합니다.<br />
+      아이콘 크기는 버튼 <code>size</code>에 맞춰 자동으로 조정됩니다.<br />
+      간격을 직접 조절하려면 <code>--cm-button-gap</code> CSS 변수를 재정의하세요.
     </blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button>
+
+    <div class="guide-row">
+      <cm-button v-for="s in sizes" :key="`prepend-${s.value}`" color="secondary" :size="s.value">
         <template #prepend>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-            <path d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1z" />
-          </svg>
+          <cm-icon name="search__line" />
         </template>
-        기본 gap
-      </cm-button>
-      <cm-button style="--cm-button-gap: 2px">
-        <template #prepend>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-            <path d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1z" />
-          </svg>
-        </template>
-        커스텀 gap
+        prepend {{ s.value }}
       </cm-button>
     </div>
 
-    <h2>Icon — Append</h2>
-    <blockquote>
-      #append 슬롯으로 아이콘을 텍스트 오른쪽에 배치<br />
-      기본 gap 사이즈 별로 적용되어 있으며, 직접 지정 시 인라인 스타일로 지정
-    </blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button>
-        기본 gap
+    <div class="guide-row">
+      <cm-button v-for="s in sizes" :key="`append-${s.value}`" color="secondary" :size="s.value">
         <template #append>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-            <path d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1z" />
-          </svg>
+          <cm-icon name="chevron-right__line" />
         </template>
-      </cm-button>
-      <cm-button style="--cm-button-gap: 2px">
-        커스텀 gap
-        <template #append>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-            <path d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1z" />
-          </svg>
-        </template>
+        append {{ s.value }}
       </cm-button>
     </div>
 
+    <div class="guide-row">
+      <cm-button color="primary" size="md" style="--cm-button-gap: 12px">
+        <template #prepend>
+          <cm-icon name="search__line" />
+        </template>
+        커스텀 gap (12px)
+      </cm-button>
+    </div>
+  </section>
+
+  <!-- Icon only -->
+  <section class="guide-section">
     <h2>Icon Only</h2>
-    <blockquote>icon-only prop으로 아이콘 단독 사용</blockquote>
-    <cm-button variant="outline" size="md" icon-only aria-label="더보기">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-        <path
-          d="M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm1.5 7a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"
-        />
-      </svg>
-    </cm-button>
+    <blockquote>
+      <code>icon-only</code> prop을 적용하면 정사각 비율의 아이콘 전용 버튼이 됩니다.<br />
+      사이즈별 아이콘 크기: <code>sm</code> 20px · <code>md</code> 24px · <code>lg</code> 32px.<br />
+      접근성을 위해 <code>aria-label</code>을 반드시 지정하세요.
+    </blockquote>
 
-    <!-- Round -->
-    <h2>Round</h2>
-    <blockquote>round prop으로 border-radius 100px 처리</blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button variant="solid-black" size="md" round>태그 버튼</cm-button>
-      <cm-button variant="outline" size="xs" round>취소</cm-button>
+    <div class="guide-row">
+      <cm-button
+        v-for="s in iconOnlySizes"
+        :key="s.value"
+        color="neutral"
+        type="fill"
+        :size="s.value"
+        icon-only
+        aria-label="검색"
+      >
+        <cm-icon name="search__line" />
+      </cm-button>
     </div>
 
-    <!-- Radius SM (6px) -->
-    <h2>Radius SM (6px)</h2>
-    <blockquote>radius-sm prop으로 border-radius 6px 처리</blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button variant="outline" size="2xs" radius-sm>전체</cm-button>
+    <div class="guide-row">
+      <cm-button
+        v-for="s in iconOnlySizes"
+        :key="s.value"
+        color="neutral"
+        type="line"
+        :size="s.value"
+        icon-only
+        aria-label="검색"
+      >
+        <cm-icon name="search__line" />
+      </cm-button>
     </div>
 
-    <!-- Text Only -->
-    <h2>Text Only</h2>
-    <blockquote>variant="text" 적용 시 텍스트 버튼, .is-muted 클래스로 비활성 색상 적용</blockquote>
-    <div class="flex flex-wrap items-center gap-4">
-      <cm-button variant="text" size="xl">Text</cm-button>
-      <cm-button variant="text" size="xl" class="is-muted">Text (muted)</cm-button>
+    <div class="guide-row">
+      <cm-button
+        v-for="s in iconOnlySizes"
+        :key="s.value"
+        color="neutral"
+        type="text"
+        :size="s.value"
+        icon-only
+        aria-label="검색"
+      >
+        <cm-icon name="search__line" />
+      </cm-button>
     </div>
-
-    <h2>Disabled</h2>
-    <blockquote>disabled prop으로 비활성 상태 적용</blockquote>
-    <div class="flex flex-wrap items-center gap-3">
-      <cm-button variant="primary" size="lg" disabled>Primary</cm-button>
-      <cm-button variant="outline" size="lg" disabled>Outline</cm-button>
-      <cm-button variant="text" size="lg" disabled>Text</cm-button>
-    </div>
-  </div>
+  </section>
 </template>
-
-<style></style>

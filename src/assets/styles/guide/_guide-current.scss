@@ -1,0 +1,124 @@
+@use '@/assets/styles/mixins' as *;
+
+@mixin page($gap: var(--space-32)) {
+  @include flex-col($gap: $gap);
+}
+
+@mixin section($gap: var(--space-12)) {
+  @include flex-col($gap: $gap);
+}
+
+@mixin row($align: center, $gap: var(--space-12), $wrap: true) {
+  @include flex($align, $gap: $gap, $wrap: $wrap);
+}
+
+@mixin list-stack($gap: var(--space-16)) {
+  @include flex-col($gap: $gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin wrap-list($x: var(--space-12), $y: $x) {
+  @include gap-margin($x, $y, flex);
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin surface($padding: var(--space-16), $radius: var(--radius-sm)) {
+  padding: $padding;
+  background-color: var(--color-container-neutral-1);
+  border: 1px solid var(--color-border-neutral-3);
+  border-radius: $radius;
+}
+
+@mixin code-box {
+  @include surface($padding: var(--space-12) var(--space-16));
+  color: var(--color-text-neutral-4);
+}
+
+@mixin card-item($padding: var(--space-12) var(--space-16), $gap: var(--space-8), $min-height: 48px) {
+  @include inline-flex(center, $gap: $gap);
+  min-height: $min-height;
+  padding: $padding;
+  background-color: var(--color-container-neutral-1);
+  border: 1px solid var(--color-border-neutral-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-neutral-4);
+}
+
+@mixin table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: var(--space-10) var(--space-12);
+    border-bottom: 1px solid var(--color-border-neutral-3);
+    text-align: left;
+  }
+
+  th {
+    background-color: var(--color-container-neutral-2);
+    color: var(--color-text-neutral-5);
+  }
+
+  td {
+    color: var(--color-text-neutral-4);
+  }
+}
+
+.guide-page {
+  @include page();
+}
+
+.guide-section {
+  @include section();
+
+  &--sm {
+    gap: var(--space-8);
+  }
+}
+
+.guide-row {
+  @include row();
+
+  &--end {
+    align-items: flex-end;
+  }
+}
+
+.guide-list-stack {
+  @include list-stack();
+}
+
+.guide-wrap-list {
+  @include wrap-list();
+}
+
+.guide-surface {
+  @include surface();
+}
+
+.guide-code {
+  @include code-box();
+}
+
+.guide-card-item {
+  @include card-item();
+
+  &--column {
+    @include flex-col(center, center, var(--space-8));
+    width: 140px;
+    text-align: center;
+  }
+}
+
+.guide-table {
+  @include table();
+}
+
+.guide-text-subtle {
+  color: var(--color-text-neutral-4);
+}
