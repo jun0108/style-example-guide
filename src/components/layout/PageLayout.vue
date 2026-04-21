@@ -53,14 +53,16 @@ onMounted(() => {
         <div class="page-layout__title-inner">
           <cm-button
             v-if="showBack"
-            variant="outline"
-            size="md"
+            color="neutral"
+            type="fill"
+            :size="layoutStore.isMobile ? 'md' : 'lg'"
             icon-only
             aria-label="뒤로 가기"
             class="page-layout__back"
-            :class="layoutStore.isMobile ? 'w-[34px]' : 'w-[48px]'"
             @click="onBack"
-          />
+          >
+            <cm-icon name="chevron-left__line" />
+          </cm-button>
           <h1 class="page-layout__title-text">
             {{ pageTitle || title }}
           </h1>

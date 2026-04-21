@@ -1,243 +1,202 @@
 @use '../variables/typography' as *;
-
-:root {
-  --btn-height-2xs: 30px;
-  --btn-height-xs: 36px;
-  --btn-height-sm: 40px;
-  --btn-height-md: 44px;
-  --btn-height-lg: 48px;
-  --btn-height-xl: 56px;
-
-  --btn-radius-sm: 6px;
-  --btn-radius: 8px;
-  --btn-radius-round: 100px;
-
-  --btn-gap: var(--space-4);
-  --btn-shadow: 0px 0px 4px 0px var(--color-primary-normal);
-
-  --btn-icon-size-sm: 14px;
-  --btn-icon-size: 16px;
-  --btn-icon-size-lg: 18px;
-  --btn-icon-size-xl: 20px;
-
-  --btn-disabled-bg: var(--color-bg-normal-disabled);
-  --btn-disabled-border: var(--color-line-regular);
-  --btn-disabled-text: var(--color-font-disabled-b);
-}
+@use '../mixins' as *;
 
 .cm-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  --cm-button-icon-size: var(--btn-icon-size);
-  gap: var(--cm-button-gap, var(--btn-gap));
-  background: none;
-  border: 1px solid transparent;
-  border-radius: var(--btn-radius);
-  white-space: nowrap;
-  cursor: pointer;
+  --cm-button-height: 36px;
+  --cm-button-padding-x: var(--space-12);
+  --cm-button-gap: var(--space-4);
+  --cm-button-radius: 8px;
+  --cm-button-icon-size: 20px;
 
+  --cm-button-bg: transparent;
+  --cm-button-color: var(--color-text-neutral-5);
+  --cm-button-border-color: transparent;
+
+  --cm-button-state-bg: transparent;
+  --cm-button-state-hover: transparent;
+  --cm-button-state-pressed: transparent;
+
+  /* Base -------------------------------------------------------------------- */
+  @include inline-flex(center, center, var(--cm-button-gap));
+  position: relative;
+  height: var(--cm-button-height);
+  padding: 0 var(--cm-button-padding-x);
+  background-color: var(--cm-button-bg);
+  border: 1px solid var(--cm-button-border-color);
+  border-radius: var(--cm-button-radius);
+  color: var(--cm-button-color);
+  transition: var(--transition);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 2;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-color: var(--cm-button-state-bg);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  /* States ------------------------------------------------------------------ */
+  &:hover:not(:disabled) {
+    --cm-button-state-bg: var(--cm-button-state-hover);
+  }
+  &:active:not(:disabled) {
+    --cm-button-state-bg: var(--cm-button-state-pressed);
+  }
   &:disabled {
-    background-color: var(--btn-disabled-bg);
-    border-color: var(--btn-disabled-border);
-    color: var(--btn-disabled-text);
     cursor: not-allowed;
+    --cm-button-state-bg: var(--state-layer-disabled-0);
   }
 
-  /* Sizes */
-  &--2xs {
-    @include typo-old('button-but4', var(--font-weight-regular));
-    --cm-button-icon-size: var(--btn-icon-size-sm);
-    height: var(--btn-height-2xs);
-    padding: 0 var(--space-10);
+  /* Child ------------------------------------------------------------------- */
+  .cm-button__text {
+    display: inline-block;
   }
-
-  &--xs {
-    @include typo-old('button-but4', var(--font-weight-regular));
-    --cm-button-icon-size: var(--btn-icon-size-sm);
-    height: var(--btn-height-xs);
-    padding: 0 var(--space-12);
+  .cm-icon {
+    width: var(--cm-button-icon-size);
+    height: var(--cm-button-icon-size);
   }
+}
 
-  &--sm {
-    @include typo-old('button-but2', var(--font-weight-regular));
-    height: var(--btn-height-sm);
-    padding: 0 var(--space-16);
-  }
-
-  &--md {
-    @include typo-old('button-but2', var(--font-weight-regular));
-    height: var(--btn-height-md);
-    padding: 0 var(--space-16);
-  }
-
-  &--lg {
-    @include typo-old('button-but2');
-    --cm-button-icon-size: var(--btn-icon-size-lg);
-    height: var(--btn-height-lg);
-    padding: 0 var(--space-16);
-  }
-
-  &--xl {
-    @include typo-old('button-but1');
-    --cm-button-icon-size: var(--btn-icon-size-xl);
-    height: var(--btn-height-xl);
-    padding: 0 var(--space-20);
-  }
-
-  /* Variants */
+/* =============================================================================
+  Color × Type
+============================================================================= */
+.cm-button {
+  /* Primary ----------------------------------------------------------------- */
   &--primary {
-    background-color: var(--color-primary-normal);
-    color: var(--color-font-white);
+    --cm-button-state-hover: var(--state-layer-hover-99);
+    --cm-button-state-pressed: var(--state-layer-pressed-99);
 
-    &:disabled {
-      border-color: transparent;
+    &.cm-button--fill {
+      --cm-button-bg: var(--color-container-primary);
+      --cm-button-color: var(--color-text-on-primary);
+    }
+    &.cm-button--line {
+      --cm-button-border-color: var(--color-border-primary);
+      --cm-button-color: var(--color-text-primary);
+    }
+    &.cm-button--text,
+    &.cm-button--underline {
+      --cm-button-color: var(--color-text-primary);
     }
   }
 
-  &--outline {
-    background-color: var(--color-bg-normal-white);
-    border-color: var(--color-line-regular);
-    color: var(--color-font-main);
-  }
+  /* Secondary --------------------------------------------------------------- */
+  &--secondary {
+    --cm-button-state-hover: var(--state-layer-hover-99);
+    --cm-button-state-pressed: var(--state-layer-pressed-99);
 
-  &--outline-dark {
-    background-color: var(--color-bg-normal-white);
-    border-color: var(--color-line-black);
-    color: var(--color-font-main);
-  }
-
-  &--outline-primary {
-    background-color: var(--color-bg-normal-white);
-    border-color: var(--color-primary-normal);
-    color: var(--color-font-main);
-  }
-
-  &--outline-shadow {
-    background-color: var(--color-bg-normal-white);
-    color: var(--color-font-main);
-    box-shadow: var(--btn-shadow);
-
-    &:disabled {
-      box-shadow: none;
+    &.cm-button--fill {
+      --cm-button-bg: var(--color-container-neutral-6);
+      --cm-button-color: var(--color-text-on-primary);
+      --cm-button-state-hover: var(--state-layer-pressed-0);
+      --cm-button-state-pressed: var(--color-opacity-white-30);
+    }
+    &.cm-button--line {
+      --cm-button-border-color: var(--color-border-neutral-6);
+      --cm-button-color: var(--color-text-neutral-5);
+    }
+    &.cm-button--text,
+    &.cm-button--underline {
+      --cm-button-color: var(--color-text-neutral-5);
     }
   }
 
-  &--solid-black {
-    background-color: var(--color-state-black);
-    color: var(--color-font-white);
+  /* Neutral ----------------------------------------------------------------- */
+  &--neutral {
+    --cm-button-state-hover: var(--state-layer-hover-99);
+    --cm-button-state-pressed: var(--state-layer-pressed-99);
 
-    &:disabled {
-      border-color: transparent;
+    &.cm-button--fill {
+      --cm-button-bg: var(--color-frame-neutral-1);
+      --cm-button-color: var(--color-text-on-neutral);
+    }
+    &.cm-button--line {
+      --cm-button-border-color: var(--color-border-neutral-3);
+      --cm-button-color: var(--color-text-on-neutral);
+    }
+    &.cm-button--text,
+    &.cm-button--underline {
+      --cm-button-color: var(--color-text-on-neutral);
     }
   }
 
-  &--solid-gray {
-    background-color: var(--color-bg-normal-light);
-    color: var(--color-font-main);
+  /* Underline --------------------------------------------------------------- */
+  &--underline {
+    --cm-button-bg: transparent;
+    --cm-button-state-hover: transparent;
+    --cm-button-state-pressed: transparent;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}
 
-    &:disabled {
-      border-color: transparent;
+/* =============================================================================
+  Size
+============================================================================= */
+.cm-button {
+  &--sm {
+    @include typo('body-3sb');
+    --cm-button-height: 24px;
+    --cm-button-padding-x: var(--space-8);
+    --cm-button-gap: var(--space-2);
+    --cm-button-radius: 4px;
+    --cm-button-icon-size: 16px;
+  }
+  &--md {
+    @include typo('body-2sb');
+    --cm-button-height: 36px;
+    --cm-button-padding-x: var(--space-12);
+    --cm-button-icon-size: 20px;
+  }
+  &--lg {
+    @include typo('heading-8sb');
+    --cm-button-height: 48px;
+    --cm-button-padding-x: var(--space-20);
+    --cm-button-icon-size: 24px;
+  }
+  &--xl {
+    @include typo('heading-6sb');
+    --cm-button-height: 56px;
+    --cm-button-padding-x: var(--space-20);
+    --cm-button-icon-size: 24px;
+  }
+}
+
+/* =============================================================================
+  Modifier
+============================================================================= */
+.cm-button {
+  /* icon-only */
+  &.is-icon {
+    --cm-button-padding-x: 0;
+    width: var(--cm-button-height);
+
+    &.cm-button--sm {
+      --cm-button-icon-size: 20px;
+    }
+    &.cm-button--md {
+      --cm-button-icon-size: 24px;
+    }
+    &.cm-button--lg {
+      --cm-button-icon-size: 32px;
     }
   }
 
-  &--text {
-    height: auto;
-    padding: 0;
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--color-font-main);
-
-    &:disabled {
-      background-color: transparent;
-      border-color: transparent;
-    }
-
-    &.is-muted {
-      color: var(--color-font-disabled-b);
-    }
-  }
-
-  /* Modifiers */
-  &--full {
-    flex: 1;
+  &.is-full {
     width: 100%;
   }
 
-  &--round {
-    border-radius: var(--btn-radius-round);
-  }
+  // &.is-round {
+  //   --cm-button-radius: 999px;
+  // }
 
-  &--radius-sm {
-    border-radius: var(--btn-radius-sm);
-  }
-
-  &--icon-only {
-    gap: 0;
-    aspect-ratio: 1;
-    padding: 0;
-  }
-
-  /* Elements */
-  &__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    font-size: var(--cm-button-icon-size);
-
-    svg {
-      width: 1em;
-      height: 1em;
-    }
-  }
-
-  &__text {
-    flex: none;
-  }
-  &.is-responsive {
-    max-width: fit-content;
-    &.cm-button {
-      /* Sizes */
-      &--2xs {
-        min-height: var(--btn-height-2xs);
-        height: fit-content;
-      }
-
-      &--xs {
-        min-height: var(--btn-height-xs);
-        height: fit-content;
-      }
-
-      &--sm {
-        min-height: var(--btn-height-sm);
-        height: fit-content;
-      }
-
-      &--md {
-        min-height: var(--btn-height-md);
-        height: fit-content;
-      }
-
-      &--lg {
-        min-height: var(--btn-height-lg);
-        height: fit-content;
-      }
-
-      &--xl {
-        min-height: var(--btn-height-xl);
-        height: fit-content;
-      }
-    }
-    .cm-button {
-      justify-content: space-between;
-      &__text {
-        flex: 1;
-        word-break: break-all;
-        white-space: pre-wrap;
-        text-align: left;
-      }
-    }
-  }
+  // &.is-radius-sm {
+  //   --cm-button-radius: 4px;
+  // }
 }
