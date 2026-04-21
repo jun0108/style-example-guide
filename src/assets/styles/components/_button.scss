@@ -5,7 +5,7 @@
   --cm-button-height: 36px;
   --cm-button-padding-x: var(--space-12);
   --cm-button-gap: var(--space-4);
-  --cm-button-radius: 8px;
+  --cm-button-radius: var(--radius-sm);
   --cm-button-icon-size: 20px;
 
   --cm-button-bg: transparent;
@@ -17,7 +17,7 @@
   --cm-button-state-pressed: transparent;
 
   /* Base -------------------------------------------------------------------- */
-  @include inline-flex(center, center, var(--cm-button-gap));
+  @include inline-flex(center, center);
   position: relative;
   height: var(--cm-button-height);
   padding: 0 var(--cm-button-padding-x);
@@ -39,6 +39,10 @@
     border-radius: inherit;
     pointer-events: none;
     transition: var(--transition);
+  }
+
+  & + & {
+    margin-left: var(--cm-button-gap);
   }
 
   /* States ------------------------------------------------------------------ */
@@ -77,6 +81,7 @@
       --cm-button-color: var(--color-text-on-primary);
     }
     &.cm-button--line {
+      --cm-button-bg: var(--color-container-neutral-0);
       --cm-button-border-color: var(--color-border-primary);
       --cm-button-color: var(--color-text-primary);
     }
@@ -98,6 +103,7 @@
       --cm-button-state-pressed: var(--color-opacity-white-30);
     }
     &.cm-button--line {
+      --cm-button-bg: var(--color-container-neutral-0);
       --cm-button-border-color: var(--color-border-neutral-6);
       --cm-button-color: var(--color-text-neutral-5);
     }
@@ -113,16 +119,17 @@
     --cm-button-state-pressed: var(--state-layer-pressed-99);
 
     &.cm-button--fill {
-      --cm-button-bg: var(--color-frame-neutral-1);
-      --cm-button-color: var(--color-text-on-neutral);
+      --cm-button-bg: var(--color-container-neutral-2);
+      --cm-button-color: var(--color-text-neutral-3);
     }
     &.cm-button--line {
+      --cm-button-bg: var(--color-container-neutral-0);
       --cm-button-border-color: var(--color-border-neutral-3);
-      --cm-button-color: var(--color-text-on-neutral);
+      --cm-button-color: var(--color-text-neutral-3);
     }
     &.cm-button--text,
     &.cm-button--underline {
-      --cm-button-color: var(--color-text-on-neutral);
+      --cm-button-color: var(--color-text-neutral-3);
     }
   }
 
@@ -141,29 +148,32 @@
 ============================================================================= */
 .cm-button {
   &--sm {
-    @include typo('body-3sb');
+    @include typo('label-4sb');
     --cm-button-height: 24px;
     --cm-button-padding-x: var(--space-8);
-    --cm-button-gap: var(--space-2);
-    --cm-button-radius: 4px;
+    --cm-button-gap: var(--space-4);
+    --cm-button-radius: var(--radius-xs);
     --cm-button-icon-size: 16px;
   }
   &--md {
-    @include typo('body-2sb');
+    @include typo('label-3sb');
     --cm-button-height: 36px;
     --cm-button-padding-x: var(--space-12);
+    --cm-button-gap: var(--space-8);
     --cm-button-icon-size: 20px;
   }
   &--lg {
-    @include typo('heading-8sb');
+    @include typo('label-2sb');
     --cm-button-height: 48px;
     --cm-button-padding-x: var(--space-20);
+    --cm-button-gap: var(--space-12);
     --cm-button-icon-size: 24px;
   }
   &--xl {
-    @include typo('heading-6sb');
+    @include typo('label-1sb');
     --cm-button-height: 56px;
     --cm-button-padding-x: var(--space-20);
+    --cm-button-gap: var(--space-16);
     --cm-button-icon-size: 24px;
   }
 }
@@ -191,12 +201,4 @@
   &.is-full {
     width: 100%;
   }
-
-  // &.is-round {
-  //   --cm-button-radius: 999px;
-  // }
-
-  // &.is-radius-sm {
-  //   --cm-button-radius: 4px;
-  // }
 }

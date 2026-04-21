@@ -10,8 +10,6 @@ type Props = {
   type?: ButtonType;
   size?: ButtonSize;
   full?: boolean;
-  round?: boolean;
-  radiusSm?: boolean;
   disabled?: boolean;
   iconOnly?: boolean;
 };
