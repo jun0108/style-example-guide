@@ -29,38 +29,154 @@
 /* Layer 2: Semantic token map */
 $typo-tokens: (
   /* Heading */
-  'heading-1b':  (size: var(--font-size-6xl), weight: var(--font-weight-bold),     lh: var(--font-lh-small)),
-  'heading-1sb': (size: var(--font-size-6xl), weight: var(--font-weight-semibold), lh: var(--font-lh-small)),
-  'heading-2sb': (size: var(--font-size-5xl), weight: var(--font-weight-semibold), lh: var(--font-lh-small)),
-  'heading-3sb': (size: var(--font-size-4xl), weight: var(--font-weight-semibold), lh: var(--font-lh-small)),
-  'heading-4sb': (size: var(--font-size-3xl), weight: var(--font-weight-semibold), lh: var(--font-lh-small)),
-  'heading-5sb': (size: var(--font-size-2xl), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'heading-6r':  (size: var(--font-size-xl),  weight: var(--font-weight-regular),  lh: var(--font-lh-medium)),
-  'heading-6sb': (size: var(--font-size-xl),  weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'heading-7sb': (size: var(--font-size-lg),  weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'heading-8sb': (size: var(--font-size-md),  weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
+  'heading-1b': (
+      size: var(--font-size-6xl),
+      weight: var(--font-weight-bold),
+      lh: var(--font-lh-small),
+    ),
+  'heading-1sb': (
+    size: var(--font-size-6xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-small),
+  ),
+  'heading-2sb': (
+    size: var(--font-size-5xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-small),
+  ),
+  'heading-3sb': (
+    size: var(--font-size-4xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-small),
+  ),
+  'heading-4sb': (
+    size: var(--font-size-3xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-small),
+  ),
+  'heading-5sb': (
+    size: var(--font-size-2xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'heading-6r': (
+    size: var(--font-size-xl),
+    weight: var(--font-weight-regular),
+    lh: var(--font-lh-medium),
+  ),
+  'heading-6sb': (
+    size: var(--font-size-xl),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'heading-7sb': (
+    size: var(--font-size-lg),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'heading-8sb': (
+    size: var(--font-size-md),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
   /* Body */
-  'body-1sb': (size: var(--font-size-md), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'body-1m':  (size: var(--font-size-md), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'body-1r':  (size: var(--font-size-md), weight: var(--font-weight-regular),  lh: var(--font-lh-medium)),
-  'body-2sb': (size: var(--font-size-sm), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'body-2m':  (size: var(--font-size-sm), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'body-2r':  (size: var(--font-size-sm), weight: var(--font-weight-regular),  lh: var(--font-lh-medium)),
-  'body-3sb': (size: var(--font-size-xs), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'body-3m':  (size: var(--font-size-xs), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'body-3r':  (size: var(--font-size-xs), weight: var(--font-weight-regular),  lh: var(--font-lh-medium)),
+  'body-1sb': (
+      size: var(--font-size-md),
+      weight: var(--font-weight-semibold),
+      lh: var(--font-lh-medium),
+    ),
+  'body-1m': (
+    size: var(--font-size-md),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'body-1r': (
+    size: var(--font-size-md),
+    weight: var(--font-weight-regular),
+    lh: var(--font-lh-medium),
+  ),
+  'body-2sb': (
+    size: var(--font-size-sm),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'body-2m': (
+    size: var(--font-size-sm),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'body-2r': (
+    size: var(--font-size-sm),
+    weight: var(--font-weight-regular),
+    lh: var(--font-lh-medium),
+  ),
+  'body-3sb': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'body-3m': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'body-3r': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-regular),
+    lh: var(--font-lh-medium),
+  ),
   /* Label */
-  'label-1sb': (size: var(--font-size-xl), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'label-1m':  (size: var(--font-size-xl), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'label-2sb': (size: var(--font-size-md), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'label-2m':  (size: var(--font-size-md), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'label-3sb': (size: var(--font-size-sm), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'label-3m':  (size: var(--font-size-sm), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
-  'label-4sb': (size: var(--font-size-xs), weight: var(--font-weight-semibold), lh: var(--font-lh-medium)),
-  'label-4m':  (size: var(--font-size-xs), weight: var(--font-weight-medium),   lh: var(--font-lh-medium)),
+  'label-1sb': (
+      size: var(--font-size-xl),
+      weight: var(--font-weight-semibold),
+      lh: var(--font-lh-medium),
+    ),
+  'label-1m': (
+    size: var(--font-size-xl),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'label-2sb': (
+    size: var(--font-size-md),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'label-2m': (
+    size: var(--font-size-md),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'label-3sb': (
+    size: var(--font-size-sm),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'label-3m': (
+    size: var(--font-size-sm),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
+  'label-4sb': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-semibold),
+    lh: var(--font-lh-medium),
+  ),
+  'label-4m': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-medium),
+    lh: var(--font-lh-medium),
+  ),
   /* Caption */
-  'caption-1m': (size: var(--font-size-xs), weight: var(--font-weight-medium),  lh: var(--font-lh-medium)),
-  'caption-1r': (size: var(--font-size-xs), weight: var(--font-weight-regular), lh: var(--font-lh-medium)),
+  'caption-1m': (
+      size: var(--font-size-xs),
+      weight: var(--font-weight-medium),
+      lh: var(--font-lh-medium),
+    ),
+  'caption-1r': (
+    size: var(--font-size-xs),
+    weight: var(--font-weight-regular),
+    lh: var(--font-lh-medium),
+  )
 );
 
 /* Mixin: typo() */
@@ -74,8 +190,6 @@ $typo-tokens: (
   line-height: map.get($config, lh);
   letter-spacing: map.get($config, ls) or var(--font-ls-normal);
 }
-
-
 
 /* Legacy source :: 마이그레이션 이후 삭제 ================================ */
 :root {

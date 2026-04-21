@@ -101,108 +101,108 @@ const iconList = [
 </script>
 
 <template>
-  <div class="guide-icon">
-    <h1>아이콘</h1>
-    <section class="guide-icon__section">
-      <h2>기본 규칙</h2>
+  <div class="guide-icon guide-page">
+    <h1>Icon</h1>
+    <section class="guide-section">
+      <h2>규칙</h2>
       <blockquote>
         파일명은 <code>{name}__{variant}.svg</code> 규칙을 사용합니다.<br />
         컴포넌트에서는 확장자를 제외한 전체 파일명을 <code>name</code>으로 전달합니다.
       </blockquote>
-      <div class="guide-icon__code">
+      <div class="guide-code">
         <code>&lt;cm-icon name="search__line" :size="20" /&gt;</code>
       </div>
     </section>
 
-    <section class="guide-icon__section">
-      <h2>사이즈</h2>
+    <section class="guide-section">
+      <h2>Sizes</h2>
       <blockquote>사용 가능한 공통 사이즈는 16px, 20px, 24px, 32px 입니다.</blockquote>
-      <ul class="guide-icon__list">
-        <li v-for="size in sizeList" :key="size" class="guide-icon__item">
+      <ul class="guide-wrap-list">
+        <li v-for="size in sizeList" :key="size" class="guide-card-item">
           <cm-icon name="search__line" :size="size" />
           <span>{{ size }}px</span>
         </li>
       </ul>
     </section>
 
-    <section class="guide-icon__section">
-      <h2>컬러 적용</h2>
+    <section class="guide-section">
+      <h2>Colors</h2>
       <blockquote><code>ico</code> 타입은 <code>color</code> prop으로 색상을 제어합니다.</blockquote>
-      <ul class="guide-icon__list">
-        <li class="guide-icon__item">
+      <ul class="guide-wrap-list">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-on-primary)" />
           <span>var(--color-icon-on-primary)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-primary)" />
           <span>var(--color-icon-primary)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-on-secondary)" />
           <span>var(--color-icon-on-secondary)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-secondary)" />
           <span>var(--color-icon-secondary)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-on-neutral)" />
           <span>var(--color-icon-on-neutral)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-blue-gray-1)" />
           <span>var(--color-icon-blue-gray-1)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-blue-gray-2)" />
           <span>var(--color-icon-blue-gray-2)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-blue-gray-3)" />
           <span>var(--color-icon-blue-gray-3)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-blue-gray-4)" />
           <span>var(--color-icon-blue-gray-4)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-blue-gray-5)" />
           <span>var(--color-icon-blue-gray-5)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-status-success)" />
           <span>var(--color-icon-status-success)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-status-warning)" />
           <span>var(--color-icon-status-warning)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-status-error)" />
           <span>var(--color-icon-status-error)</span>
         </li>
-        <li class="guide-icon__item">
+        <li class="guide-card-item">
           <cm-icon name="star__fill" :size="24" color="var(--color-icon-status-info)" />
           <span>var(--color-icon-status-info)</span>
         </li>
       </ul>
     </section>
 
-    <section class="guide-icon__section">
-      <h2>이미지 타입</h2>
+    <section class="guide-section">
+      <h2>Image Type</h2>
       <blockquote>여러가지 컬러가 들어가는 아이콘의 경우에는 <code>img</code> 타입으로 그대로 렌더링합니다.</blockquote>
-      <ul class="guide-icon__list">
-        <li class="guide-icon__item">
+      <ul class="guide-wrap-list">
+        <li class="guide-card-item">
           <cm-icon name="circle-check__fill" type="img" :size="32" alt="성공" />
           <span>작성 예시만 참고. 보여지는 아이콘은 무관합니다.</span>
         </li>
       </ul>
     </section>
 
-    <section class="guide-icon__section">
-      <h2>아이콘 모음</h2>
-      <ul class="guide-icon__grid">
-        <li v-for="iconName in iconList" :key="iconName" class="guide-icon__grid-item">
+    <section class="guide-section">
+      <h2>Icon List</h2>
+      <ul class="guide-wrap-list">
+        <li v-for="iconName in iconList" :key="iconName" class="guide-card-item guide-card-item--column">
           <cm-icon :name="iconName" :size="24" />
           <span>{{ iconName }}</span>
         </li>
@@ -210,55 +210,3 @@ const iconList = [
     </section>
   </div>
 </template>
-
-<style lang="scss">
-.guide-icon {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
-
-  &__section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
-  }
-
-  &__code {
-    padding: var(--space-12) var(--space-16);
-    background-color: var(--color-bg-normal-light);
-    border: 1px solid var(--color-line-regular);
-    border-radius: var(--radius-sm);
-    color: var(--color-font-main);
-  }
-
-  &__list,
-  &__grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-12);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  &__item,
-  &__grid-item {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-8);
-    min-height: 48px;
-    padding: var(--space-12) var(--space-16);
-    background-color: var(--color-bg-normal-white);
-    border: 1px solid var(--color-line-regular);
-    border-radius: var(--radius-sm);
-    color: var(--color-font-main);
-  }
-
-  &__grid-item {
-    flex-direction: column;
-    justify-content: center;
-    width: 140px;
-    text-align: center;
-  }
-}
-</style>
