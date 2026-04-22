@@ -9,7 +9,9 @@
   &__lnb {
     --lnb-width: 350px;
     --lnb-width-admin: 314px; // admin 전용 너비 스타일
+    --lnb-width-short: 96px;
     --lnb-background-color: var(--color-container-primary-light);
+    --list-gap: 0;
     --list-padding: 0 var(--space-8);
     --list-item-height: 40px;
     --list-item-color: var(--color-text-neutral-5);
@@ -24,6 +26,7 @@
     padding: var(--space-24);
     background-color: var(--lnb-background-color);
     .lnb__list {
+      @include space($y: var(--list-gap));
       padding: var(--list-padding);
       &-title {
         @include flex(center);
@@ -55,20 +58,37 @@
           font-weight: var(--font-weight-semibold);
           background: var(--list-item-selected-background-color);
           color: var(--list-item-selected-color);
+          .is-prepend {
+            color: var(--list-item-selected-color);
+          }
         }
       }
       &.size--lg {
+        --list-gap: var(--space-8);
         --list-padding: 0;
         --list-item-height: 48px;
         --list-item-padding: var(--space-12) var(--space-16);
         .lnb__list {
           &-item {
             @include typo('body-1m');
+            p {
+              flex: 1;
+              & + .is-append {
+                margin-left: var(--space-16);
+              }
+            }
+          }
+        }
+        .cm-icon {
+          &.is-prepend + p {
+            margin-left: var(--space-8);
           }
         }
       }
       &.is-child {
         --list-padding: 0 var(--space-8);
+        --list-gap: var(--space-4);
+
         .lnb__list {
           &-title {
             @include flex(center);
@@ -95,14 +115,11 @@
               }
             }
             &.is-select {
-              .cm-button {
+              .is-append {
                 .cm-icon {
                   color: var(--list-item-selected-color);
                 }
               }
-            }
-            & + .lnb__list-item {
-              margin-top: var(--space-4);
             }
           }
         }
@@ -127,15 +144,17 @@
       }
     }
     &.is-short {
-      .header {
-        &__left {
-          width: auto;
-          button {
+      width: var(--lnb-width-short);
+      .lnb__list {
+        &:not(.size--lg) {
+          display: none;
+        }
+        &-item {
+          padding: var(--space-12);
+          p,
+          .is-append {
             display: none;
           }
-        }
-        &__title {
-          display: none;
         }
       }
     }

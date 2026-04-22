@@ -9,7 +9,7 @@
 
   height: 100dvh;
   min-height: 100dvh;
-  background-color: var(--color-bg-normal-light);
+  background-color: var(--color-container-primary-light);
 
   &__main {
     @include flex();

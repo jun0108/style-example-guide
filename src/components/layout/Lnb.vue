@@ -139,6 +139,7 @@
 </script>
 
 <template>
+  <!-- FIXME: short 스타일 적용시 is-short 클래스 바인딩 -->
   <aside class="layout__lnb">
     <!-- admin 페이지 전용 ui -->
     <ul v-for="menu in menuList" :key="`menu-list-${menu.menuNm}`" class="lnb__list">
@@ -154,11 +155,15 @@
 
     <!-- 사용자 페이지 전용 ui -->
     <!-- <ul class="lnb__list size--lg">
-      <li class="lnb__list-item">
+      <li class="lnb__list-item is-select">
+        <cm-icon name="message-circle-plus__line" :size="24" class="is-prepend"/>
         <p>새로운 채팅하기</p>
+        <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
       </li>
       <li class="lnb__list-item">
+        <cm-icon name="search__line" :size="24" class="is-prepend"/>
         <p>채팅 검색</p>
+        <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
       </li>
     </ul>
     <ul class="lnb__list is-child">
@@ -174,6 +179,7 @@
           size="sm"
           icon-only
           aria-label="더보기"
+          class="is-append"
         >
           <cm-icon name="ellipsis-vertical__line"/>
         </cm-button>
@@ -186,6 +192,7 @@
           size="sm"
           icon-only
           aria-label="더보기"
+          class="is-append"
         >
           <cm-icon name="ellipsis-vertical__line"/>
         </cm-button>

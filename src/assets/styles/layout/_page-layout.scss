@@ -1,5 +1,6 @@
-@use '@/assets/styles/variables/typography' as *;
-@use '@/assets/styles/mixins/icon' as *;
+@use '../variables/typography' as *;
+@use '../mixins/icon' as *;
+@use '../mixins/flex' as *;
 
 @mixin page-layout-flex-center($gap) {
   display: flex;
@@ -24,7 +25,7 @@
 }
 
 .page-layout {
-  --page-layout-padding: var(--space-40);
+  --page-layout-padding: var(--space-20) var(--space-64);
   --page-layout-gap: var(--space-24);
   --page-layout-title-gap: var(--space-16);
   --page-layout-box-padding: var(--space-20);
@@ -44,24 +45,25 @@
   --page-layout-map-title-padding: var(--page-layout-padding) var(--page-layout-padding) var(--space-10)
     var(--page-layout-padding);
   --page-layout-grid-min: 280px;
-
+  overflow-y: auto;
   box-sizing: border-box;
   align-self: stretch;
   width: 100%;
-  max-width: var(--bp-viewport-max);
   height: 100%;
   min-height: 100%;
   margin: 0 auto;
-  background-color: var(--color-bg-normal-regular);
+  background-color: var(--color-container-primary-light);
   color: var(--color-font-main);
-  overflow-y: auto;
+  border-radius: var(--radius-xl) 0 0 0;
+  box-shadow: var(--shadow-1);
+
 
   &__inner {
-    display: flex;
-    flex-direction: column;
+    @include flex-col();
     gap: var(--page-layout-gap);
     padding: var(--page-layout-padding);
     min-height: 100%;
+    background-color: var(--color-container-neutral-0);
   }
 
   &--tab {
