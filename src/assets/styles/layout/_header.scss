@@ -133,7 +133,7 @@
         & + .header__button {
           position: relative;
           margin-left: var(--space-32);
-          &::after {
+          &::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -148,10 +148,9 @@
       &__button {
         @include flex-center();
         @include typo('label-3m');
+        @include space(var(--space-10));
+        height: 36px;
         color: var(--color-text-neutral-3);
-        .cm-icon {
-          margin: var(--space-6) var(--space-6) var(--space-6) var(--space-10);
-        }
        }
     }
     &.is-short {
