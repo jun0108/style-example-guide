@@ -143,61 +143,75 @@
   <aside class="layout__lnb">
     <!-- admin 페이지 전용 ui -->
     <ul v-for="menu in menuList" :key="`menu-list-${menu.menuNm}`" class="lnb__list">
-      <div class="lnb__list-title">
+      <label class="lnb__list-title">
         <cm-icon :name="menu.iconNm" :size="20" class="is-prepend"/>
         <p>{{menu.menuNm}}</p>
-      </div>
-      <!-- FIXME: 메뉴 선택 시 li태그에 is-select 클래스 바인딩 -->
-      <li v-for="childMenu in menu.childMenu" :key="`menu-list-child-${childMenu.menuNm}`" class="lnb__list-item">
-        <p>{{childMenu.menuNm}}</p>
-      </li>
+      </label>
+      <ul>
+        <li v-for="childMenu in menu.childMenu" :key="`menu-list-child-${childMenu.menuNm}`" >
+          <!-- FIXME: 메뉴 선택 시 button 태그에 is-select 클래스 바인딩 -->
+          <button type="button" class="lnb__list-item">
+          <p>{{childMenu.menuNm}}</p>
+          </button>
+        </li>
+      </ul>
     </ul>
 
     <!-- 사용자 페이지 전용 ui -->
-    <!-- <ul class="lnb__list size--lg">
-      <li class="lnb__list-item is-select">
-        <cm-icon name="message-circle-plus__line" :size="24" class="is-prepend"/>
-        <p>새로운 채팅하기</p>
-        <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
+    <ul class="lnb__list lnb__list--lg">
+      <li>
+        <button type="button" class="lnb__list-item is-select">
+          <cm-icon name="message-circle-plus__line" :size="24" class="is-prepend"/>
+          <p>새로운 채팅하기</p>
+          <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
+        </button>
       </li>
-      <li class="lnb__list-item">
-        <cm-icon name="search__line" :size="24" class="is-prepend"/>
-        <p>채팅 검색</p>
-        <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
+      <li>
+        <button type="button" class="lnb__list-item">
+          <cm-icon name="search__line" :size="24" class="is-prepend"/>
+          <p>채팅 검색</p>
+          <cm-icon name="chevron-right__line" :size="24" class="is-append"/>
+        </button>
       </li>
     </ul>
-    <ul class="lnb__list is-child">
-      <div class="lnb__list-title">
+    <ul class="lnb__list lnb__list--child">
+      <label class="lnb__list-title">
         <cm-icon name="message-circle-more__fill" :size="16" class="is-prepend"/>
         <p>Chat</p>
-      </div>
-      <li class="lnb__list-item is-select">
-        <p>새로운 채팅을 시작합니다새로운 채팅을 시작합니다</p>
-        <cm-button
-          color="neutral"
-          type="text"
-          size="sm"
-          icon-only
-          aria-label="더보기"
-          class="is-append"
-        >
-          <cm-icon name="ellipsis-vertical__line"/>
-        </cm-button>
-      </li>
-      <li class="lnb__list-item">
-        <p>Simple Design System</p>
-        <cm-button
-          color="neutral"
-          type="text"
-          size="sm"
-          icon-only
-          aria-label="더보기"
-          class="is-append"
-        >
-          <cm-icon name="ellipsis-vertical__line"/>
-        </cm-button>
-      </li>
-    </ul> -->
+      </label>
+      <ul>
+        <li>
+          <button type="button" class="lnb__list-item is-select">
+            <p>새로운 채팅을 시작합니다새로운 채팅을 시작합니다</p>
+            <cm-button
+              color="neutral"
+              type="text"
+              size="sm"
+              icon-only
+              aria-label="더보기"
+              class="is-append"
+            >
+              <cm-icon name="ellipsis-vertical__line"/>
+            </cm-button>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="lnb__list-item">
+            <p>Simple Design System</p>
+            <cm-button
+              color="neutral"
+              type="text"
+              size="sm"
+              icon-only
+              aria-label="더보기"
+              class="is-append"
+            >
+              <cm-icon name="ellipsis-vertical__line"/>
+            </cm-button>
+          </button>
+        </li>
+      </ul>
+    </ul>
   </aside>
 </template>
 

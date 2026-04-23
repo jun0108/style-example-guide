@@ -7,11 +7,11 @@ import Lnb from '@/components/layout/Lnb.vue';
 <template>
   <div class="layout-default">
     <Header />
-    <div class="layout-default__main">
+    <main class="layout-default__main">
       <Lnb />
       <div class="layout-default__main-inner">
         <RouterView />
       </div>
-    </div>
+    </main>
   </div>
 </template>
