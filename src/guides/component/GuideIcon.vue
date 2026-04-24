@@ -46,6 +46,7 @@ const iconList = [
   'file-input__line',
   'file-output__line',
   'file-pen-line__line',
+  'file-clock__line',
   'gamepad-2__line',
   'git-compare-arrows__line',
   'image-plus__line',
@@ -96,7 +97,11 @@ const iconList = [
   'undo-2__line',
   'user__fill',
   'user__line',
+  'users__line',
   'vector-square__line',
+  'laptop__line',
+  'monitor-check__line',
+  'chart__line',
 ] as const;
 </script>
 

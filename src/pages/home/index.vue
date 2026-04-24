@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div>
+  <PageLayout mode="single-box" title="Main">
     is home
-  </div>
+  </PageLayout>
 </template>
 
 <style></style>

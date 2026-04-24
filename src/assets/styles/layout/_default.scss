@@ -1,29 +1,25 @@
 @use '../variables/typography' as *;
+@use '../mixins/flex' as *;
 
 .layout-default {
-  --layout-default-header-height: 80px;
   --layout-default-inner-max-width: var(--bp-viewport-max);
-  --layout-default-inner-padding-x: var(--space-24);
+  --layout-default-inner-padding-x: var(--space-24); 
+  @include flex-col();
 
-  display: flex;
-  flex-direction: column;
   height: 100dvh;
   min-height: 100dvh;
-  background-color: var(--color-bg-normal-light);
-  color: var(--color-font-main);
+  background-color: var(--color-container-primary-light);
 
   &__main {
+    @include flex();
     flex: 1;
     min-height: 0;
     overflow: hidden;
   }
 
   &__main-inner {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin: 0 auto;
-    max-width: var(--layout-default-inner-max-width);
+    @include flex();
+    flex: 1;
     height: 100%;
     min-height: 100%;
   }
