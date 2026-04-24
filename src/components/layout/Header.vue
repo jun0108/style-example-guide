@@ -22,16 +22,27 @@ function toggleUserMenu() {
         <!-- TODO: admin 페이지 전용 작업시 분리 필요 -->
         <div class="header__chip">Admin</div>
       </div>
-      <!-- TODO: 공통 버튼 스타일 추가되면 수정할 버튼 -->
        <!-- 사용자 전용 버튼 -->
-       <!-- // 사이드바 닫기 버튼
-       <button type="button">
-         <cm-icon name="panel-left-close__line" :size="32" />
-       </button>
-        // 사이드바 열기 버튼
-      <button type="button">
+       <!-- // 사이드바 닫기 버튼 -->
+      <!-- <cm-button
+        color="neutral"
+        type="text"
+        size="lg"
+        icon-only
+        aria-label="사이드바 닫기"
+      >
+        <cm-icon name="panel-left-close__line" :size="32" />
+      </cm-button> -->
+      <!-- // 사이드바 열기 버튼 -->
+      <!-- <cm-button
+        color="neutral"
+        type="text"
+        size="lg"
+        icon-only
+        aria-label="사이드바 열기"
+      >
         <cm-icon name="panel-left-open__line" :size="32" />
-      </button> -->
+      </cm-button> -->
     </div>
 
     <!-- 사용자 전용 nav -->
@@ -51,28 +62,53 @@ function toggleUserMenu() {
     </nav> -->
     <div class="header__util">
       <!-- FIXME: 로그인한 경우 노출되는 항목  -->
-      <!-- TODO: 공통 버튼 스타일 추가되면 수정할 버튼 -->
       <!-- 사용자 전용 버튼 -->
-      <!-- <button type="button">관리자 콘솔</button> -->
+      <!-- <cm-button color="primary" type="line" size="md">
+          <template #append>
+          <cm-icon name="chevron-right__line" />
+        </template>
+        관리자 콘솔
+      </cm-button> -->
       <!-- 관리자 전용 버튼 -->
-      <button type="button">사용자 콘솔</button>
+      <cm-button color="primary" type="line" size="md">
+          <template #append>
+          <cm-icon name="chevron-right__line" />
+        </template>
+        사용자 콘솔
+      </cm-button>
 
       <div class="header__profile" :class="{ 'is-open': isShowUserMenu }" @click="toggleUserMenu">
         <div class="header__profile-icon"></div>
         <span class="header__profile-name" >
-          홍길동
+          <em>홍길동</em>님
         </span>
       </div>
 
       <button type="button" class="header__button">
         <span>로그아웃</span>
-        <cm-icon name="log-out__line" :size="24" />
+        <cm-button
+          color="neutral"
+          type="text"
+          size="md"
+          icon-only
+          aria-label="로그아웃"
+        >
+          <cm-icon name="log-out__line" :size="24" />
+        </cm-button>
       </button>
 
       <!-- FIXME: 로그아웃한 경우 노출되는 항목  -->
       <!-- <button type="button" class="header__button">
         <span>로그인</span>
-        <cm-icon name="log-in__line" :size="24" />
+        <cm-button
+          color="neutral"
+          type="text"
+          size="md"
+          icon-only
+          aria-label="로그인"
+        >
+          <cm-icon name="log-out__line" :size="24" />
+        </cm-button>
       </button> -->
     </div>
   </header>

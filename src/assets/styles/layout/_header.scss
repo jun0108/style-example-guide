@@ -126,14 +126,17 @@
           }
         }
         &-name {
-          @include typo('label-2sb');
+          @include typo('body-1r');
           color: var(--color-text-neutral-4);
           cursor: default;
+          em {
+            @include typo('label-2sb');
+          }
         }
         & + .header__button {
           position: relative;
           margin-left: var(--space-32);
-          &::after {
+          &::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -148,10 +151,8 @@
       &__button {
         @include flex-center();
         @include typo('label-3m');
+        @include space(var(--space-4));
         color: var(--color-text-neutral-3);
-        .cm-icon {
-          margin: var(--space-6) var(--space-6) var(--space-6) var(--space-10);
-        }
        }
     }
     &.is-short {
