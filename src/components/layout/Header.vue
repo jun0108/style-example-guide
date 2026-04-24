@@ -80,19 +80,35 @@ function toggleUserMenu() {
       <div class="header__profile" :class="{ 'is-open': isShowUserMenu }" @click="toggleUserMenu">
         <div class="header__profile-icon"></div>
         <span class="header__profile-name" >
-          홍길동
+          <em>홍길동</em>님
         </span>
       </div>
 
       <button type="button" class="header__button">
         <span>로그아웃</span>
-        <cm-icon name="log-out__line" :size="24" />
+        <cm-button
+          color="neutral"
+          type="text"
+          size="md"
+          icon-only
+          aria-label="로그아웃"
+        >
+          <cm-icon name="log-out__line" :size="24" />
+        </cm-button>
       </button>
 
       <!-- FIXME: 로그아웃한 경우 노출되는 항목  -->
       <!-- <button type="button" class="header__button">
         <span>로그인</span>
-        <cm-icon name="log-in__line" :size="24" />
+        <cm-button
+          color="neutral"
+          type="text"
+          size="md"
+          icon-only
+          aria-label="로그인"
+        >
+          <cm-icon name="log-out__line" :size="24" />
+        </cm-button>
       </button> -->
     </div>
   </header>

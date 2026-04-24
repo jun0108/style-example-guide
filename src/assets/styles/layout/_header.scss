@@ -126,9 +126,12 @@
           }
         }
         &-name {
-          @include typo('label-2sb');
+          @include typo('body-1r');
           color: var(--color-text-neutral-4);
           cursor: default;
+          em {
+            @include typo('label-2sb');
+          }
         }
         & + .header__button {
           position: relative;
@@ -148,8 +151,7 @@
       &__button {
         @include flex-center();
         @include typo('label-3m');
-        @include space(var(--space-10));
-        height: 36px;
+        @include space(var(--space-4));
         color: var(--color-text-neutral-3);
        }
     }
