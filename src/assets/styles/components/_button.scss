@@ -7,6 +7,7 @@
   --cm-button-gap: var(--space-4);
   --cm-button-radius: var(--radius-sm);
   --cm-button-icon-size: 20px;
+  --cm-button-icon-gap: var(--space-4);
 
   --cm-button-bg: transparent;
   --cm-button-color: var(--color-text-neutral-5);
@@ -18,6 +19,7 @@
 
   /* Base -------------------------------------------------------------------- */
   @include inline-flex(center, center);
+  @include space($x: var(--cm-button-icon-gap));
   position: relative;
   height: var(--cm-button-height);
   padding: 0 var(--cm-button-padding-x);
@@ -64,6 +66,7 @@
   .cm-icon {
     width: var(--cm-button-icon-size);
     height: var(--cm-button-icon-size);
+    color: var(--cm-button-color);
   }
 }
 
@@ -154,6 +157,7 @@
     --cm-button-gap: var(--space-4);
     --cm-button-radius: var(--radius-xs);
     --cm-button-icon-size: 16px;
+    --cm-button-icon-gap: var(--space-2);
   }
   &--md {
     @include typo('label-3sb');
