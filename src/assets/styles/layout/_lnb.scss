@@ -14,10 +14,10 @@
     --lnb-width-short: 96px;
     --lnb-bg-color: var(--color-container-primary-light);
     --lnb-list-divide-gap: var(--space-24);
+    --lnb-list-padding: 0 var(--space-8);
     --lnb-list-title-padding: 0 var(--space-8);
     --lnb-list-item-height: 40px;
     --lnb-list-item-color: var(--color-text-neutral-5);
-    --lnb-list-li-padding: 0 var(--space-8);
     --lnb-list-item-padding: 0 var(--space-16) 0 var(--space-24);
     --lnb-list-item-hover-bg-color: var(--state-layer-hover-primary);
     --lnb-list-item-selected-bg-color: linear-gradient(270deg, var(--color-pink-400) 0%, var(--color-violet-600) 100%);
@@ -30,6 +30,9 @@
     background-color: var(--lnb-bg-color);
     .lnb__list {
       @include space($y: var(--lnb-list-gap));
+      > ul {
+        padding: var(--lnb-list-padding);
+      }
       &-title {
         @include flex(center);
         @include typo('body-1m');
@@ -42,15 +45,10 @@
           margin-right: var(--space-4);
         }
       }
-      > li {
-        @include flex();
-        padding: var(--lnb-list-li-padding);
-      }
       &-item {
         @include flex(center);
         @include typo('body-1sb');
         @include truncate();
-        flex: 1;
         width: 100%;
         height: var(--lnb-list-item-height);
         padding: var(--lnb-list-item-padding);
@@ -79,10 +77,9 @@
       }
       &--lg {
         --lnb-list-gap: var(--space-8);
+        --lnb-list-padding: 0;
         --lnb-list-item-height: 48px;
         --lnb-list-item-padding: var(--space-12) var(--space-16);
-        --lnb-list-li-padding: 0;
-
         .lnb__list {
           &-item {
             @include typo('body-1m');
@@ -111,9 +108,9 @@
         }
       }
       &--child {
+        --lnb-list-padding: 0 var(--space-16);
         --lnb-list-title-padding: 0 var(--space-16);
         --lnb-list-gap: var(--space-4);
-        --lnb-list-li-padding: 0 var(--space-16);
 
         .lnb__list {
           &-title {
