@@ -20,7 +20,7 @@
   /* Base -------------------------------------------------------------------- */
   @include inline-flex(center, center);
   @include space($x: var(--cm-button-icon-gap));
-  position: relative;
+  @include state-layer('--cm-button-state-bg', 1px);
   height: var(--cm-button-height);
   padding: 0 var(--cm-button-padding-x);
   background-color: var(--cm-button-bg);
@@ -28,20 +28,6 @@
   border-radius: var(--cm-button-radius);
   color: var(--cm-button-color);
   transition: var(--transition);
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    z-index: 2;
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    background-color: var(--cm-button-state-bg);
-    border-radius: inherit;
-    pointer-events: none;
-    transition: var(--transition);
-  }
 
   & + & {
     margin-left: var(--cm-button-gap);
