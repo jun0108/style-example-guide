@@ -97,6 +97,15 @@
   @include wrap-list();
 }
 
+.guide-split-list {
+  @include wrap-list(var(--space-16));
+
+  & > li {
+    flex: 1 1 360px;
+    min-width: 0;
+  }
+}
+
 .guide-surface {
   @include surface();
 }

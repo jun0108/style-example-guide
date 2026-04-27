@@ -32,6 +32,22 @@
     @return space-evenly;
   }
 
+  @if $val == 'start' {
+    @return flex-start;
+  }
+
+  @if $val == 'end' {
+    @return flex-end;
+  }
+
+  @if $val == 'stretch' {
+    @return stretch;
+  }
+
+  @if $val == 'baseline' {
+    @return baseline;
+  }
+
   @return $val;
 }
 
