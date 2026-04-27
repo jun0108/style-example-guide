@@ -1,514 +1,225 @@
-@use '../mixins/index' as *;
+@use '../mixins' as *;
 @use '../variables/typography' as *;
 
-:root {
-  --inputs-selector-size: 24px;
-  --inputs-selector-radius: 4px;
-  --inputs-selector-active-color: var(--color-bg-normal-white);
-  --inputs-selector-active-disabled-bg-color: var(--color-state-disabled);
-  --inputs-selector-active-disabled-border-color: var(--color-state-disabled);
-}
-
-/* ========================= Mixins ========================= */
-@mixin selector-input-base {
+/* Control Mixins ------------------------------------------------------------------ */
+@mixin selector-control-base {
+  position: relative;
+  width: var(--v-selector-size);
+  height: var(--v-selector-size);
+  margin: 0;
+  background-color: var(--v-selector-bg-color);
+  border: var(--v-selector-border-width) solid var(--v-selector-border-color);
+  border-radius: var(--v-selector-checkbox-radius);
+  color: var(--v-selector-checkbox-mark-color);
+  box-sizing: border-box;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  outline: none;
-  display: inline-block;
-  position: relative;
   cursor: pointer;
-  background: var(--inputs-background-color);
-  border: 1px solid var(--inputs-border-color);
-  border-radius: var(--inputs-selector-radius);
-  width: var(--inputs-selector-size);
-  height: var(--inputs-selector-size);
+  transition: var(--transition);
 
   &::before {
     content: '';
-    display: inline-block;
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 50%;
     left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
     transform: translate(-50%, -50%);
-    // background-color: currentColor;
+    transition:
+      width 0.2s ease,
+      height 0.2s ease,
+      opacity 0.2s ease;
   }
-
-  &:checked {
-    background: var(--color-primary-normal);
-    border-color: var(--color-primary-normal);
-  }
-
-  &:disabled {
-    background-color: var(--inputs-disabled-background-color);
-    cursor: not-allowed;
-
-    & + span {
-      cursor: not-allowed;
-      color: var(--inputs-disabled-text-color);
-    }
-
-    &:checked {
-      background: var(--inputs-disabled-background-color);
-      border-color: var(--color-line-regular);
-    }
-
-    &[type='checkbox']:indeterminate {
-      background-color: var(--inputs-selector-active-disabled-bg-color);
-      border-color: var(--inputs-selector-active-disabled-border-color);
-    }
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &[type='checkbox']:indeterminate {
-    background: var(--color-primary-normal);
-    border-color: var(--color-primary-normal);
-
-    &::before {
-      background: url('/images/icon/minus__line.svg') no-repeat center/cover;
-    }
-  }
-
-  @content;
 }
 
-/* ========================= Styles ========================= */
+@mixin checkbox-mark-icon($src) {
+  &::before {
+    @include pseudo-icon(var(--v-selector-checkbox-mark-size), $src) {
+      color: currentColor;
+    }
+    opacity: 1;
+  }
+}
+
+@mixin radio-mark-dot {
+  &::before {
+    width: var(--v-selector-radio-mark-size);
+    height: var(--v-selector-radio-mark-size);
+    background-color: var(--v-selector-active-bg-color);
+    border-radius: 50%;
+    opacity: 1;
+  }
+}
+
+/* Selector ------------------------------------------------------------------ */
 .v-selector {
-  display: flex;
+  --v-selector-size: 20px;
+  --v-selector-row-height: 24px;
+  --v-selector-bg-color: var(--color-container-neutral-0);
+  --v-selector-border-width: 2px;
+  --v-selector-border-color: var(--color-icon-blue-gray-3);
+  --v-selector-active-bg-color: var(--color-container-primary);
+  --v-selector-state-bg-color: transparent;
+  --v-selector-label-color: var(--inputs-label-color);
+  --v-selector-label-required-color: var(--inputs-required-text-color);
+  --v-selector-desc-color: var(--color-text-neutral-3);
+  --v-selector-layout-gap: var(--inputs-vertical-space);
+  --v-selector-item-gap: var(--space-10);
+  --v-selector-content-gap: var(--space-4);
+  --v-selector-content-label-color: var(--color-text-neutral-5);
+  --v-selector-content-desc-color: var(--color-text-neutral-3);
+  --v-selector-checkbox-radius: var(--radius-xs);
+  --v-selector-checkbox-mark-color: var(--color-icon-on-primary);
+  --v-selector-checkbox-mark-size: 12px;
+  --v-selector-radio-radius: var(--radius-full);
+  --v-selector-radio-mark-size: 10px;
+
+  @include flex-col();
+  @include space($y: var(--v-selector-layout-gap));
+  @include state-layer('--v-selector-state-bg-color', 2px);
+
   flex: 1;
-  align-items: center;
-  gap: var(--inputs-vertical-space);
-  min-width: 50px;
+  min-width: 0;
+
+  &.is-disabled {
+    --v-selector-state-bg-color: var(--state-layer-disabled-0);
+    cursor: not-allowed;
+
+    .v-selector__input input,
+    .v-selector__input label {
+      cursor: not-allowed;
+    }
+  }
 
   &__label {
-    @include typo-old('body-b1', var(--inputs-label-font-weight));
-    position: relative;
-    color: var(--inputs-label-text-color);
-
-    &.required {
-      &::after {
-        content: '';
-        display: inline-block;
-        width: 6px;
-        height: 6px;
-        margin-left: var(--inputs-required-space);
-        margin-top: -14px;
-        vertical-align: middle;
-        // background: url('/images/icon/required__fill.svg') no-repeat center / contain;
-      }
-    }
+    @include typo('body-1m');
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    color: var(--v-selector-label-color);
   }
 
   &__input-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--inputs-horizontal-space);
+    @include flex-col();
+    @include space($y: var(--inputs-vertical-space));
+    min-width: 0;
   }
 
   &__input {
+    min-width: 0;
+    min-height: var(--v-selector-row-height);
+
     label {
-      display: flex;
-      align-items: center;
-      color: var(--color-font-main);
-
-      span {
-        @include typo-old('body-b1');
-        display: block;
-        padding-left: var(--space-10);
-        white-space: nowrap;
-        cursor: pointer;
-      }
-
-      input[type='checkbox'] {
-        @include selector-input-base {
-          &:checked {
-            &::before {
-              background: url('/images/icon/check__line.svg') no-repeat center/cover;
-            }
-          }
-        }
-      }
-
-      input[type='radio'] {
-        @include selector-input-base {
-          border-radius: 100%;
-
-          &:checked {
-            &::before {
-              // background: url('/images/icon/circle__fill.svg') no-repeat center/cover;
-              width: 50%;
-              height: 50%;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // &__desc {
-  //   font-size: var(--inputs-desc-size);
-  //   color: var(--inputs-desc-text-color);
-  // }
-
-  &--check-style {
-    .v-selector__input label input[type='radio'] {
-      border-radius: 50%;
-
-      &:checked {
-        &::before {
-          background: url('/images/icon/check__line.svg') no-repeat center/cover;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  &--round {
-    .v-selector__input label input[type='checkbox'] {
-      border-radius: 50%;
-    }
-
-    .v-selector__input label input[type='radio'] {
-      &:checked {
-        &::before {
-          background: url('/images/icon/check__line.svg') no-repeat center/cover;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  &--outline {
-    .v-selector__input {
-      label {
-        border-radius: 999px;
-        border: 1px solid var(--inputs-border-color);
-        padding: 9px var(--space-16) 9px var(--space-10);
-        cursor: pointer;
-
-        input[type='checkbox'] {
-          border-radius: 50%;
-        }
-      }
-    }
-
-    &.is-checked,
-    .is-checked {
-      .v-selector__input,
-      &.is-checked {
-        label {
-          border-color: var(--color-primary-normal);
-        }
-      }
-    }
-
-    .v-selector {
+      @include flex(start);
       min-width: 0;
+      cursor: pointer;
     }
 
-    &.is-disabled {
-      .v-selector__input,
-      &.is-checked {
-        label {
-          cursor: not-allowed;
-        }
-      }
-
-      &.is-checked,
-      .is-checked {
-        .v-selector__input,
-        &.v-selector__input {
-          label {
-            border-color: var(--color-line-regular);
-          }
-        }
-      }
+    input[type='checkbox'],
+    input[type='radio'] {
+      @include selector-control-base;
     }
 
-    &.is- {
-      &green {
-        &.is-checked {
-          .v-selector__input {
-            label {
-              border-color: var(--color-status-positive);
-
-              input[type='checkbox']:checked,
-              input[type='radio']:checked {
-                background: var(--color-status-positive);
-                border-color: var(--color-status-positive);
-              }
-            }
-          }
-        }
-      }
-
-      &orange {
-        &.is-checked {
-          .v-selector__input {
-            label {
-              border-color: var(--color-status-delay);
-
-              input[type='checkbox']:checked,
-              input[type='radio']:checked {
-                background: var(--color-status-delay);
-                border-color: var(--color-status-delay);
-              }
-            }
-          }
-        }
-      }
-
-      &gray {
-        &.is-checked {
-          .v-selector__input {
-            label {
-              border-color: var(--color-badge-text-disabled);
-
-              input[type='checkbox']:checked,
-              input[type='radio']:checked {
-                background: var(--color-badge-text-disabled);
-                border-color: var(--color-badge-text-disabled);
-              }
-            }
-          }
-        }
-      }
+    input[type='radio'] {
+      border-radius: var(--v-selector-radio-radius);
     }
 
-    &.has-icon {
-      .v-selector {
-        &__input {
-          min-width: 198px;
-
-          &-wrapper {
-            gap: var(--space-12) var(--space-20);
-          }
-
-          label {
-            padding: 5px var(--space-12);
-          }
-        }
-
-        &__icon {
-          background: var(--color-status-positive);
-          margin-left: auto;
-          padding: var(--space-8);
-          border-radius: 50%;
-        }
-      }
+    input[type='checkbox']:checked,
+    input[type='checkbox']:indeterminate {
+      background-color: var(--v-selector-active-bg-color);
+      border-color: var(--v-selector-active-bg-color);
     }
-    &.gap--sm {
-      .v-selector__input-wrapper {
-        gap: var(--inputs-horizontal-space--sm);
-      }
+
+    input[type='checkbox']:checked {
+      @include checkbox-mark-icon('/images/icon/check__line.svg');
+    }
+
+    input[type='checkbox']:indeterminate {
+      @include checkbox-mark-icon('/images/icon/minus__line.svg');
+    }
+
+    input[type='radio']:checked {
+      @include radio-mark-dot;
+      border-color: var(--v-selector-active-bg-color);
     }
   }
 
-  &--mode-check {
-    .v-selector__input {
-      label {
-        span {
-          padding-left: var(--space-10);
-
-          &::before {
-            display: none;
-          }
-        }
-
-        input[type='radio'] {
-          &:checked {
-            &::before {
-              background: url('/images/icon/check__line.svg') no-repeat center/cover;
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-      }
-    }
+  &__content {
+    @include flex-col();
+    @include space(null, var(--v-selector-content-gap));
+    min-width: 0;
+    margin-left: var(--v-selector-item-gap);
   }
 
-  &--mode {
-    .v-selector__input {
-      label {
-        span {
-          display: flex;
-          align-items: center;
-          padding-left: 7px;
-
-          &::before {
-            content: '';
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            margin-right: 3px;
-          }
-        }
-      }
-
-      &:nth-child(1) {
-        label {
-          span {
-            &::before {
-              background:
-                radial-gradient(circle at 35% 35%, var(--color-white) 0 18%, transparent 19%),
-                linear-gradient(135deg, var(--color-yellow-300) 0%, var(--color-orange-300) 100%);
-            }
-          }
-        }
-      }
-
-      &:nth-child(2) {
-        label {
-          span {
-            &::before {
-              background:
-                radial-gradient(circle at 35% 35%, var(--color-blue-100) 0 14%, transparent 15%),
-                linear-gradient(135deg, var(--color-blue-gray-700) 0%, var(--color-neutral-900) 100%);
-            }
-          }
-        }
-      }
-    }
-  }
-  &.is-bold {
-    .v-selector__input {
-      label {
-        font-weight: var(--font-weight-semibold);
-      }
-    }
-  }
-  &.is-col {
-    .v-selector__input-wrapper {
-      flex-direction: column;
-    }
-  }
-  &.size {
-    &--sm {
-      &.v-selector--outline {
-        .v-selector__input {
-          label {
-            padding: 7px var(--space-16) 7px var(--space-10);
-          }
-        }
-      }
-
-      input[type='radio'] {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    &--lg {
-      &.v-selector--outline {
-        .v-selector__input {
-          label {
-            padding: 13px var(--space-12);
-          }
-        }
-      }
-    }
+  &__content--stacked {
+    margin-left: 0;
   }
 
-  &.is-error &__input input {
-    border-color: var(--inputs-error-color);
+  &__content-row {
+    @include inline-flex(center);
+    min-width: 0;
+  }
+
+  &__content-row &__content-label {
+    margin-left: var(--v-selector-item-gap);
+  }
+
+  &__content--stacked &__content-desc {
+    margin-left: calc(var(--v-selector-size) + var(--v-selector-item-gap));
+  }
+
+  &__content-label,
+  &__content-desc {
+    display: block;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  &__content-label {
+    @include truncate();
+    @include typo('label-2m');
+    color: var(--v-selector-content-label-color);
+  }
+
+  &__content-desc {
+    @include truncate();
+    @include typo('body-1r');
+    color: var(--v-selector-content-desc-color);
+  }
+
+  &__desc {
+    @include truncate();
+    @include typo('body-1r');
+    color: var(--v-selector-desc-color);
+  }
+
+  /* Size ---------------------------------------------------------- */
+  &--md {
+    --v-selector-row-height: 24px;
+  }
+
+  &--lg {
+    --v-selector-row-height: 28px;
+  }
+
+  &--lg &__content-label {
+    @include typo('label-1sb');
   }
 }
+
+/* Selector List ------------------------------------------------------------------ */
 .v-selector__list {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 0;
-  border: 1px solid var(--color-line-regular);
-  border-radius: 8px;
+  --v-selector-list-item-gap: var(--space-24);
 
-  &--fixed {
-    flex: none;
-  }
+  @include flex-col();
+
   .v-selector {
-    flex: none !important;
-    padding: 0;
-  }
+    flex: none;
 
-  .total-count {
-    @include typo-old('body-b3', var(--font-weight-semibold));
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    align-items: center;
-    justify-content: space-between;
-    min-height: 36px;
-    padding: var(--space-8) var(--space-16) 0;
-    em {
-      margin-left: var(--space-4);
-      color: var(--color-primary-normal);
-    }
-    .v-selector {
-      flex: none;
-      &__input {
-        input[type='checkbox'] {
-          width: 20px;
-          height: 20px;
-        }
-        label {
-          span {
-            @include typo-old('body-b3');
-          }
-        }
-      }
-    }
-  }
-
-  .is-list {
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0;
-    padding: var(--space-8) var(--space-4) var(--space-8) var(--space-8);
-    margin-right: var(--space-4);
-    gap: var(--space-4);
-
-    .v-selector {
-      align-items: flex-start;
-      flex: none;
-      &__input-wrapper {
-        flex: 1 1 0%;
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-        .v-selector__input {
-          & + .v-selector__input {
-            margin-top: var(--space-4);
-          }
-        }
-      }
-      &__input {
-        label {
-          span {
-            @include typo-old('body-b3');
-          }
-        }
-      }
-    }
-    .v-selector__input {
-      label {
-        width: 100%;
-        height: 44px;
-        padding: 0 var(--space-10);
-        cursor: pointer;
-      }
-      &:hover {
-        border-radius: 6px;
-        background: var(--color-bg-normal-light);
-      }
+    &__input-wrapper {
+      @include space($y: var(--v-selector-list-item-gap));
     }
   }
 }
