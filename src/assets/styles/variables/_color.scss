@@ -195,101 +195,6 @@
   --color-badge-bg-green: var(--color-green-95);
   --color-badge-bg-gray: var(--color-gray-96);
   --color-badge-bg-disabled: var(--color-gray-82);
-
-  --color-scrollbar-thumb: var(--color-gray-57);
-}
-
-:root[data-theme='dark'] {
-  /* Primary */
-  --color-primary-normal: var(--color-brand-magenta);
-  --color-primary-default: var(--color-blue-55);
-
-  /* Font */
-  --color-font-main: var(--color-gray-100);
-  --color-font-sub-1: var(--color-gray-89);
-  --color-font-sub-2: var(--color-gray-71);
-  --color-font-disabled-w: var(--color-gray-54);
-  --color-font-disabled-b: var(--color-gray-54);
-  --color-font-white: var(--color-gray-0);
-
-  /* Line */
-  --color-line-light: var(--color-gray-39);
-  --color-line-regular: var(--color-gray-54);
-  --color-line-black: var(--color-gray-100);
-  --color-line-disabled: var(--color-gray-36);
-
-  /* Black / Disabled */
-  --color-state-black: var(--color-gray-100);
-  --color-state-disabled: var(--color-gray-100);
-
-  /* Icon */
-  --color-icon-black: var(--color-gray-100);
-  --color-icon-regular: var(--color-gray-100);
-  --color-icon-light: var(--color-gray-100);
-  --color-icon-white: var(--color-gray-0);
-  --color-icon-disabled: var(--color-gray-100);
-
-  /* Background Normal */
-  --color-bg-normal-black: var(--color-gray-71);
-  --color-bg-normal-regular: var(--color-gray-7);
-  --color-bg-normal-light: var(--color-gray-25);
-  --color-bg-normal-white: var(--color-gray-0);
-  --color-bg-normal-disabled: var(--color-gray-18);
-  --color-bg-normal-disabled-dark: var(--color-gray-7);
-
-  /* Background Opacity */
-  --color-bg-opacity-white-12: var(--color-opacity-black-6);
-  --color-bg-opacity-white-20: var(--color-opacity-black-20);
-  --color-bg-opacity-white-30: var(--color-opacity-black-30);
-  --color-bg-opacity-white-50: var(--color-opacity-black-50);
-  --color-bg-opacity-white-60: var(--color-opacity-black-60);
-  --color-bg-opacity-white-92: var(--color-opacity-black-85);
-  --color-bg-opacity-black-6: var(--color-opacity-white-12);
-  --color-bg-opacity-black-20: var(--color-opacity-white-20);
-  --color-bg-opacity-black-30: var(--color-opacity-white-30);
-  --color-bg-opacity-black-50: var(--color-opacity-white-50);
-  --color-bg-opacity-black-60: var(--color-opacity-white-60);
-  --color-bg-opacity-black-85: var(--color-opacity-white-92);
-
-  /* Status */
-  --color-status-informative: var(--color-blue-60);
-  --color-status-positive: var(--color-green-60);
-  --color-status-delay: var(--color-red-orange-60);
-  --color-status-warning: var(--color-red-50);
-
-  /* Badge — text */
-  --color-badge-text-blue: var(--color-blue-70);
-  --color-badge-text-red: var(--color-red-60);
-  --color-badge-text-red-orange: var(--color-red-orange-60);
-  --color-badge-text-green: var(--color-green-60);
-  --color-badge-text-gray: var(--color-gray-0);
-  --color-badge-text-disabled: var(--color-gray-54);
-
-  /* Badge — line */
-  --color-badge-line-blue: var(--color-blue-30);
-  --color-badge-line-red: var(--color-red-20);
-  --color-badge-line-red-orange: var(--color-red-orange-20);
-  --color-badge-line-green: var(--color-green-20);
-  --color-badge-line-gray: var(--color-gray-25);
-  --color-badge-line-disabled: var(--color-gray-21);
-
-  /* Badge — background */
-  --color-badge-bg-blue: var(--color-blue-10);
-  --color-badge-bg-red: var(--color-red-10);
-  --color-badge-bg-red-orange: var(--color-red-orange-10);
-  --color-badge-bg-green: var(--color-green-10);
-  --color-badge-bg-gray: var(--color-gray-7);
-  --color-badge-bg-disabled: var(--color-gray-11);
-}
-
-:root[data-brand='blue'] {
-  --color-primary-normal: var(--color-blue-50);
-  --color-primary-default: var(--color-brand-magenta);
-}
-
-:root[data-brand='custom'] {
-  --color-primary-normal: var(--color-custom-primary);
-  --color-primary-default: var(--color-custom-primary);
 }
 // =============================== OLD END =============================== //
 
@@ -540,4 +445,7 @@
 
   /* Text Opacity */
   --state-text-opacity-disabled: 0.4;
+
+  /* ETC */
+  --color-scrollbar-thumb: var(--color-container-neutral-3);
 }
