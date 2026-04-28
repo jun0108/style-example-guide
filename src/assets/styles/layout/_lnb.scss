@@ -13,6 +13,7 @@
     --lnb-padding-sm: var(--space-20) var(--space-24); // admin, 사용자 lnbKnowledge 전용 padding 스타일
     --lnb-width-short: 96px;
     --lnb-bg-color: var(--color-container-primary-light);
+    --lnb-list-gap: 0;
     --lnb-list-divide-gap: var(--space-24);
     --lnb-list-padding: 0 var(--space-8);
     --lnb-list-title-padding: 0 var(--space-8);
@@ -29,8 +30,8 @@
     padding: var(--lnb-padding-sm);
     background-color: var(--lnb-bg-color);
     .lnb__list {
-      @include space($y: var(--lnb-list-gap));
       > ul {
+        @include space($y: var(--lnb-list-gap));
         padding: var(--lnb-list-padding);
       }
       &-title {
@@ -78,6 +79,7 @@
       &--lg {
         --lnb-list-gap: var(--space-8);
         --lnb-list-padding: 0;
+        --lnb-list-item-gap: var(--space-8);
         --lnb-list-item-height: 48px;
         --lnb-list-item-padding: var(--space-12) var(--space-16);
         .lnb__list {
@@ -109,6 +111,7 @@
       }
       &--child {
         --lnb-list-padding: 0 var(--space-16);
+        --lnb-list-item-gap: var(--space-4);
         --lnb-list-title-padding: 0 var(--space-16);
         --lnb-list-gap: var(--space-4);
 

@@ -71,7 +71,7 @@ function toggleUserMenu() {
       </cm-button> -->
       <!-- 관리자 전용 버튼 -->
       <cm-button color="primary" type="line" size="md">
-          <template #append>
+        <template #append>
           <cm-icon name="chevron-right__line" />
         </template>
         사용자 콘솔

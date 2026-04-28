@@ -2,8 +2,6 @@
 @use '../mixins/flex' as *;
 
 .layout-default {
-  --layout-default-inner-max-width: var(--bp-viewport-max);
-  --layout-default-inner-padding-x: var(--space-24); 
   @include flex-col();
 
   height: 100dvh;
@@ -22,5 +20,6 @@
     flex: 1;
     height: 100%;
     min-height: 100%;
+    align-items: stretch;
   }
 }

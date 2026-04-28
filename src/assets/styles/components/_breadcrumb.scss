@@ -1,0 +1,45 @@
+@use '../mixins/index' as *;
+@use '../variables/typography' as *;
+
+.cm-breadcrumb {
+  --breadcrumb-height: 24px;
+  --breadcrumb-item-gap: 28px;
+
+  height: var(--breadcrumb-height);
+  &__list {
+    @include flex(center);
+    > .cm-icon {
+      margin-right: var(--space-4)
+    }
+  }
+  &__item {
+    @include flex-center();
+    @include typo('body-1r');
+    position: relative;
+    min-width: var(--breadcrumb-height);
+    height: var(--breadcrumb-height);
+    color: var(--color-text-neutral-3);
+    transition: var(--transition);
+    a {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+    &.is-current {
+      color: var(--color-text-neutral-5);
+    }
+    & + .cm-breadcrumb__item {
+      margin-left: var(--breadcrumb-item-gap);
+      &::before {
+        @include pseudo-icon(16px, '../images/icon/chevron-right__line.svg') {
+          left: -22px;
+          color: var(--color-icon-blue-gray-4);
+          transform: translate(0, -50%);
+          user-select: none;
+        }
+      }
+    }
+  }
+}
