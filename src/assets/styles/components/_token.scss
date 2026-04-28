@@ -1,0 +1,269 @@
+@use '../variables/typography' as *;
+@use '../mixins' as *;
+
+.cm-token {
+  --cm-token-height: 38px;
+  --cm-token-padding-x: var(--space-16);
+  --cm-token-content-space: var(--space-4);
+  --cm-token-radius: var(--radius-full);
+  --cm-token-remove-size: 16px;
+
+  --cm-token-bg: transparent;
+  --cm-token-color: var(--color-text-neutral-4);
+  --cm-token-border-color: transparent;
+
+  --cm-token-state-bg: transparent;
+  --cm-token-state-hover: transparent;
+  --cm-token-state-pressed: transparent;
+  --cm-token-state-icon-color: var(--color-icon-status-success);
+
+  /* Base -------------------------------------------------------------------- */
+  @include inline-flex(center, center);
+  @include space($x: var(--cm-token-content-space));
+  @include state-layer('--cm-token-state-bg');
+  @include typo('label-2m');
+  flex: none;
+  height: var(--cm-token-height);
+  padding: 0 var(--cm-token-padding-x);
+  background-color: var(--cm-token-bg);
+  border: 1px solid var(--cm-token-border-color);
+  border-radius: var(--cm-token-radius);
+  color: var(--cm-token-color);
+  white-space: nowrap;
+  cursor: default;
+  transition: var(--transition);
+
+  /* Child ------------------------------------------------------------------- */
+  &__text {
+    @include truncate();
+    line-height: 1;
+  }
+
+  &__state-icon {
+    position: relative;
+    z-index: 3;
+    color: var(--cm-token-state-icon-color);
+  }
+
+  &__remove {
+    @include inline-flex(center, center);
+    position: relative;
+    z-index: 3;
+    width: var(--cm-token-remove-size);
+    height: var(--cm-token-remove-size);
+    padding: 0;
+    background-color: var(--color-icon-on-primary);
+    border: 0;
+    border-radius: var(--radius-full);
+    color: currentColor;
+    cursor: pointer;
+
+    .cm-icon {
+      width: var(--cm-token-remove-size);
+      height: var(--cm-token-remove-size);
+      color: currentColor;
+    }
+  }
+}
+
+/* =============================================================================
+  Chip
+============================================================================= */
+.cm-token {
+  &--chip {
+    --cm-token-bg: var(--color-container-neutral-0);
+    --cm-token-color: var(--color-text-neutral-4);
+    --cm-token-border-color: var(--color-border-neutral-3);
+    --cm-token-state-hover: var(--state-layer-hover-99);
+    --cm-token-state-pressed: var(--state-layer-pressed-99);
+    --cm-token-selected-bg: var(--state-layer-selected-primary);
+    --cm-token-selected-color: var(--color-text-primary);
+    --cm-token-selected-border-color: var(--color-border-primary);
+    cursor: pointer;
+
+    &.cm-token--primary {
+      --cm-token-selected-bg: var(--state-layer-selected-primary);
+      --cm-token-selected-color: var(--color-text-primary);
+      --cm-token-selected-border-color: var(--color-border-primary);
+    }
+    &.cm-token--secondary {
+      --cm-token-selected-bg: var(--state-layer-selected-secondary);
+      --cm-token-selected-color: var(--color-text-secondary);
+      --cm-token-selected-border-color: var(--color-border-secondary);
+    }
+    &.cm-token--sm {
+      --cm-token-height: 32px;
+      --cm-token-padding-x: var(--space-12);
+    }
+    &:hover {
+      --cm-token-state-bg: var(--cm-token-state-hover);
+    }
+    &:active {
+      --cm-token-state-bg: var(--cm-token-state-pressed);
+    }
+    &.is-selected {
+      --cm-token-bg: var(--cm-token-selected-bg);
+      --cm-token-border-color: var(--cm-token-selected-border-color);
+      --cm-token-state-bg: transparent;
+      --cm-token-color: var(--cm-token-selected-color);
+    }
+  }
+}
+
+/* =============================================================================
+  Tag
+============================================================================= */
+.cm-token {
+  &--tag {
+    --cm-token-height: 36px;
+
+    &.cm-token--primary {
+      --cm-token-color: var(--color-text-primary);
+      --cm-token-border-color: var(--color-border-primary-light);
+    }
+    &.cm-token--secondary {
+      --cm-token-color: var(--color-text-secondary);
+      --cm-token-border-color: var(--color-border-secondary-light);
+    }
+    &.cm-token--neutral {
+      --cm-token-color: var(--color-text-neutral-3);
+      --cm-token-border-color: var(--color-border-neutral-3);
+    }
+    &.cm-token--sm {
+      @include typo('label-3m');
+      --cm-token-height: 28px;
+      --cm-token-padding-x: var(--space-12);
+    }
+    &.is-removable {
+      --cm-token-padding-x: var(--space-12);
+
+      &.cm-token--primary {
+        --cm-token-bg: var(--color-container-primary-light);
+      }
+      &.cm-token--secondary {
+        --cm-token-bg: var(--color-container-secondary-light);
+      }
+      &.cm-token--neutral {
+        --cm-token-bg: var(--color-container-neutral-2);
+      }
+      &.cm-token--sm {
+        --cm-token-padding-x: var(--space-8);
+      }
+    }
+  }
+}
+
+/* =============================================================================
+  Badge
+============================================================================= */
+.cm-token {
+  &--badge {
+    @include typo('label-4m');
+    --cm-token-height: 24px;
+    --cm-token-padding-x: var(--space-8);
+    --cm-token-radius: var(--radius-xs);
+
+    &.cm-token--purple {
+      --cm-token-bg: var(--color-container-primary-light);
+      --cm-token-color: var(--color-text-primary);
+      --cm-token-border-color: var(--color-border-primary-light);
+    }
+    &.cm-token--pink {
+      --cm-token-bg: var(--color-container-secondary-light);
+      --cm-token-color: var(--color-text-secondary);
+      --cm-token-border-color: var(--color-border-secondary-light);
+    }
+    &.cm-token--neutral {
+      --cm-token-bg: var(--color-container-neutral-2);
+      --cm-token-color: var(--color-text-neutral-3);
+      --cm-token-border-color: var(--color-border-neutral-3);
+    }
+    &.cm-token--blue {
+      --cm-token-bg: var(--color-container-status-info-light);
+      --cm-token-color: var(--color-text-status-info);
+      --cm-token-border-color: var(--color-border-status-info-light);
+    }
+    &.cm-token--red {
+      --cm-token-bg: var(--color-container-status-error-light);
+      --cm-token-color: var(--color-text-status-error);
+      --cm-token-border-color: var(--color-border-status-error-light);
+    }
+    &.cm-token--green {
+      --cm-token-bg: var(--color-container-status-success-light);
+      --cm-token-color: var(--color-text-status-success);
+      --cm-token-border-color: var(--color-border-status-success-light);
+    }
+    &.cm-token--yellow {
+      --cm-token-bg: var(--color-container-status-warning-light);
+      --cm-token-color: var(--color-text-status-warning);
+      --cm-token-border-color: var(--color-border-status-warning-light);
+    }
+    &.cm-token--line {
+      --cm-token-bg: var(--color-container-neutral-0);
+    }
+  }
+}
+
+/* =============================================================================
+  Badge Icon
+============================================================================= */
+.cm-token {
+  &--badge-dot,
+  &--badge-count,
+  &--badge-state {
+    width: var(--cm-token-height);
+    height: var(--cm-token-height);
+    padding: 0;
+    border: 0;
+  }
+
+  &--badge-dot {
+    --cm-token-height: 6px;
+    --cm-token-bg: var(--color-container-primary);
+
+    &.cm-token--primary {
+      --cm-token-bg: var(--color-container-primary);
+    }
+    &.cm-token--secondary {
+      --cm-token-bg: var(--color-container-secondary);
+    }
+    &.cm-token--red {
+      --cm-token-bg: var(--color-container-status-error);
+    }
+    &.cm-token--neutral {
+      --cm-token-bg: var(--color-icon-blue-gray-4);
+    }
+  }
+
+  &--badge-count {
+    @include typo('label-4sb');
+    --cm-token-height: 20px;
+    --cm-token-bg: var(--color-container-primary);
+    --cm-token-color: var(--color-text-on-primary);
+
+    &.cm-token--primary {
+      --cm-token-bg: var(--color-container-primary);
+      --cm-token-color: var(--color-text-on-primary);
+    }
+    &.cm-token--primary-light {
+      --cm-token-bg: var(--color-container-primary-light);
+      --cm-token-color: var(--color-text-primary);
+    }
+    &.cm-token--neutral {
+      --cm-token-bg: var(--color-container-neutral-4);
+      --cm-token-color: var(--color-text-on-neutral);
+    }
+  }
+
+  &--badge-state {
+    --cm-token-height: 24px;
+    --cm-token-bg: transparent;
+
+    &.is-good {
+      --cm-token-state-icon-color: var(--color-icon-status-success);
+    }
+    &.is-bad {
+      --cm-token-state-icon-color: var(--color-icon-status-error);
+    }
+  }
+}

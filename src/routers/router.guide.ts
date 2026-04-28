@@ -13,7 +13,7 @@ export default {
     { path: 'inputs/dropdown', component: () => import('@/guides/inputs/GuideDropdown.vue') },
     // components
     { path: 'component/button', component: () => import('@/guides/component/GuideButton.vue') },
-    { path: 'component/chip', component: () => import('@/guides/component/GuideChip.vue') },
+    { path: 'component/token', component: () => import('@/guides/component/GuideToken.vue') },
     { path: 'component/icon', component: () => import('@/guides/component/GuideIcon.vue') },
     { path: 'component/tooltip', component: () => import('@/guides/component/GuideTooltip.vue') },
     { path: 'component/toggle', component: () => import('@/guides/component/GuideToggle.vue') },

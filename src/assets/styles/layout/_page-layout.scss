@@ -311,11 +311,11 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--color-bg-normal-regular);
+    background-color: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    border: 5px solid var(--color-bg-normal-regular);
+    border-color: transparent;
   }
 
   // ---- 이상하게 닫혀있던 중첩정리 시작 ----

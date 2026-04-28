@@ -16,7 +16,7 @@
       <div>
         <h2>Right</h2>
         <cm-tooltip placement="right" desc="표시할 단말 모델을 선택하거나 원하는 위치로 순서를 변경할 수 있습니다.">
-          <cm-chip variant="primary" size="sm">+9</cm-chip>
+          <cm-token color="primary" size="sm">+9</cm-token>
         </cm-tooltip>
       </div>
       <div>
@@ -26,5 +26,3 @@
     </div>
   </div>
 </template>
-
-<style></style>
