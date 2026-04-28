@@ -133,16 +133,17 @@ em {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-normal-white);
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-scrollbar-thumb);
-  border-radius: 999px;
-  border: 5px solid var(--color-bg-normal-white);
+  background-color: var(--color-scrollbar-thumb);
+  background-clip: padding-box;
+  border: 4px solid transparent;
+  border-radius: var(--radius-full);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-scrollbar-thumb) var(--color-bg-normal-white);
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
 }
