@@ -2,22 +2,22 @@
 @use '../variables/typography' as *;
 
 .cm-breadcrumb {
-  --breadcrumb-height: 24px;
-  --breadcrumb-item-gap: 28px;
+  --cm-breadcrumb-height: 24px;
+  --cm-breadcrumb-item-gap: var(--space-28);
 
   height: var(--breadcrumb-height);
   &__list {
     @include flex(center);
     > .cm-icon {
-      margin-right: var(--space-4)
+      margin-right: var(--space-4);
     }
   }
   &__item {
     @include flex-center();
     @include typo('body-1r');
     position: relative;
-    min-width: var(--breadcrumb-height);
-    height: var(--breadcrumb-height);
+    height: var(--cm-breadcrumb-height);
+    padding: 0 var(--space-2);
     color: var(--color-text-neutral-3);
     transition: var(--transition);
     a {
@@ -29,9 +29,10 @@
     }
     &.is-current {
       color: var(--color-text-neutral-5);
+      font-weight: var(--font-weight-medium);
     }
     & + .cm-breadcrumb__item {
-      margin-left: var(--breadcrumb-item-gap);
+      margin-left: var(--cm-breadcrumb-item-gap);
       &::before {
         @include pseudo-icon(16px, '../images/icon/chevron-right__line.svg') {
           left: -22px;

@@ -1,7 +1,7 @@
 @use '../variables/typography' as *;
 @use '../mixins/flex' as *;
 
-.layout-default {
+.layout-login {
   @include flex-col();
   height: 100dvh;
   min-height: 100dvh;

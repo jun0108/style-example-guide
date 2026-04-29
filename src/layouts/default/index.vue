@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Header from '@/components/layout/Header.vue';
 import Lnb from '@/components/layout/Lnb.vue';
-
 </script>
 
 <template>

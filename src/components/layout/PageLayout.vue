@@ -15,7 +15,6 @@ const slots = useSlots();
 
 const hasTitleBar = computed(() => props.title || !!slots.titleUtil);
 
-
 onMounted(() => {
   const path = extractRoutePath(route.path);
   const menu = menuStore.menuList.find((_m) => _m.progUri === path);
@@ -36,16 +35,9 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="page-layout__box">
-        <div class="page-layout__content">
-          <slot name="content" />
-        </div>
+      <div class="page-layout__content">
+        <slot name="content" />
       </div>
-
-      <!-- footer 공통 -->
-      <footer v-if="$slots.footer" class="page-layout__footer">
-        <slot name="footer" />
-      </footer>
     </div>
   </div>
 </template>

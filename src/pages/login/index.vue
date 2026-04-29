@@ -1,11 +1,9 @@
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <PageLayout mode="single-box" class="login">
-    login
-  </PageLayout>
+  <div class="login">
+    <div class="login__inner">login</div>
+  </div>
 </template>
 
 <style></style>
