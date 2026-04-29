@@ -27,8 +27,7 @@ body {
   min-width: var(--bp-viewport-min);
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: var(--color-bg-normal-white);
-  color: var(--color-font-main);
+  color: var(--color-text-neutral-5);
   font-family: var(--font-family);
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
@@ -118,13 +117,13 @@ em {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-primary-default);
+  outline: 2px solid var(--color-border-primary);
   outline-offset: 2px;
 }
 
 ::selection {
-  background-color: var(--color-bg-opacity-black-20);
-  color: var(--color-font-main);
+  background-color: var(--color-container-neutral-3);
+  color: var(--color-text-neutral-5);
 }
 
 ::-webkit-scrollbar {

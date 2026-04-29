@@ -1,6 +1,0 @@
-@use '../variables/typography' as *;
-
-.cm-timer {
-  @include typo-old('body-b2');
-  color: var(--color-red-50);
-}
