@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
 import LayoutDefault from '@/layouts/default/index.vue';
+import LayoutLogin from '@/layouts/login/index.vue';
 
 import Home from '@/pages/home/index.vue';
 import Login from '@/pages/login/index.vue';
@@ -19,7 +20,13 @@ const router = createRouter({
       component: LayoutDefault,
       children: [
         { path: '', name: 'Home', component: Home },
-        { path: '/login', component: Login },
+      ],
+    },
+    {
+      path: '/login',
+      component: LayoutLogin,
+      children: [
+        { path: '', component: Login },
       ],
     },
     routerGuide,

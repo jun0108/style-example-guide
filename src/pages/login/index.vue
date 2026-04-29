@@ -1,9 +1,8 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div>
-    is login
+  <div class="login">
+    <div class="login__inner">login</div>
   </div>
 </template>
 
