@@ -8,8 +8,11 @@
   height: var(--breadcrumb-height);
   &__list {
     @include flex(center);
-    > .cm-icon {
-      margin-right: var(--space-4);
+    li {
+      &:first-child {
+        @include flex-center();
+        margin-right: var(--space-4);
+      }
     }
   }
   &__item {
